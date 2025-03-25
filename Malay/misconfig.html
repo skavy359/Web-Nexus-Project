@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-[#020617]">
+    
+    <!-- HEADER -->
+    <nav class="flex items-center justify-between p-4 bg-[#020617]">
+        <div class="flex items-center space-x-3">
+            <img src="/Assets/Images/logo.svg" alt="logo" class="w-12">
+            <span class="text-2xl text-white font-bold font-['Press_Start_2P'] font-black drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black]">Web-Nexus</span>
+        </div>
+
+        <div class="md:flex flex items-center justify-center space-x-10">
+            <a href="#" class=" text-white hover:text-gray-300">Vulnerabilities</a>
+            <a href="#" class=" text-white hover:text-gray-300">About Us</a>
+            <a href="#" class=" text-white hover:text-gray-300">Contact Us</a>
+        </div>
+        
+        <div class="hidden md:flex items-center space-x-4">
+                <img id="theme-icon" src="/Assets/Images/dark-mode.svg" alt="dark-mode" class="w-10">
+            <button class="rounded-md px-4 py-2 bg-yellow-400 hover:bg-yellow-600 text-xs font-['Press_Start_2P']">Log Out</button>
+        </div>
+    
+        <button id="menu-btn" class="md:hidden focus:outline-none">
+            <img src="/Assets/Images/menu.svg" alt="menu" class="w-8">
+        </button>
+    </nav>
+
+    <div class="relative w-screen h-[50vh]">
+        <div class="absolute flex items-center justify-start h-full w-full z-10">
+
+            <div class="flex flex-col items-start justify-center p-20 max-w-[50vw]">
+                
+                <h1 class="text-white text-4xl font-black drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black] font-['Press_Start_2P']">Misconfiguration</h1>
+                <h1 class="text-white text-4xl font-black drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black] font-['Press_Start_2P']">Security</h1>
+                
+                <div class="text-white text-md mt-[10%] font-semibold">Security misconfiguration is a common vulnerability that occurs when an application, server, database, or cloud service is improperly set up, leaving security gaps that attackers can exploit. These misconfigurations can stem from default settings, unnecessary features, weak permissions, unpatched systems, or exposing sensitive information.</div>
+
+                <button class="bg-yellow-300 hover:bg-yellow-600 px-3 py-2 font-['Press_Start_2P'] text-xs rounded-md font-bold mt-10">Get Started</button>
+
+            </div>
+
+        </div>
+        <img src="/Assets/Images/CoverImageMisconfig.gif" class="absolute object-cover w-full h-full" alt="">
+
+
+    </div>
+
+    <details id="dropdown" class="group w-64 bg-white shadow-md rounded-lg p-4">
+        <summary class="cursor-pointer text-lg font-semibold flex justify-between items-center">
+            Click to see more
+            <span class="transition-transform duration-300 group-open:rotate-180">▼</span>
+        </summary>
+        <div id="content" class="overflow-hidden max-h-0 transition-all duration-500">
+            <p class="mt-2 text-gray-600">This is the hidden content that appears when you click.</p>
+        </div>
+    </details>
+
+    <script>
+        const details = document.getElementById("dropdown");
+        const content = document.getElementById("content");
+
+        details.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent default toggle behavior
+            
+            if (!details.open) {
+                content.style.maxHeight = content.scrollHeight + "px";
+                setTimeout(() => details.setAttribute("open", ""), 300); // Open after animation
+            } else {
+                content.style.maxHeight = "0px";
+                setTimeout(() => details.removeAttribute("open"), 300); // Close after animation
+            }
+        });
+    </script>
+
+    <script src="misconfigScript.js"></script>
+</body>
+</html>
