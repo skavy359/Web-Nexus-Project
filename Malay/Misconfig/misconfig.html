@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Misconfiguration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-[#020617] selection:text-yellow-400">
+    
+    <!-- HEADER -->
+    <nav class="fixed z-99 top-0 left-0 h-[10vh] w-screen flex items-center justify-between p-4 bg-[#020617] border-b-2 border-[#3E4B5E] max-md:p-0">
+        <div class="flex items-center space-x-3">
+            <img src="/Assets/Images/logo.svg" alt="logo" class="w-12">
+            <span class="text-2xl text-white font-bold font-['Press_Start_2P'] font-black drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black] max-md:text-xs">
+                Web-Nexus</span>
+        </div>
+
+        <div class="flex items-center justify-between space-x-10 max-md:space-x-4">
+            <a href="#" class="text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a>
+            <a href="#" class="text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">About Us</a>
+            <a href="#" class="text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Contact Us</a>
+        </div>
+        
+        <div class="flex justify-center items-center">
+                <img id="theme-icon" src="/Assets/Images/dark-mode.svg" alt="dark-mode" class="w-10">
+                <button class="bg-yellow-300 hover:bg-yellow-600 px-3 py-2 mr-3 rounded-md border-3 border-[rgb(221,170,16)]  transition-colors duration-500">
+                    <div class=" font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] font-thin text-xs">
+                        Log Out
+                    </div>
+                </button>
+        </div>
+    
+        <button id="menu-btn" class="md:hidden focus:outline-none">
+            <img src="/Assets/Images/menu.svg" alt="menu" class="w-8">
+        </button>
+    </nav>
+
+    <div class="relative w-screen h-[60vh] mt-[10vh] overflow-hidden">
+        <div class="absolute flex items-center justify-start h-full w-full z-10">
+
+            <div class="flex flex-col items-start justify-center p-[10%] max-w-[50vw] max-md:max-w-full max-md:p-[5%] bg-[linear-gradient(to_right,_rgba(0,0,0,0.7)_30%,_rgba(0,0,0,0)_100%)] ">
+                
+                <h1 class="text-white text-4xl font-black drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black] font-['Press_Start_2P'] max-md:text-2xl">Security</h1>
+                <h1 class="text-white text-4xl font-black drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black] font-['Press_Start_2P'] max-md:text-2xl">Misconfiguration</h1>
+                
+                <div class="text-white text-md mt-[10%] font-semibold drop-shadow-[2px_2px_0px_black] drop-shadow-[-2px_-2px_0px_black] max-md:text-xs">Security misconfiguration is a common vulnerability that occurs when an application, server, database, or cloud service is improperly set up, leaving security gaps that attackers can exploit. These misconfigurations can stem from default settings, unnecessary features, weak permissions, unpatched systems, or exposing sensitive information.</div>
+
+                <button class="bg-yellow-300 hover:bg-yellow-600 px-3 py-2 rounded-md mt-10 border-3 border-[rgb(221,170,16)] transition-colors duration-500">
+                    <div class=" font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] font-thin text-xs">
+                        Get Started
+                    </div>
+                </button>
+
+            </div>
+
+        </div>
+        <img src="/Assets/Images/CoverImageMisconfig.gif" class="absolute object-cover w-full h-full opacity-[0.6]" alt="">
+
+
+    </div>
+
+    <div class="w-full h-auto mt-[8vh] px-[10vw]">
+        <div class="flex flex-col items-center justify-center w-full h-full border-3 border-[#3E4B5E] rounded-md p-[2%]">
+
+            <details id="dropdown1" class="relative group w-full bg-[#020617] shadow-md rounded-lg p-4 hover:bg-[#0F172A] transition-colors duration-500">
+    
+                <summary class="cursor-pointer text-lg font-semibold flex justify-between items-center  rounded-md p-2">
+                    <div class="flex items-center justify-center ['Press_Start_2P'] text-white font-black text-3xl border-3 border-[#3E4B5E] rounded-full w-16 h-16">
+                        1
+                    </div>
+
+                    <div class="font-['Press_Start_2P'] text-md font-black text-white"> 
+                        Vulnerable Misconfigured Page
+                    </div>
+
+                    <span class="text-white transition-transform duration-300 group-open:rotate-180">▼</span>
+                </summary>
+                <div id="content1" class="overflow-hidden flex items-center max-h-0 transition-all duration-500">
+                    <p class="mt-2 text-gray-600">This is the hidden content that appears when you click.</p>
+                </div>
+
+                <marquee behavior="scroll" direction="left" scrollamount="10">
+                    <img src="/Assets/Images/Ronit-User1.JPG" class="w-40 h-40 inline-block mx-4" alt="Image 1">
+                
+                </marquee>
+            </details>
+
+            <details id="dropdown2" class="relative group w-full bg-[#020617] shadow-md rounded-lg p-4 hover:bg-[#0F172A] transition-colors duration-500">
+    
+                <summary class="cursor-pointer text-lg font-semibold flex justify-between items-center rounded-md p-2">
+                    <div class="flex items-center justify-center ['Press_Start_2P'] text-white font-black text-3xl border-3 border-[#3E4B5E] rounded-full w-16 h-16">
+                        2
+                    </div>
+
+                    <div class="font-['Press_Start_2P'] text-md font-black text-white"> 
+                        Prevention Measures
+                    </div>
+
+                    <span class="text-white transition-transform duration-300 group-open:rotate-180">▼</span>
+                </summary>
+                <div id="content2" class="overflow-hidden max-h-0 transition-all duration-500">
+                    <p class="mt-2 text-gray-600">This is the hidden content that appears when you click.</p>
+                </div>
+
+                <!-- <marquee behavior="scroll" direction="left" scrollamount="10">
+                    <img src="/Assets/Images/Ronit-User1.JPG" class="w-40 h-40 inline-block mx-4" alt="Image 1">
+                
+                </marquee> -->
+            </details>
+
+            <details id="dropdown3" class="relative group w-full bg-[#020617] shadow-md rounded-lg p-4 hover:bg-[#0F172A] transition-colors duration-500">
+    
+                <summary class="cursor-pointer text-lg font-semibold flex justify-between items-center  rounded-md p-2">
+                    <div class="flex items-center justify-center ['Press_Start_2P'] text-white font-black text-3xl border-3 border-[#3E4B5E] rounded-full w-16 h-16">
+                        3
+                    </div>
+
+                    <div class="font-['Press_Start_2P'] text-md font-black text-white"> 
+                        Securely Configured Page
+                    </div>
+
+                    <span class="text-white transition-transform duration-300 group-open:rotate-180">▼</span>
+                </summary>
+                <div id="content3" class="overflow-hidden max-h-0 transition-all duration-500">
+                    <p class="mt-2 text-gray-600">This is the hidden content that appears when you click.</p>
+                </div>
+
+                <!-- <marquee behavior="scroll" direction="left" scrollamount="10">
+                    <img src="/Assets/Images/Ronit-User1.JPG" class="w-40 h-40 inline-block mx-4" alt="Image 1">
+                
+                </marquee> -->
+            </details>
+
+        </div>
+    </div>
+
+
+    
+
+    <script src="misconfigScript.js"></script>
+</body>
+</html>
