@@ -2,11 +2,11 @@
 // HEADER STUFF ANIMATION
 
 gsap.from(".headerStuff", {
-  y: -50,
-  opacity: 0,
-  duration: 2,
-  stagger: 0.2,
-  ease: "power4.out",
+    y: -50,
+    opacity: 0,
+    duration: 2,
+    stagger: 0.2,
+    ease: "power4.out",
 })
 
 // DASHBOARD ANIMATION
@@ -16,6 +16,26 @@ gsap.from(".dashboardSection", {
     duration: 2,
     ease: "power4.out",
 })
+
+// POPUP WINDOW ANIMATION
+gsap.utils.toArray(".windowPopup").forEach((windowPopup) => {
+    gsap.from(windowPopup, {
+      scale: 0,
+      translateX: "-50%",
+      translateY: "-50%",
+      duration: 1.2,
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: windowPopup,
+        scrub: 1,
+        // end: "bottom 50%",
+        toggleActions: "play reverse play reverse",
+        // start: "top 85%",
+        
+      }
+    });
+});
+
 
 console.log(isAdmin);
 document.addEventListener("DOMContentLoaded", function () {
@@ -194,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
   } else {
     const dashboardHeading = document.querySelector(".dashboardHeading");
-    dashboardHeading.textContent = "Vulnerable Admin Dashboard";
+    dashboardHeading.textContent = "Secure Admin Dashboard";
 
     // POPUP TEXT ANIMATION
 
@@ -202,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const textElement1 = document.querySelector(".popupText1");
 
-    const text1 = "My Sweet Little Intruder, ";
+    const text1 = "Welcome Admin!, Who is totally the admin ";
     textElement1.textContent = "";
 
     text1.split("").forEach(char => {
@@ -229,7 +249,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const textElement2 = document.querySelector(".popupText2");
 
-    const text2 = "look what you did!";
+    const text2 = "";
     textElement2.textContent = "";
 
     text2.split("").forEach(char => {
@@ -257,7 +277,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const textElement3 = document.querySelector(".popupText3");
 
-    const text3 = "You have logged in to"
+    const text3 = ""
     textElement3.textContent = "";
 
     text3.split("").forEach(char => {
@@ -285,7 +305,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const textElement4 = document.querySelector(".popupText4");
 
-    const text4 = "ADMIN's Dashboard";
+    const text4 = "and not some intruder";
     textElement4.textContent = "";
 
     text4.split("").forEach(char => {
@@ -313,7 +333,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const textElement5 = document.querySelector(".popupText5");
 
-    const text5 = "using an ";
+    const text5 = "Your data is ";
     textElement5.textContent = "";
 
     text5.split("").forEach(char => {
@@ -341,7 +361,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const textElement6 = document.querySelector(".popupText6");
 
-    const text6 = "exploit.";
+    const text6 = "safe!";
     textElement6.textContent = "";
 
     text6.split("").forEach(char => {

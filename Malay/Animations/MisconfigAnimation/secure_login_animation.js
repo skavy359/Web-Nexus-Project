@@ -147,7 +147,7 @@ gsap.from(
   textElement5.children,
   {
     display: "none",
-    delay: 4.8,
+    delay: 4,
     stagger: 0.05,
     duration: 2.5,
     ease: "power4.out",
