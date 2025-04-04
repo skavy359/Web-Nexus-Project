@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vulnerable Login</title>
+    <title>Secure Login</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
@@ -137,7 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <!-- SECURE FORM SECTION -->
         <div class="formSection flex items-center justify-center w-[50vw] h-full max-md:h[50vh] max-md:w-full">
             <div class="bg-[#1E293B] border-3 border-[#3E4B5E]  p-8 rounded-lg shadow-md w-96 h-120 flex flex-col items-center justify-center">
-            <h2 class="text-2xl font-['Press_Start_2P'] font-bold mb-14 text-center text-white drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black]">Secure Login</h2>
+            <h2 class="text-2xl font-['Press_Start_2P'] font-bold mb-14 text-center text-green-400 drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black]">Secure Login</h2>
                 
                 <?php if ($error): ?>
                     <div class=" text-red-300 px-4 py-3 rounded relative mb-4 -mt-8" role="alert">
@@ -168,7 +168,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </button>
                 </form>
                 
-                <div class="mt-6 text-center text-sm text-white drop-shadow-[3px_3px_0px_black] drop-shadow-[-3px_-3px_0px_black] font-semibold hover:text-green-300 transition-colors duration-500 ">
+                <div class="mt-6 text-center text-sm text-white drop-shadow-[3px_3px_0px_black] drop-shadow-[-3px_-3px_0px_black] font-semibold hover:text-green-400 transition-colors duration-500 ">
                     Secure login with multiple protection mechanisms
                 </div>
             </div>
