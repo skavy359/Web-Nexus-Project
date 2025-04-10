@@ -40,7 +40,7 @@
             <span
                 class="text-2xl font-bold text-white font-['Press_Start_2P'] font-black drop-shadow-[5px_5px_0px_black] max-md:text-xs hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">Web-Nexus</span>
         </div>
-    
+
         <div class="space-x-10 max-md:space-x-4 flex flex-1 justify-center items-center">
             <a href="#"
                 class="headerStuff transform transition duration-300 hover:scale-110 hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] hover:text-xl text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a>
@@ -50,7 +50,7 @@
                 class="headerStuff transform transition duration-300 hover:scale-110 hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] hover:text-xl text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact
                 Us</a>
         </div>
-    
+
         <div class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] flex justify-center items-center">
             <div class="yellowButton yellowButtonHeader hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
                 <div
@@ -315,7 +315,7 @@
 
                         <div class="flex items-center justify-between w-full">
 
-                            <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">Robust Session Management</p>
+                            <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">Dependency Version Pinning</p>
 
                             <div class="flex flex-row justify-end items-center gap-2 h-7 mb-2 w-auto">
 
@@ -329,19 +329,20 @@
                         <pre class="whitespace-pre-wrap flex items-center w-full h-full">
 
                         <code class=" rounded-md text-sm font-mono w-full h-full" >
-// SECURE: Robust session management with multiple security layers
-session_start();
-
-// Regenerate session ID prevents session fixation attacks
-// Old session data is deleted to prevent orphaned sessions
-session_regenerate_id(true);
-
-// Store only necessary non-sensitive information
-// Add timeout tracking and IP binding for hijacking protection
-$_SESSION['user_id'] = $users[$username]['id'];
-$_SESSION['user_role'] = $users[$username]['role'];
-$_SESSION['last_activity'] = time();
-$_SESSION['ip_address'] = $_SERVER['REMOTE_ADDR'];
+// SECURE: Use specific versioning to prevent automatic upgrades to vulnerable versions
+// Composer.json example with explicit secure versions
+{
+    "require": {
+        "symfony/http-foundation": "5.4.10",
+        "guzzlehttp/guzzle": "7.4.5",
+        // Always specify exact versions or minimum secure versions
+        "laravel/framework": "^8.83.27"
+    },
+    // Prevent installing packages with known vulnerabilities
+    "allow-plugins": {
+        "symfony/thanks": false
+    }
+}
                         </code>
                         </pre>
                     </div>
@@ -353,11 +354,12 @@ $_SESSION['ip_address'] = $_SERVER['REMOTE_ADDR'];
 
                         <img src="/Assets/Images/robot.gif" class="h-16 w-auto" alt="">
 
-                        <p class="preventionDescription mt-2 text-gray-600 italic">The improved code replaces basic
-                            session handling with comprehensive protection. Instead of storing complete user data
-                            (including passwords) in the session, it only stores necessary information like user ID and
-                            role. The code adds session_regenerate_id() to prevent session fixation attacks and
-                            implements timeout tracking and IP binding for added security against hijacking attempts.
+                        <p class="preventionDescription mt-2 text-gray-600 italic">This security practice implements
+                            explicit version pinning for dependencies, preventing automatic updates to potentially
+                            vulnerable versions. By specifying exact secure versions or minimum patched versions, the
+                            system maintains a stable,
+                            secure dependency tree and reduces risk of introducing known vulnerabilities through package
+                            updates.
                         </p>
 
 
@@ -369,8 +371,8 @@ $_SESSION['ip_address'] = $_SERVER['REMOTE_ADDR'];
 
                         <div class="flex items-center justify-between w-full">
 
-                            <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">Preventing URL Parameter
-                                Vulnerabilities</p>
+                            <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">Dependency Scanning Implementation
+                            </p>
 
                             <div class="flex flex-row justify-end items-center gap-2 h-7 mb-2 w-auto">
 
@@ -384,19 +386,25 @@ $_SESSION['ip_address'] = $_SERVER['REMOTE_ADDR'];
                         <pre class="whitespace-pre-wrap flex items-center w-full h-full">
 
                         <code class=" rounded-md text-sm font-mono w-full h-full" >
-// SECURE: POST method with CSRF protection
-// Credentials not visible in URL or server logs
-// CSRF token prevents cross-site request forgery attacks
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Validate token to ensure request originated from your form
-    if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
-        die("CSRF attack detected");
-    }
-    
-    // Sanitize username but preserve password for verification
-    $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS);
-    $password = $_POST['password']; // Never sanitize before verification
-}
+// SECURE: Automated scanning for known vulnerabilities in dependencies
+// Pre-commit hook for dependency security scanning
+
+#!/bin/bash
+# Pre-commit hook to check dependencies for vulnerabilities
+
+echo "Scanning dependencies for security vulnerabilities..."
+# Run composer audit to check for vulnerabilities
+composer audit
+
+# Exit with error if vulnerabilities found
+if [ $? -ne 0 ]; then
+    echo "⚠️ Security vulnerabilities detected in dependencies!"
+    echo "Run 'composer audit' for details and update packages before committing."
+    exit 1
+fi
+
+echo "✅ No known vulnerabilities detected in dependencies."
+exit 0
                         </code>
                         </pre>
                     </div>
@@ -408,11 +416,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                         <img src="/Assets/Images/robot.gif" class="h-16 w-auto" alt="">
 
-                        <p class="preventionDescription mt-2 text-gray-600 italic"> The code changes from using exposed
-                            GET parameters for authentication to more secure POST requests with CSRF protection. This
-                            prevents credentials from appearing in browser history, logs, or referrer headers. The
-                            implementation adds a CSRF token validation to protect against cross-site request forgery
-                            attacks and properly sanitizes the username input while preserving password integrity. </p>
+                        <p class="preventionDescription mt-2 text-gray-600 italic">This preventive measure implements
+                            automated dependency scanning that runs before each code commit. The script checks
+                            all installed packages against vulnerability databases, preventing the introduction of
+                            known-vulnerable dependencies
+                            into the codebase and ensuring early detection of security issues without relying on manual
+                            verification.</p>
 
                     </div>
 
@@ -421,7 +430,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                         <div class="flex items-center justify-between w-full">
 
-                            <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">Output Encoding</p>
+                            <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">Runtime Dependency Validation</p>
 
                             <div class="flex flex-row justify-end items-center gap-2 h-7 mb-2 w-auto">
 
@@ -435,71 +444,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <pre class="whitespace-pre-wrap flex items-center w-full h-full">
 
                         <code class=" rounded-md text-sm font-mono w-full h-full" >
-// SECURE: Proper HTML encoding prevents XSS by converting special characters
-// ENT_QUOTES handles both single and double quotes for comprehensive protection
-// UTF-8 ensures proper handling of international characters
-echo htmlspecialchars($user['username'], ENT_QUOTES, 'UTF-8');
-                        </code>
-                        </pre>
-                    </div>
+// SECURE: Runtime validation of critical library integrity
+// Validates library checksums against known-good values before use
 
-
-                    <!-- ROBO WITH DESC -->
-                    <div class="flex flex-row items-start gap-2 justify-start mt-8 mb-20">
-
-
-                        <img src="/Assets/Images/robot.gif" class="h-16 w-auto" alt="">
-
-                        <p class="preventionDescription mt-2 text-gray-600 italic"> The secure code implements
-                            htmlspecialchars() with ENT_QUOTES and UTF-8 encoding when outputting user data, replacing
-                            direct unencoded output. This prevents cross-site scripting (XSS) attacks by converting
-                            special characters that could be interpreted as HTML or JavaScript into their harmless HTML
-                            entity equivalents. </p>
-
-                    </div>
-
-                    <!-- WINDOW -->
-                    <div class="windowPopup flex flex-col items-center justify-center bg-[#3E4B5E] rounded-md p-2">
-
-                        <div class="flex items-center justify-between w-full">
-
-                            <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">Input Validation</p>
-
-                            <div class="flex flex-row justify-end items-center gap-2 h-7 mb-2 w-auto">
-
-                                <div class="bg-[#0F172A] w-5 h-[4px]"></div>
-                                <div class="bg-transparent border-4 border-[#0F172A] w-5 h-5"></div>
-                                <div class="bg-transparent border-4 border-[#0F172A] rounded-full w-5 h-5"></div>
-
-                            </div>
-                        </div>
-
-                        <pre class="whitespace-pre-wrap flex items-center w-full h-full">
-
-                        <code class=" rounded-md text-sm font-mono w-full h-full" >
-// SECURE: Comprehensive input validation with specific rules
-// Enforces length limits and character restrictions
-// Prevents malformed input from entering the application
-function validateUsername($username) {
-    // Check length requirements to prevent buffer overflow attempts
-    if (strlen($username) < 3 || strlen($username) > 20) {
-        return false;
-    }
+function validateLibraryIntegrity($libraryPath) {
+    // Hash map of known-good checksums for critical libraries
+    $trustedChecksums = [
+        'jquery.min.js' => 'dc5e7f18c8d36ac1d3d4753a87c98d0a',
+        'bootstrap.min.js' => '0a15b4ee9a188952c4acf51b1f2afcbb',
+        'react.production.min.js' => '83324355de97f5c43b8ae6839d93a14f'
+    ];
     
-    // Restrict to alphanumeric plus safe special characters
-    // Prevents injection of dangerous characters
-    if (!preg_match('/^[a-zA-Z0-9_.-]+$/', $username)) {
-        return false;
+    $fileName = basename($libraryPath);
+    
+    // If library is critical, verify its integrity
+    if (array_key_exists($fileName, $trustedChecksums)) {
+        $fileHash = md5_file($libraryPath);
+        
+        if ($fileHash !== $trustedChecksums[$fileName]) {
+            error_log("Security Alert: Library integrity check failed for {$fileName}");
+            return false;
+        }
     }
     
     return true;
 }
-
-// Apply validation and handle invalid input appropriately
-$username = $_POST['username'] ?? '';
-if (!validateUsername($username)) {
-    $error = 'Invalid username format';
-}
                         </code>
                         </pre>
                     </div>
@@ -511,11 +480,12 @@ if (!validateUsername($username)) {
 
                         <img src="/Assets/Images/robot.gif" class="h-16 w-auto" alt="">
 
-                        <p class="preventionDescription mt-2 text-gray-600 italic"> The improved code adds comprehensive
-                            validation for user input rather than accepting any value. It creates a validateUsername()
-                            function that enforces specific rules including length requirements (3-20 characters) and
-                            character restrictions (alphanumeric plus safe special characters), preventing injection
-                            attacks and ensuring data integrity. </p>
+                        <p class="preventionDescription mt-2 text-gray-600 italic"> This security mechanism performs
+                            runtime validation of critical JavaScript libraries by checking file integrity against
+                            known-good checksums. It protects against supply chain attacks or tampered library files by
+                            detecting unauthorized
+                            modifications to external dependencies before they execute, preventing the exploitation of
+                            compromised libraries. </p>
 
                     </div>
 
@@ -524,7 +494,8 @@ if (!validateUsername($username)) {
 
                         <div class="flex items-center justify-between w-full">
 
-                            <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">HTTPS and Secure Cookies</p>
+                            <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">Subresource Integrity Implementation
+                            </p>
 
                             <div class="flex flex-row justify-end items-center gap-2 h-7 mb-2 w-auto">
 
@@ -537,25 +508,22 @@ if (!validateUsername($username)) {
 
                         <pre class="whitespace-pre-wrap flex items-center w-full h-full">
 
-                          <code class=" rounded-md text-sm font-mono w-full h-full" >
-// Force HTTPS to encrypt all traffic between client and server
-// Prevents network sniffing and man-in-the-middle attacks
-if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== 'on') {
-    header("Location: https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
-    exit();
+                        <code class=" rounded-md text-sm font-mono w-full h-full" >
+// SECURE: Implement Subresource Integrity (SRI) for external libraries
+// Ensures third-party resources haven't been tampered with
+
+function generateIntegrityTag($libraryUrl, $expectedHash) {
+    return "<script src=\"{$libraryUrl}\" 
+        integrity=\"sha384-{$expectedHash}\" 
+        crossorigin=\"anonymous\"></script>";
 }
 
-// Configure session with security-focused cookie settings
-// cookie_secure: HTTPS-only transmission prevents interception
-// cookie_httponly: JavaScript cannot access cookies, blocking XSS cookie theft
-// cookie_samesite: Controls cross-origin requests to prevent CSRF
-session_start([
-    'cookie_secure' => true,
-    'cookie_httponly' => true,
-    'cookie_samesite' => 'Lax',
-    'use_strict_mode' => true
-]);
-                          </code>
+// Usage for including external dependencies with integrity verification
+echo generateIntegrityTag(
+    'https://cdn.example.com/jquery-3.6.0.min.js',
+    'xBj4lYfFtcxmklOEZwdO3wyfj8e9zzzzBV+GOIYo1U/MLuOoG9zEXZ6XaaWHjISx'
+);
+                        </code>
                         </pre>
                     </div>
 
@@ -566,11 +534,91 @@ session_start([
 
                         <img src="/Assets/Images/robot.gif" class="h-16 w-auto" alt="">
 
-                        <p class="preventionDescription mt-2 text-gray-600 italic"> This security measure forces HTTPS
-                            connections by redirecting HTTP requests and implements secure cookie settings for sessions.
-                            It enables cookie_secure to ensure cookies are only transmitted via HTTPS, cookie_httponly
-                            to prevent JavaScript access to cookies, and cookie_samesite to control cross-origin
-                            requests, collectively protecting against various cookie-based attacks. </p>
+                        <p class="preventionDescription mt-2 text-gray-600 italic"> This code implements Subresource
+                            Integrity (SRI) for external JavaScript libraries, which verifies that resources loaded
+                            from CDNs or external sources match their expected cryptographic hash. This prevents the
+                            execution of manipulated
+                            scripts even if the CDN is compromised, protecting against supply chain attacks by ensuring
+                            only the exact expected
+                            library version is executed.</p>
+
+                    </div>
+
+                    <!-- WINDOW -->
+                    <div class="windowPopup flex flex-col items-center justify-center bg-[#3E4B5E] rounded-md p-2">
+
+                        <div class="flex items-center justify-between w-full">
+
+                            <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">Library Sandboxing</p>
+
+                            <div class="flex flex-row justify-end items-center gap-2 h-7 mb-2 w-auto">
+
+                                <div class="bg-[#0F172A] w-5 h-[4px]"></div>
+                                <div class="bg-transparent border-4 border-[#0F172A] w-5 h-5"></div>
+                                <div class="bg-transparent border-4 border-[#0F172A] rounded-full w-5 h-5"></div>
+
+                            </div>
+                        </div>
+
+                        <pre class="whitespace-pre-wrap flex items-center w-full h-full">
+
+                        <code class=" rounded-md text-sm font-mono w-full h-full" >
+// SECURE: Sandbox potentially risky third-party library execution
+// Isolates library execution context to prevent privilege escalation
+
+class LibrarySandbox {
+    private $allowedMethods = ['parse', 'transform', 'calculate'];
+    private $libraryInstance;
+    
+    public function __construct($libraryClass) {
+        // Initialize the third-party library in restricted context
+        $this->libraryInstance = new $libraryClass();
+    }
+    
+    public function execute($methodName, $parameters) {
+        // Verify method is in allowlist before execution
+        if (!in_array($methodName, $this->allowedMethods)) {
+            throw new SecurityException("Method {$methodName} is not allowed in sandbox");
+        }
+        
+        // Validate input parameters before passing to library
+        $sanitizedParams = $this->sanitizeParameters($parameters);
+        
+        // Execute in try-catch to contain potential errors
+        try {
+            return call_user_func_array(
+                [$this->libraryInstance, $methodName],
+                $sanitizedParams
+            );
+        } catch (Exception $e) {
+            error_log("Library execution error: " . $e->getMessage());
+            return null;
+        }
+    }
+    
+    private function sanitizeParameters($params) {
+        // Implementation of parameter validation logic
+        return array_map('filter_var', $params, array_fill(0, count($params), FILTER_SANITIZE_STRING));
+    }
+}
+                        </code>
+                        </pre>
+                    </div>
+
+
+                    <!-- ROBO WITH DESC -->
+                    <div class="flex flex-row items-start gap-2 justify-start mt-8 mb-20">
+
+
+                        <img src="/Assets/Images/robot.gif" class="h-16 w-auto" alt="">
+
+                        <p class="preventionDescription mt-2 text-gray-600 italic"> This security pattern implements a
+                            sandboxing mechanism for third-party libraries that restricts their execution context
+                            and capabilities. By creating a wrapper that limits available methods, validates inputs, and
+                            contains errors, the system
+                            prevents potentially vulnerable libraries from accessing sensitive resources or executing
+                            unintended operations,
+                            significantly reducing the impact of library vulnerabilities. </p>
 
                     </div>
 
