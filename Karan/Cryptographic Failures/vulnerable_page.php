@@ -137,9 +137,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <input type="password" name="password" id="password" value="<?php echo htmlspecialchars($password_entered); ?>" placeholder="Enter password" class="w-full p-3 bg-[#1E293B] border border-[#3E4B5E] rounded-md text-white focus:outline-none focus:ring-2 focus:ring-yellow-300">
                     </div>
                     
-                    <button type="submit" class="relative bg-yellow-300 hover:bg-yellow-600 w-full px-4 py-3 rounded-md border-2 border-[rgb(221,170,16)] transition-colors duration-500 group hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
-                        <div class="font-['Press_Start_2P'] text-black group-hover:text-white drop-shadow-[2px_2px_0px_rgb(221,170,16)] text-sm">Register (Insecure)</div>
-                        <div class="absolute w-[101%] h-[110%] bg-[rgb(221,170,16)] hover:bg-yellow-600 rounded-md transition-colors duration-500 -z-10 top-[2%] left-0"></div>
+                    <button type="submit" class="relative bg-red-500 hover:bg-red-600 w-full px-4 py-3 rounded-md border-2 border-[rgb(239,68,68)] transition-colors duration-500 group hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
+                        <div class="font-['Press_Start_2P'] text-black group-hover:text-white drop-shadow-[2px_2px_0px_rgb(239,68,68)] text-sm">Register (Insecure)</div>
+                        <div class="absolute w-[101%] h-[110%] bg-[rgb(239,68,68)] hover:bg-red-600 rounded-md transition-colors duration-500 -z-10 top-[2%] left-0"></div>
                     </button>
                     
                     <div class="mt-4 text-center">
@@ -150,7 +150,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <!-- RIGHT SIDE: EXPLANATION -->
             <div class="md:w-1/2 bg-[#0F172A] p-6 rounded-lg border-2 border-[#3E4B5E] shadow-lg">
-                <h3 class="text-xl font-['Press_Start_2P'] text-yellow-300 mb-6">Vulnerability Explained</h3>
+                <h3 class="text-xl font-['Press_Start_2P'] text-red-500 mb-6">Vulnerability Explained</h3>
                 
                 <div class="mb-6">
                     <h4 class="text-lg font-bold text-white mb-2">What's happening?</h4>
