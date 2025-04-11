@@ -1,142 +1,492 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="output.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Poiret+One&family=Press+Start+2P&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <style>
-    .perspective {
-      perspective: 1000px;
-    }
-    .preserve-3d {
-      transform-style: preserve-3d;
-    }
-    .transition-transform {
-      transition: transform 0.6s;
-    }
-    .rotate-y-180 {
-      transform: rotateY(180deg);
-    }
-  </style>
-</head>
-<body class="w-full min-h-screen bg-[url('/Assets/Images/space-bg.svg')] bg-cover bg-center bg-no-repeat bg-fixed custom-cursor" style="background-size:120%;">
-  <header>
-    <nav class="bg-blue-900 p-4">
-      <h1 class="text-4xl text-white text-center" style="font-family:'Press Start 2P';">Header</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Poiret+One&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      .perspective {
+        perspective: 1000px;
+      }
+      .preserve-3d {
+        transform-style: preserve-3d;
+      }
+      .transition-transform {
+        transition: transform 0.6s;
+      }
+      .rotate-y-180 {
+        transform: rotateY(180deg);
+      }
+    </style>
+  </head>
+  <body
+    class="w-full min-h-screen bg-[url('/Assets/Images/space-bg.svg')] bg-cover bg-center bg-no-repeat bg-fixed custom-cursor"
+    style="background-size: 120%"
+  >
+    <!-- HEADER -->
+    <nav
+      class="fixed z-[999] top-0 left-0 h-[10vh] w-screen flex items-center justify-between p-4 bg-[#020617] border-b-2 border-[#3E4B5E] max-md:p-0"
+    >
+      <div class="flex items-center space-x-3">
+        <img src="/Assets/Images/logo.svg" alt="logo" class="w-12" />
+        <span
+          class="text-2xl text-white font-bold font-['Press_Start_2P'] font-black drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black] max-md:text-xs"
+        >
+          Web-Nexus</span
+        >
+      </div>
+
+      <div
+        class="flex items-center justify-between space-x-10 max-md:space-x-4"
+      >
+        <a
+          href="#"
+          class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs"
+          >Vulnerabilities</a
+        >
+        <a
+          href="#"
+          class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs"
+          >About Us</a
+        >
+        <a
+          href="#"
+          class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs"
+          >Contact Us</a
+        >
+      </div>
+
+      <div
+        id="menu-btn"
+        class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] md:hidden focus:outline-none"
+      >
+        <img src="/Assets/Images/menu.svg" alt="menu" class="w-8" />
+      </div>
+
+      <div
+        class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] flex justify-center items-center"
+      >
+        <div
+          class="yellowButton yellowButtonHeader hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]"
+        >
+          <div
+            class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 mr-3 rounded-md border-3 border-[rgb(221,170,16)] transition-colors duration-500"
+          >
+            <div
+              class="font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] font-thin text-xs max-md:text-[8px]"
+            >
+              Log Out
+            </div>
+            <div
+              class="absolute w-[105%] h-[115%] bg-[rgb(221,170,16)] hover:bg-yellow-600 rounded-md transition-colors duration-500 -z-1 top-[1%] left-0"
+            ></div>
+          </div>
+        </div>
+      </div>
     </nav>
-  </header>
-  <main class="p-4">
-    <div class="flex justify-center mt-13">
-      <div class="mt-5 w-160 flex justify-center">
-        <img src="/Assets/Images/Pokédex.svg" height="240" width="240" alt="Night Sky" class="transform -rotate-6 ml-30">
+    <main class="p-4">
+      <div class="flex justify-center mt-13">
+        <div class="mt-5 w-160 flex justify-center">
+          <img
+            src="/Assets/Images/Pokédex.svg"
+            height="240"
+            width="240"
+            alt="Night Sky"
+            class="transform -rotate-6 ml-30"
+          />
+        </div>
+        <div class="mt-5 w-170 ml-10">
+          <h1
+            class="text-zinc-200 text-3xl font-semibold text-left mt-20"
+            style="font-family: 'Press Start 2P'"
+          >
+            YOUR ULTIMATE GUIDE TO OWASP TOP 10 VULNERABILITIES
+          </h1>
+        </div>
       </div>
-      <div class="mt-5 w-170 ml-10">
-        <h1 class="text-zinc-200 text-3xl font-semibold text-left mt-20" style="font-family:'Press Start 2P';">YOUR ULTIMATE GUIDE TO OWASP TOP 10 VULNERABILITIES</h1>
+      <div class="mt-10 flex flex-col items-center">
+        <h1
+          class="text-zinc-200 text-2xl font-semibold text-center"
+          style="font-family: 'Press Start 2P'"
+        >
+          MEET THE TEAM
+        </h1>
+        <p class="text-blue-500 text-xl font-medium text-center pt-5">
+          The Team behind the website
+        </p>
       </div>
-    </div>
-    <div class="mt-10 flex flex-col items-center">
-      <h1 class="text-zinc-200 text-2xl font-semibold text-center" style="font-family:'Press Start 2P';">MEET THE TEAM</h1>
-      <p class="text-blue-500 text-xl font-medium text-center pt-5">The Team behind the website</p>
-    </div>
-    <div class="w-250 ml-50 grid grid-cols-3 grid-rows-2 gap-y-10 mt-20">
-          <div class="flex flex-col items-center relative">
-            <img src="/Assets/Images/team-card-image.svg" height="220" width="220" alt="team card">
-            <img src="/Assets/Images/red-dot.svg" height="68" width="68" alt="red dot" class=" bottom-16 left-17 absolute">
-            <img src="/Assets/Images/smaller-red-dots.svg" height="30" width="30" alt="red dot" class=" top-10 right-37 absolute">
-            <div id="flip-card" class="top-15 right-23 absolute preserve-3d transition-transform duration-700">
-              <div class="absolute backface-hidden">
-                <img src="/Assets/Images/sonny_avatar.png" height="150" width="150" alt="sonny avatar" class="rounded-md border-2 border-black special-area">
-              </div>
-              <div class="backface-hidden transform rotate-y-180">
-                <img src="/Assets/Images/baby-sonny.png" height="150" width="150" alt="sonny avatar" class="rounded-md border-2 border-black special-area">
-              </div>
+      <div class="w-250 ml-50 grid grid-cols-3 grid-rows-2 gap-y-10 mt-20">
+        <div class="flex flex-col items-center relative">
+          <img
+            src="/Assets/Images/team-card-image.svg"
+            height="220"
+            width="220"
+            alt="team card"
+          />
+          <img
+            src="/Assets/Images/red-dot.svg"
+            height="68"
+            width="68"
+            alt="red dot"
+            class="bottom-16 left-17 absolute"
+          />
+          <img
+            src="/Assets/Images/smaller-red-dots.svg"
+            height="30"
+            width="30"
+            alt="red dot"
+            class="top-10 right-37 absolute"
+          />
+          <div
+            id="flip-card"
+            class="top-15 right-23 absolute preserve-3d transition-transform duration-700"
+          >
+            <div class="absolute backface-hidden">
+              <img
+                src="/Assets/Images/ronit_image.png"
+                height="150"
+                width="150"
+                alt="sonny avatar"
+                class="rounded-md border-2 border-black special-area"
+              />
             </div>
-            <div>
-              <p class="text-md text-white font-semibold mt-2">Chief Founding Officer</p>
-            </div>
-            <div class="flex flex-row justify-around mt-4 space-x-5">
-              <img src="/Assets/Images/twitter.jpg" height="30" width="30" alt="twitter" class="hover:transition-transform hover:scale-130 duration-300 special-area">
-              <img src="/Assets/Images/instagram.jpg" height="30" width="30" alt="instagram" class="hover:transition-transform hover:scale-130 duration-300 special-area">
-              <img src="/Assets/Images/github.png" height="30" width="30" alt="github" class="hover:transition-transform hover:scale-130 duration-300 special-area">
-              <img src="/Assets/Images/LinkedIn.jpg" height="30" width="30" alt="LinkedIn" class="hover:transition-transform hover:scale-130 duration-300 special-area">
-            </div>
-          </div>
-          <div class="flex flex-col items-center relative">
-            <img src="/Assets/Images/team-card-image.svg" height="220" width="220" alt="team card">
-            <img src="/Assets/Images/red-dot.svg" height="68" width="68" alt="red dot" class=" bottom-16 left-17 absolute">
-            <img src="/Assets/Images/smaller-red-dots.svg" height="30" width="30" alt="red dot" class=" top-10 right-37 absolute">
-            <img src="/Assets/Images/sonny_avatar.png" height="150" width="150" alt="sonny avatar" class="top-15 right-23 absolute rounded-md border-2 border-black special-area">
-            <div>
-              <p class="text-md text-white font-semibold mt-2">Chief Founding Officer</p>
-            </div>
-            <div class="flex flex-row justify-around mt-4 space-x-5">
-              <img src="/Assets/Images/twitter.jpg" height="30" width="30" alt="twitter" class="hover:transition-transform hover:scale-130 duration-300 special-area">
-              <img src="/Assets/Images/instagram.jpg" height="30" width="30" alt="instagram" class="hover:transition-transform hover:scale-130 duration-300 special-area">
-              <img src="/Assets/Images/github.png" height="30" width="30" alt="github" class="hover:transition-transform hover:scale-130 duration-300 special-area">
-              <img src="/Assets/Images/LinkedIn.jpg" height="30" width="30" alt="LinkedIn" class="hover:transition-transform hover:scale-130 duration-300 special-area">
-            </div>
-          </div>
-          <div class="flex flex-col items-center relative">
-            <img src="/Assets/Images/team-card-image.svg" height="220" width="220" alt="team card">
-            <img src="/Assets/Images/red-dot.svg" height="68" width="68" alt="red dot" class=" bottom-16 left-17 absolute">
-            <img src="/Assets/Images/smaller-red-dots.svg" height="30" width="30" alt="red dot" class=" top-10 right-37 absolute">
-            <img src="/Assets/Images/sonny_avatar.png" height="150" width="150" alt="sonny avatar" class="top-15 right-23 absolute rounded-md border-2 border-black special-area">
-            <div>
-              <p class="text-md text-white font-semibold mt-2">Chief Founding Officer</p>
-            </div>
-            <div class="flex flex-row justify-around mt-4 space-x-5">
-              <img src="/Assets/Images/twitter.jpg" height="30" width="30" alt="twitter" class="hover:transition-transform hover:scale-130 duration-300 special-area">
-              <img src="/Assets/Images/instagram.jpg" height="30" width="30" alt="instagram" class="hover:transition-transform hover:scale-130 duration-300 special-area">
-              <img src="/Assets/Images/github.png" height="30" width="30" alt="github" class="hover:transition-transform hover:scale-130 duration-300 special-area">
-              <img src="/Assets/Images/LinkedIn.jpg" height="30" width="30" alt="LinkedIn" class="hover:transition-transform hover:scale-130 duration-300 special-area">
+            <div class="backface-hidden transform rotate-y-180">
+              <img
+                src="/Assets/Images/baby-sonny.png"
+                height="150"
+                width="150"
+                alt="sonny avatar"
+                class="rounded-md border-2 border-black special-area"
+              />
             </div>
           </div>
-          <div class="flex flex-col items-center relative">
-            <img src="/Assets/Images/team-card-image.svg" height="220" width="220" alt="team card">
-            <img src="/Assets/Images/red-dot.svg" height="68" width="68" alt="red dot" class=" bottom-16 left-17 absolute">
-            <img src="/Assets/Images/smaller-red-dots.svg" height="30" width="30" alt="red dot" class=" top-10 right-37 absolute">
-            <img src="/Assets/Images/sonny_avatar.png" height="150" width="150" alt="sonny avatar" class="top-15 right-23 absolute rounded-md border-2 border-black special-area">
-            <div>
-              <p class="text-md text-white font-semibold mt-2">Chief Founding Officer</p>
+          <div>
+            <p class="text-md text-white font-semibold mt-2">
+              Chief Founding Officer
+            </p>
+          </div>
+          <div class="flex flex-row justify-around mt-4 space-x-5">
+            <img
+              src="/Assets/Images/twitter.jpg"
+              height="30"
+              width="30"
+              alt="twitter"
+              class="hover:transition-transform hover:scale-130 duration-300 special-area"
+            />
+            <img
+              src="/Assets/Images/instagram.jpg"
+              height="30"
+              width="30"
+              alt="instagram"
+              class="hover:transition-transform hover:scale-130 duration-300 special-area"
+            />
+            <img
+              src="/Assets/Images/github.png"
+              height="30"
+              width="30"
+              alt="github"
+              class="hover:transition-transform hover:scale-130 duration-300 special-area"
+            />
+            <img
+              src="/Assets/Images/LinkedIn.jpg"
+              height="30"
+              width="30"
+              alt="LinkedIn"
+              class="hover:transition-transform hover:scale-130 duration-300 special-area"
+            />
+          </div>
+        </div>
+        <!-- <div class="flex flex-col items-center relative">
+          <img
+            src="/Assets/Images/team-card-image.svg"
+            height="220"
+            width="220"
+            alt="team card"
+          />
+          <img
+            src="/Assets/Images/red-dot.svg"
+            height="68"
+            width="68"
+            alt="red dot"
+            class="bottom-16 left-17 absolute"
+          />
+          <img
+            src="/Assets/Images/smaller-red-dots.svg"
+            height="30"
+            width="30"
+            alt="red dot"
+            class="top-10 right-37 absolute"
+          />
+          <div
+            id="flip-card"
+            class="top-15 right-23 absolute preserve-3d transition-transform duration-700"
+          >
+            <div class="absolute backface-hidden">
+              <img
+                src="/Assets/Images/ronit_image.png"
+                height="150"
+                width="150"
+                alt="sonny avatar"
+                class="rounded-md border-2 border-black special-area"
+              />
             </div>
-            <div class="flex flex-row justify-around mt-4 space-x-5">
-              <img src="/Assets/Images/twitter.jpg" height="30" width="30" alt="twitter" class="hover:transition-transform hover:scale-130 duration-300 special-area">
-              <img src="/Assets/Images/instagram.jpg" height="30" width="30" alt="instagram" class="hover:transition-transform hover:scale-130 duration-300 special-area">
-              <img src="/Assets/Images/github.png" height="30" width="30" alt="github" class="hover:transition-transform hover:scale-130 duration-300 special-area">
-              <img src="/Assets/Images/LinkedIn.jpg" height="30" width="30" alt="LinkedIn" class="hover:transition-transform hover:scale-130 duration-300 special-area">
+            <div class="backface-hidden transform rotate-y-180">
+              <img
+                src="/Assets/Images/baby-sonny.png"
+                height="150"
+                width="150"
+                alt="sonny avatar"
+                class="rounded-md border-2 border-black special-area"
+              />
             </div>
           </div>
-          <div class="flex flex-col items-center relative">
-            <img src="/Assets/Images/team-card-image.svg" height="220" width="220" alt="team card">
-            <img src="/Assets/Images/red-dot.svg" height="68" width="68" alt="red dot" class=" bottom-16 left-17 absolute">
-            <img src="/Assets/Images/smaller-red-dots.svg" height="30" width="30" alt="red dot" class=" top-10 right-37 absolute">
-            <img src="/Assets/Images/sonny_avatar.png" height="150" width="150" alt="sonny avatar" class="top-15 right-23 absolute rounded-md border-2 border-black special-area">
-            <div>
-              <p class="text-md text-white font-semibold mt-2">Chief Founding Officer</p>
-            </div>
-            <div class="flex flex-row justify-around mt-4 space-x-5">
-              <img src="/Assets/Images/twitter.jpg" height="30" width="30" alt="twitter" class="hover:transition-transform hover:scale-130 duration-300 special-area">
-              <img src="/Assets/Images/instagram.jpg" height="30" width="30" alt="instagram" class="hover:transition-transform hover:scale-130 duration-300 special-area">
-              <img src="/Assets/Images/github.png" height="30" width="30" alt="github" class="hover:transition-transform hover:scale-130 duration-300 special-area">
-              <img src="/Assets/Images/LinkedIn.jpg" height="30" width="30" alt="LinkedIn" class="hover:transition-transform hover:scale-130 duration-300 special-area">
-            </div>
+          <div>
+            <p class="text-md text-white font-semibold mt-2">
+              Chief Founding Officer
+            </p>
           </div>
-    </div>
-    <script>
-      const flipCard = document.getElementById("flip-card");
-  
-      flipCard.addEventListener("click", () => {
-        flipCard.classList.add("rotate-y-180");
-  
-        setTimeout(() => {
-          flipCard.classList.remove("rotate-y-180");
-        }, 3000); // 3 seconds later it flips back
-      });
-    </script>
-  </main>
-</body>
+          <div class="flex flex-row justify-around mt-4 space-x-5">
+            <img
+              src="/Assets/Images/twitter.jpg"
+              height="30"
+              width="30"
+              alt="twitter"
+              class="hover:transition-transform hover:scale-130 duration-300 special-area"
+            />
+            <img
+              src="/Assets/Images/instagram.jpg"
+              height="30"
+              width="30"
+              alt="instagram"
+              class="hover:transition-transform hover:scale-130 duration-300 special-area"
+            />
+            <img
+              src="/Assets/Images/github.png"
+              height="30"
+              width="30"
+              alt="github"
+              class="hover:transition-transform hover:scale-130 duration-300 special-area"
+            />
+            <img
+              src="/Assets/Images/LinkedIn.jpg"
+              height="30"
+              width="30"
+              alt="LinkedIn"
+              class="hover:transition-transform hover:scale-130 duration-300 special-area"
+            />
+          </div>
+        </div>
+        <div class="flex flex-col items-center relative">
+          <img
+            src="/Assets/Images/team-card-image.svg"
+            height="220"
+            width="220"
+            alt="team card"
+          />
+          <img
+            src="/Assets/Images/red-dot.svg"
+            height="68"
+            width="68"
+            alt="red dot"
+            class="bottom-16 left-17 absolute"
+          />
+          <img
+            src="/Assets/Images/smaller-red-dots.svg"
+            height="30"
+            width="30"
+            alt="red dot"
+            class="top-10 right-37 absolute"
+          />
+          <img
+            src="/Assets/Images/ronit_image.png"
+            height="150"
+            width="150"
+            alt="sonny avatar"
+            class="top-15 right-23 absolute rounded-md border-2 border-black special-area"
+          />
+          <div>
+            <p class="text-md text-white font-semibold mt-2">
+              Chief Founding Officer
+            </p>
+          </div>
+          <div class="flex flex-row justify-around mt-4 space-x-5">
+            <img
+              src="/Assets/Images/twitter.jpg"
+              height="30"
+              width="30"
+              alt="twitter"
+              class="hover:transition-transform hover:scale-130 duration-300 special-area"
+            />
+            <img
+              src="/Assets/Images/instagram.jpg"
+              height="30"
+              width="30"
+              alt="instagram"
+              class="hover:transition-transform hover:scale-130 duration-300 special-area"
+            />
+            <img
+              src="/Assets/Images/github.png"
+              height="30"
+              width="30"
+              alt="github"
+              class="hover:transition-transform hover:scale-130 duration-300 special-area"
+            />
+            <img
+              src="/Assets/Images/LinkedIn.jpg"
+              height="30"
+              width="30"
+              alt="LinkedIn"
+              class="hover:transition-transform hover:scale-130 duration-300 special-area"
+            />
+          </div>
+        </div>
+        <div class="flex flex-col items-center relative">
+          <img
+            src="/Assets/Images/team-card-image.svg"
+            height="220"
+            width="220"
+            alt="team card"
+          />
+          <img
+            src="/Assets/Images/red-dot.svg"
+            height="68"
+            width="68"
+            alt="red dot"
+            class="bottom-16 left-17 absolute"
+          />
+          <img
+            src="/Assets/Images/smaller-red-dots.svg"
+            height="30"
+            width="30"
+            alt="red dot"
+            class="top-10 right-37 absolute"
+          />
+          <img
+            src="/Assets/Images/ronit_image.png"
+            height="150"
+            width="150"
+            alt="sonny avatar"
+            class="top-15 right-23 absolute rounded-md border-2 border-black special-area"
+          />
+          <div>
+            <p class="text-md text-white font-semibold mt-2">
+              Chief Founding Officer
+            </p>
+          </div>
+          <div class="flex flex-row justify-around mt-4 space-x-5">
+            <img
+              src="/Assets/Images/twitter.jpg"
+              height="30"
+              width="30"
+              alt="twitter"
+              class="hover:transition-transform hover:scale-130 duration-300 special-area"
+            />
+            <img
+              src="/Assets/Images/instagram.jpg"
+              height="30"
+              width="30"
+              alt="instagram"
+              class="hover:transition-transform hover:scale-130 duration-300 special-area"
+            />
+            <img
+              src="/Assets/Images/github.png"
+              height="30"
+              width="30"
+              alt="github"
+              class="hover:transition-transform hover:scale-130 duration-300 special-area"
+            />
+            <img
+              src="/Assets/Images/LinkedIn.jpg"
+              height="30"
+              width="30"
+              alt="LinkedIn"
+              class="hover:transition-transform hover:scale-130 duration-300 special-area"
+            />
+          </div>
+        </div>
+        <div class="flex flex-col items-center relative">
+          <img
+            src="/Assets/Images/team-card-image.svg"
+            height="220"
+            width="220"
+            alt="team card"
+          />
+          <img
+            src="/Assets/Images/red-dot.svg"
+            height="68"
+            width="68"
+            alt="red dot"
+            class="bottom-16 left-17 absolute"
+          />
+          <img
+            src="/Assets/Images/smaller-red-dots.svg"
+            height="30"
+            width="30"
+            alt="red dot"
+            class="top-10 right-37 absolute"
+          />
+          <img
+            src="/Assets/Images/ronit_image.png"
+            height="150"
+            width="150"
+            alt="sonny avatar"
+            class="top-15 right-23 absolute rounded-md border-2 border-black special-area"
+          />
+          <div>
+            <p class="text-md text-white font-semibold mt-2">
+              Chief Founding Officer
+            </p>
+          </div>
+          <div class="flex flex-row justify-around mt-4 space-x-5">
+            <img
+              src="/Assets/Images/twitter.jpg"
+              height="30"
+              width="30"
+              alt="twitter"
+              class="hover:transition-transform hover:scale-130 duration-300 special-area"
+            />
+            <img
+              src="/Assets/Images/instagram.jpg"
+              height="30"
+              width="30"
+              alt="instagram"
+              class="hover:transition-transform hover:scale-130 duration-300 special-area"
+            />
+            <img
+              src="/Assets/Images/github.png"
+              height="30"
+              width="30"
+              alt="github"
+              class="hover:transition-transform hover:scale-130 duration-300 special-area"
+            />
+            <img
+              src="/Assets/Images/LinkedIn.jpg"
+              height="30"
+              width="30"
+              alt="LinkedIn"
+              class="hover:transition-transform hover:scale-130 duration-300 special-area"
+            />
+          </div>
+        </div> -->
+      </div>
+      <script>
+        const flipCard = document.getElementById("flip-card");
+
+        flipCard.addEventListener("click", () => {
+          flipCard.classList.add("rotate-y-180");
+
+          setTimeout(() => {
+            flipCard.classList.remove("rotate-y-180");
+          }, 3000); // 3 seconds later it flips back
+        });
+      </script>
+    </main>
+  </body>
 </html>
