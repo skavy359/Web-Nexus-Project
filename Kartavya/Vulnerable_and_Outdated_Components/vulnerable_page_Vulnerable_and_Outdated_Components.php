@@ -117,7 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             placeholder="Enter password">
                     </div>
                     <button type="submit"
-                        class="w-full bg-red-600 hover:bg-red-700 py-4 text-xl rounded-lg text-white font-bold">Login (Insecure)</button>
+                        class="w-full bg-red-600 hover:bg-red-700 py-4 text-xl rounded-lg text-white font-bold hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">Login (Insecure)</button>
                         <p class="text-xs text-gray-400 italic mt-4 ml-10">
     😉 Try logging in as <span class="font-mono bg-gray-800 px-2 py-1 rounded">admin</span> with password <span class="font-mono bg-gray-800 px-2 py-1 rounded">admin123</span>
 </p>

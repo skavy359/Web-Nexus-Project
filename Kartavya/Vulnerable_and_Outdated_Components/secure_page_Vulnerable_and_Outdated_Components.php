@@ -130,7 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             class="w-full p-5 bg-[#1E293B] border border-[#3E4B5E] rounded-xl text-white"
                             placeholder="Enter password">
                     </div>
-                    <button type="submit" class="w-full bg-green-600 hover:bg-green-700 py-4 text-xl rounded-lg text-white font-bold">Login</button>
+                    <button type="submit" class="w-full bg-green-600 hover:bg-green-700 py-4 text-xl rounded-lg text-white font-bold hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">Login</button>
                     <p class="text-xs text-gray-400 italic mt-4 ml-10">
                         😊 Try logging in as <span class="font-mono bg-gray-800 px-2 py-1 rounded">admin</span> with password <span class="font-mono bg-gray-800 px-2 py-1 rounded">admin123</span>
                     </p>
