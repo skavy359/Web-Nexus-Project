@@ -1,30 +1,17 @@
 <?php
-// Secure implementation using prepared statements
+
 session_start();
 
 $search_term = "";
 $search_results = [];
 $security_message = "";
 
-// Simulated database connection (in a real app, use actual DB connection)
-// This is a simulation for demonstration purposes
-$pdo = new stdClass(); // Mock PDO object
-$pdo->query_log = []; // For demonstration
-$stmt = new stdClass(); // Mock statement
+$pdo = new stdClass();
+$pdo->query_log = [];
+$stmt = new stdClass();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $search_term = $_POST['search_term'];
-
-    // SECURE: Using prepared statements with parameter binding
-    // This prevents SQL injection by separating SQL code from user data
-    
-    // In a real application, this would be:
-    // $stmt = $pdo->prepare("SELECT * FROM products WHERE name LIKE ?");
-    // $search_param = "%" . $search_term . "%";
-    // $stmt->execute([$search_param]);
-    // $search_results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    
-    // Simulating the secure query for demonstration
     $secure_query = "SELECT * FROM products WHERE name LIKE ?";
     $search_param = "%" . $search_term . "%";
     
@@ -33,7 +20,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'params' => [$search_param]
     ];
     
-    // Security message to display how the query is safely processed
     $security_message = "<div class='text-green-500 mb-4'>
         <p class='font-bold'>✓ SECURE IMPLEMENTATION</p>
         <p>Using prepared statements with parameter binding:</p>
@@ -46,20 +32,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <li>Database manipulation</li>
         </ul>
     </div>";
-    
-    // For demonstration: Simulate normal search results regardless of injection attempts
+
     $injection_patterns = [
         "' OR '1'='1", "1=1", "1==1", "' OR 1=1 --", "\" OR 1=1 --", 
         "OR 1=1", "' OR 1=1", "admin'--", "1'='1"
     ];
     
     if (in_array($search_term, $injection_patterns)) {
-        // Even with injection attempts, only relevant results are returned
         if (stripos('laptop', $search_term) !== false) {
             $search_results[] = ['id' => 1, 'name' => 'Laptop', 'price' => '$999.99'];
         }
     } else {
-        // Normal search simulation
         if (stripos('laptop', $search_term) !== false) {
             $search_results[] = ['id' => 1, 'name' => 'Laptop', 'price' => '$999.99'];
         }
@@ -85,21 +68,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Secure Form - SQL Injection Protection</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-    <!-- Highlight.js CSS for syntax highlighting -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
-
-    <!-- Highlight.js script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -107,60 +83,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         });
     </script>
 </head>
+
 <body class="bg-[#020617] text-white font-['Lexend'] cursor-[url('/Assets/Images/cursor_01.png'),_auto]">
     <!-- HEADER -->
     <nav class="fixed z-[999] top-0 left-0 h-[10vh] w-screen flex items-center justify-between p-4 bg-[#020617] border-b-2 border-[#3E4B5E] max-md:p-0">
-        <div class="flex items-center space-x-3">
-            <a href="../index.html">
-                <img src="/Assets/Images/logo.svg" alt="logo" class="w-12" />
-            </a>
-            <span class="text-2xl text-white font-bold font-['Press_Start_2P'] font-black drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black] max-md:text-xs">Web-Nexus</span>
-        </div>
-        <div class="flex items-center justify-between space-x-10 max-md:space-x-4">
-            <a
-            href="#"
-            class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs"
-            >Vulnerabilities</a
-            >
-            <a
-            href="#"
-            class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs"
-            >About Us</a
-            >
-            <a
-            href="#"
-            class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs"
-            >Contact Us</a
-            >
+        <div class="headerStuff flex items-center space-x-3 max-md:space-x-1">
+            <img src="/Assets/Images/logo.svg" alt="logo" class="w-12 max-md:w-8">
+            <span class="text-2xl font-bold text-white font-['Press_Start_2P'] font-black drop-shadow-[5px_5px_0px_black] max-md:text-xs hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">Web-Nexus</span>
         </div>
 
-        <div
-            id="menu-btn"
-            class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] md:hidden focus:outline-none"
-        >
-            <img src="/Assets/Images/menu.svg" alt="menu" class="w-8" />
+        <div class="space-x-10 max-md:space-x-4 flex flex-1 justify-center items-center">
+            <a href="/Kavy (Main Branch)/Home/Home-Page.html#vulnerabilities" class="headerStuff transition-transform duration-300 ease-in-out hover:scale-105 hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] hover:text-lg text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a>
+            <a href="/Kavy (Main Branch)/Home/Home-Page.html" class="headerStuff transition-transform duration-300 ease-in-out hover:scale-105 hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] hover:text-lg text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Home</a>
+            <a href="/Karan/About Us/contact_us.html" class="headerStuff transition-transform duration-300 ease-in-out hover:scale-105 hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] hover:text-lg text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact Us</a>
         </div>
-        <div class="flex items-center justify-center">
-            <div
-            onclick="window.location.href='index.html'"
-            class="yellowButton yellowButtonHeader hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]"
-            >
-            <div
-                class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 mr-3 rounded-md border-3 border-[rgb(221,170,16)] transition-colors duration-500"
-            >
-                <div
-                class="font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] font-thin text-xs max-md:text-[8px] text-black"
-                >
-                Back to Vulnerabilities
+
+        <div class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] flex justify-center items-center">
+            <div class="yellowButton yellowButtonHeader hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
+                <div class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 mr-3 rounded-md border-3 border-[rgb(221,170,16)] transition-colors duration-500">
+                    <div class="font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] text-black font-thin text-sm max-md:text-[8px]">
+                        <a href="/Kartavya/Login_Pages/page1_login_register.php" class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">Log In</a>
+                    </div>
+                    <div class="absolute w-[105%] h-[115%] bg-[rgb(221,170,16)] hover:bg-yellow-600 rounded-md  transition-colors duration-500 -z-1 top-[1%] left-0"></div>
                 </div>
-                <div
-                class="absolute w-[102%] h-[115%] bg-[rgb(221,170,16)] hover:bg-yellow-600 rounded-md transition-colors duration-500 -z-1 top-[1%] left-0"
-                ></div>
-            </div>
             </div>
         </div>
     </nav>
-
     <!-- MAIN CONTENT -->
     <div class="pt-[15vh] pb-10 px-4 flex flex-col items-center justify-start min-h-screen">
         <div class="w-full max-w-7xl flex flex-col md:flex-row gap-8">
@@ -186,7 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </button>
                     
                     <div class="mt-4 text-center">
-                        <a href="sql_injection_vulnerable.php" class="text-blue-400 hover:text-blue-300 text-sm hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">See the vulnerable version</a>
+                        <a href="Sql-injection-Vulnerable.php" class="text-blue-400 hover:text-blue-300 text-sm hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">See the vulnerable version</a>
                     </div>
                 </form>
 
@@ -224,12 +172,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="mb-6">
                     <h4 class="text-lg font-bold text-white mb-2">How it's secured</h4>
                     <p class="text-gray-300 mb-4">This form uses prepared statements with parameter binding to prevent SQL injection:</p>
-                    
                     <pre class="bg-gray-800 p-4 rounded-md overflow-x-auto mb-4">
 <code class="language-php">// Secure implementation
 $stmt = $pdo->prepare("SELECT * FROM products WHERE name LIKE ?");
 $search_param = "%" . $search_term . "%";
-$stmt->execute([$search_param]);</code></pre>
+$stmt->execute([$search_param]);
+</code>
+                    </pre>
                 </div>
 
                 <div class="mb-6">
@@ -248,16 +197,24 @@ $stmt->execute([$search_param]);</code></pre>
                     <div class="grid grid-cols-2 gap-4">
                         <div class="bg-red-900/30 p-4 rounded-md">
                             <p class="font-bold text-red-400 mb-2">Vulnerable</p>
-                            <pre class="text-xs overflow-x-auto"><code class="language-php">$query = "SELECT * FROM products 
-WHERE name LIKE '%" . $search_term . "%'";</code></pre>
+                            <pre class="text-xs overflow-x-auto">
+<code class="language-php">
+    $query = "SELECT * FROM products 
+    WHERE name LIKE '%" . $search_term . "%'";
+</code>
+                            </pre>
                             <p class="text-xs mt-2 text-gray-400">User input directly in query</p>
                         </div>
                         <div class="bg-green-900/30 p-4 rounded-md">
                             <p class="font-bold text-green-400 mb-2">Secure</p>
-                            <pre class="text-xs overflow-x-auto"><code class="language-php">$stmt = $pdo->prepare(
+                            <pre class="text-xs overflow-x-auto">
+<code class="language-php">
+    $stmt = $pdo->prepare(
     "SELECT * FROM products WHERE name LIKE ?"
-);
-$stmt->execute(["%".$search_term."%"]);</code></pre>
+    );
+    $stmt->execute(["%".$search_term."%"]);
+</code>
+                            </pre>
                             <p class="text-xs mt-2 text-gray-400">Parameters separate from SQL</p>
                         </div>
                     </div>
@@ -266,7 +223,9 @@ $stmt->execute(["%".$search_term."%"]);</code></pre>
                 <div>
                     <h4 class="text-lg font-bold text-white mb-2">Additional Security Measures</h4>
                     <ul class="list-disc pl-5 text-gray-300 space-y-2">
-                        <li><strong>Output escaping</strong>: Using <code class="bg-gray-800 px-1 rounded text-xs">htmlspecialchars()</code> to prevent XSS attacks when displaying data</li>
+                        <li><strong>Output escaping</strong>: Using 
+                        <code class="bg-gray-800 px-1 rounded text-xs">htmlspecialchars()</code>
+                        to prevent XSS attacks when displaying data</li>
                         <li><strong>Input validation</strong>: Validating input formats before processing</li>
                         <li><strong>Least privilege</strong>: Database users should have minimal required permissions</li>
                         <li><strong>Error handling</strong>: Custom error messages that don't reveal database details</li>
@@ -287,7 +246,7 @@ $stmt->execute(["%".$search_term."%"]);</code></pre>
             <div>
                 <h3 class="text-lg font-semibold text-blue-400">Company</h3>
                 <ul class="mt-4 space-y-2">
-                    <li><a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">About Us</a></li>
+                    <li><a href="/Karan/About Us/contact_us.html" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">About Us</a></li>
                     <li><a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Careers</a></li>
                     <li><a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Blog</a></li>
                 </ul>
@@ -295,8 +254,8 @@ $stmt->execute(["%".$search_term."%"]);</code></pre>
             <div>
                 <h3 class="text-lg font-semibold text-blue-400">Support</h3>
                 <ul class="mt-4 space-y-2">
-                    <li><a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Help Center</a></li>
-                    <li><a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Contact</a></li>
+                    <li><a href="/Karan/About Us/contact_us.html" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Help Center</a></li>
+                    <li><a href="/Karan/About Us/contact_us.html" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Contact</a></li>
                     <li><a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">FAQs</a></li>
                 </ul>
             </div>
@@ -304,24 +263,21 @@ $stmt->execute(["%".$search_term."%"]);</code></pre>
                 <h3 class="text-lg font-semibold text-blue-400">Follow Us</h3>
                 <div class="mt-4 flex justify-center md:justify-start space-x-4">
                     <a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
-                        <img src="/Assets/Images/github.svg" alt="Github" class="w-8">
+                        <img src="/Assets/Images/github.png" alt="Github" class="w-8">
                     </a>
                     <a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
-                        <img src="/Assets/Images/linkedin.svg" alt="Linkedin" class="w-8">
+                        <img src="/Assets/Images/LinkedIn.jpg" alt="Linkedin" class="w-8">
                     </a>
                     <a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
-                        <img src="/Assets/Images/twitter.svg" alt="Twitter" class="w-8">
+                        <img src="/Assets/Images/twitter.jpg" alt="Twitter" class="w-8">
                     </a>
                 </div>
             </div>
         </div>
-        
         <div class="mt-12 text-center text-gray-500">
             &copy; 2025 Web-Nexus. All Rights Reserved.
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UNob9r7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
