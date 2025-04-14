@@ -34,7 +34,7 @@
     <nav
       class="fixed z-[999] top-0 left-0 h-[10vh] w-screen flex items-center justify-between p-4 bg-[#020617] border-b-2 border-[#3E4B5E] max-md:p-0"
     >
-      <div class="flex items-center space-x-3">
+      <div class="headerStuff flex items-center space-x-3">
         <img src="/Assets/Images/logo.svg" alt="logo" class="w-12" />
         <span
           class="text-2xl text-white font-bold font-['Press_Start_2P'] font-black drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black] max-md:text-xs"
@@ -93,7 +93,7 @@
     </nav>
     <main class="p-4 mt-20 flex flex-col items-center justify-center">
       <div class="flex justify-center mt-13">
-        <div class="mt-5 w-160 flex justify-center">
+        <div class="pokedex mt-5 w-160 flex justify-center relative">
           <img
             src="/Assets/Images/Pokédex.svg"
             height="240"
@@ -101,10 +101,12 @@
             alt="Night Sky"
             class="transform -rotate-6 ml-30"
           />
+
+          <img src="/Assets/Images/mascot.gif" class="absolute -rotate-6 h-40  -translate-y-1/2 top-[43%] left-1/2" alt="">
         </div>
         <div class="mt-5 w-170 ml-10">
           <h1
-            class="text-zinc-200 text-3xl font-semibold text-left mt-20"
+            class="heading text-zinc-200 text-3xl font-semibold text-left mt-20"
             style="font-family: 'Press Start 2P'"
           >
             YOUR ULTIMATE GUIDE TO OWASP TOP 10 VULNERABILITIES
@@ -113,17 +115,17 @@
       </div>
       <div class="mt-20 flex flex-col items-center">
         <h1
-          class="text-zinc-200 text-4xl font-semibold text-center"
+          class="heading2 text-zinc-200 text-4xl font-semibold text-center"
           style="font-family: 'Press Start 2P'"
         >
           MEET THE TEAM
         </h1>
-        <p class="text-blue-500 text-2xl font-medium text-center pt-5">
+        <p class="heading2 text-blue-500 text-2xl font-medium text-center pt-5">
           The Team behind the website
         </p>
       </div>
       <div class="w-250 grid grid-cols-3 grid-rows-2 gap-y-10 gap-x-20 mt-20">
-        <div class="flex flex-col items-center relative">
+        <div class="card flex flex-col items-center relative">
           <img
             src="/Assets/Images/team-card-image.svg"
             height="300"
@@ -211,7 +213,7 @@
             </a>
           </div>
         </div>
-        <div class="flex flex-col items-center relative">
+        <div class="card flex flex-col items-center relative">
           <img
             src="/Assets/Images/team-card-image.svg"
             height="300"
@@ -288,7 +290,7 @@
             />
           </div>
         </div>
-        <div class="flex flex-col items-center relative">
+        <div class="card flex flex-col items-center relative">
           <img
             src="/Assets/Images/team-card-image.svg"
             height="300"
@@ -333,7 +335,7 @@
           </div>
           <div>
             <p class="text-xl text-white font-semibold mt-2">
-              Malay Shikar Soni
+              Malay Shikhar Soni
             </p>
           </div>
           <div class="flex flex-row justify-around mt-4 space-x-5">
@@ -391,7 +393,7 @@
             </a>
           </div>
         </div>
-        <div class="flex flex-col items-center relative">
+        <div class="card flex flex-col items-center relative">
           <img
             src="/Assets/Images/team-card-image.svg"
             height="300"
@@ -497,4 +499,9 @@
       </script>
     </main>
   </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/Malay/Animations/ContactUsAnimation/contact_us_animation.js"></script>
+
 </html>
