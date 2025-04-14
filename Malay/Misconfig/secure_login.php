@@ -79,12 +79,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <a href="/Karan/About Us/contact_us.html" class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]  text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact Us</a>
         </div>
         
-        <div id="menu-btn" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] md:hidden focus:outline-none">
-            <img src="/Assets/Images/menu.svg" alt="menu" class="w-8">
-        </div>
+        
 
         <div class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] flex justify-center items-center">
-                <img id="headerStuff theme-icon" src="/Assets/Images/dark-mode.svg" alt="dark-mode" class="w-10 p-2 max-md:w-6">
+                <!-- <img id="headerStuff theme-icon" src="/Assets/Images/dark-mode.svg" alt="dark-mode" class="w-10 p-2 max-md:w-6"> -->
                 <div class="yellowButton yellowButtonHeader hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] ">
                     <div class=" relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 mr-3 rounded-md border-3 border-[rgb(221,170,16)]  transition-colors duration-500">
                         <div class=" font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] font-thin text-xs max-md:text-[8px]">

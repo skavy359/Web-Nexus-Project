@@ -2,4 +2,3 @@ About Us Page with Karan
 Misconfig.php ✅
 Xss.php ✅
 Deserialisation.php
-Simulate_attack.php
