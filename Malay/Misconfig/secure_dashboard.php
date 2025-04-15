@@ -44,7 +44,7 @@ if (!isset($sensitive_data[$user_id]) ||
 $user_data = $sensitive_data[$user_id];
 ?>
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="">
 <head>
     
     <script>

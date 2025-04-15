@@ -534,3 +534,18 @@ passwordInput.addEventListener("click", () => {
   );
 
 });
+
+//FOOTER ANIMATION
+
+gsap.from("footer", {
+
+  opacity: 0,
+  y:100,
+  duration: 2,
+  ease: "power4.out",
+  scrollTrigger: {
+      trigger: "footer",
+      start: "top 85%",
+  }
+
+});

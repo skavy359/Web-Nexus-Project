@@ -61,7 +61,7 @@ if ($access_blocked) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="">
 
 <head>
     <meta charset="UTF-8">

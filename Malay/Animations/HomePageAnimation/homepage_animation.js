@@ -65,3 +65,4 @@ gsap.from("footer", {
     }
 
 });
+

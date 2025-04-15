@@ -6,7 +6,7 @@ if (isset($_GET['url'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,7 +58,7 @@ if (isset($_GET['url'])) {
 <body class="bg-[#020617] text-white font-['Lexend'] cursor-[url('/Assets/Images/cursor_01.png'),_auto]">
     <!-- HEADER -->
     <nav class="fixed z-[999] top-0 left-0 h-[10vh] w-screen flex items-center justify-between p-4 bg-[#020617] border-b-2 border-[#3E4B5E] max-md:p-0">
-        <div class="flex items-center space-x-3">
+        <div class="headerStuff flex items-center space-x-3">
             <a href="../Karan/index.html">
                 <img src="/Assets/Images/logo.svg" alt="logo" class="w-12" />
             </a>
@@ -115,7 +115,7 @@ if (isset($_GET['url'])) {
     <div class="pt-[15vh] pb-10 px-4 flex flex-col items-center justify-start min-h-screen">
         <div class="w-full max-w-7xl flex flex-col md:flex-row gap-8">
             <!-- LEFT SIDE: FORM -->
-            <div class="md:w-1/2 bg-[#0F172A] p-6 rounded-lg border-2 border-red-600 shadow-lg">
+            <div class="formSection md:w-1/2 bg-[#0F172A] p-6 rounded-lg border-2 border-red-600 shadow-lg">
                 <div class="flex items-center mb-6">
                     <div class="flex items-center justify-center font-['Press_Start_2P'] text-white font-black text-xl border-2 border-red-600 rounded-full w-10 h-10 mr-4">!</div>
                     <h2 class="text-2xl font-['Press_Start_2P'] text-red-500">Vulnerable SSRF</h2>
@@ -155,7 +155,7 @@ if (isset($_GET['url'])) {
             </div>
             
             <!-- RIGHT SIDE: EXPLANATION -->
-            <div class="md:w-1/2 bg-[#0F172A] p-6 rounded-lg border-2 border-red-600 shadow-lg">
+            <div class="formSection md:w-1/2 bg-[#0F172A] p-6 rounded-lg border-2 border-red-600 shadow-lg">
                 <h3 class="text-xl font-['Press_Start_2P'] text-red-300 mb-6">Vulnerability Explained</h3>
                 
                 <div class="mb-6">
@@ -251,5 +251,10 @@ if (isset($_GET['url'])) {
             &copy; 2025 Web-Nexus. All Rights Reserved.
         </div>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/Malay/Animations/DeserialisationAnimation/vulnerable_deserialisation_animation.js"></script>
+
 </body>
 </html>
