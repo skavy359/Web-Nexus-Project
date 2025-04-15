@@ -154,9 +154,9 @@ if (isset($_GET['doc_id'])) {
         </div>
 
         <div class="space-x-10 max-md:space-x-4 flex flex-1 justify-center items-center">
-            <a href="/Kavy (Main Branch)/Home/Home-Page.html#vulnerabilities" class="headerStuff transition-transform duration-300 ease-in-out hover:scale-105 hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] hover:text-lg text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a>
-            <a href="/Kavy (Main Branch)/Home/Home-Page.html" class="headerStuff transition-transform duration-300 ease-in-out hover:scale-105 hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] hover:text-lg text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Home</a>
-            <a href="/Karan/About Us/contact_us.html" class="headerStuff transition-transform duration-300 ease-in-out hover:scale-105 hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] hover:text-lg text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact Us</a>
+            <a href="/Kavy (Main Branch)/Home/Home-Page.html#vulnerabilities" class="headerStuff transition-transform duration-300 ease-in-out hover:scale-105 hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a>
+            <a href="/Kavy (Main Branch)/Home/Home-Page.html" class="headerStuff transition-transform duration-300 ease-in-out hover:scale-105 hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Home</a>
+            <a href="/Karan/About Us/contact_us.html" class="headerStuff transition-transform duration-300 ease-in-out hover:scale-105 hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact Us</a>
         </div>
 
         <div class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] flex justify-center items-center">
