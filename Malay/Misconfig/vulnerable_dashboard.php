@@ -46,7 +46,7 @@ $user_sensitive_data = $sensitive_data[$user['id']];
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
 
     <script>
