@@ -85,12 +85,11 @@ if ($access_blocked) {
         </div>
 
         <div class="flex items-center justify-between space-x-10 max-md:space-x-4">
-            <a href="#"
+            <a href="/Kavy (Main Branch)/Home/Home-Page.html#vulnerabilities"
                 class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a>
-            <a href="#"
-                class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">About
-                Us</a>
-            <a href="#"
+            <a href="/Kavy (Main Branch)/Home/Home-Page.html"
+                class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Home</a>
+            <a href="/Karan/About Us/contact_us.html"
                 class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Contact
                 Us</a>
         </div>
@@ -101,7 +100,7 @@ if ($access_blocked) {
         </div>
 
         <div class="flex items-center justify-center">
-            <div onclick="window.location.href='index.html'"
+            <div onclick="window.location.href='Secutity_Logging_and_Monitoring_Failure.html'"
                 class="yellowButton yellowButtonHeader hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
                 <div
                     class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 mr-3 rounded-md border-3 border-[rgb(221,170,16)] transition-colors duration-500">
