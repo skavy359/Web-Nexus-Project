@@ -159,8 +159,8 @@ if (!isset($user) && isset($_SESSION["secure_user_data"])) {
         </div>
 
         <div class="flex items-center justify-between space-x-10 max-md:space-x-4">
-            <a href="/Kavy (Main Branch)/Home-Page.html#vulnerabilities" class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a>
-            <a href="/Kavy (Main Branch)/Home-Page.html" class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Home</a>
+            <a href="/Kavy (Main Branch)/Home/Home-Page.html#vulnerabilities" class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a>
+            <a href="/Kavy (Main Branch)/Home/Home-Page.html" class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Home</a>
             <a href="/Karan/About Us/contact_us.html" class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact Us</a>
         </div>
         
@@ -283,7 +283,7 @@ s:10:"isAdmin";b:1;s:8:"token";s:32:"abc123"}</code></pre>
                 <p class="text-[#3E4B5E] font-semibold mb-6">You'll notice the security measures prevent this attack.</p>
                 
                 <p class="mt-4">
-                    <a href="deserialisation.php" class="flex items-center justify-center w-full py-3 mt-6 bg-[#3E4B5E] text-[#0F172A] font-bold text-xl px-4 rounded hover:bg-[#0F172A] hover:text-[#3E4B5E] transition-colors duration-500">
+                    <a href="deserialisation.html" class="flex items-center justify-center w-full py-3 mt-6 bg-[#3E4B5E] text-[#0F172A] font-bold text-xl px-4 rounded hover:bg-[#0F172A] hover:text-[#3E4B5E] transition-colors duration-500">
                         Go Back
                     </a>
                 </p>
