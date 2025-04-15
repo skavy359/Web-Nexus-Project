@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once 'page1_config.php';
+require_once 'config.php';
 
 if (isset($_POST['register'])){
     $name = $_POST['name'];
@@ -18,7 +18,7 @@ if (isset($_POST['register'])){
         $conn->query("INSERT INTO users (name, email, password, role) VALUES ('$name', '$email', '$password', '$role')");
     }
 
-    header("Location: page1_index.php");
+    header("Location: login_page.php");
     exit();
 }
 
@@ -35,10 +35,10 @@ if (isset($_POST['login'])){
             $_SESSION['email'] = $user['email'];
 
             if($user['role'] === 'admin'){
-                header("Location: page1_admin_page.php");
+                header("Location: admin_page.php");
             }
             else{
-                header("Location: page1_user_page.php");
+                header("Location: user_page.php");
             }
             exit();
         }
@@ -46,7 +46,7 @@ if (isset($_POST['login'])){
 
     $_SESSION['login_error'] = 'Incorrect email or password';
     $_SESSION['active_form'] = 'login';
-    header("Location: page1_index.php");
+    header("Location: login_page.php");
     exit();
 
 }

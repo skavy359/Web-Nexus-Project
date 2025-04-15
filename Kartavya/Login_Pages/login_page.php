@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 $errors = [
@@ -10,15 +11,14 @@ $activeForm = $_SESSION['active_form'] ?? 'login';
 
 session_unset();
 
-function showError($error)
-{
+function showError($error){
     return !empty($error) ? "<p class='text-red-400 mt-2 text-sm'>$error</p>" : '';
 }
 
-function isActiveForm($formName, $activeForm)
-{
+function isActiveForm($formName, $activeForm){
     return $formName === $activeForm ? '' : 'hidden';
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -90,7 +90,9 @@ function isActiveForm($formName, $activeForm)
                 </button>
                 <p class="text-sm mt-4 text-green-200">Don’t have an account?
                     <a href="#" onclick="showform('register-box')"
-                        class="text-green-400 underline hover:text-green-300 hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">Register</a>
+                        class="text-green-400 underline hover:text-green-300 hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
+                        Register
+                    </a>
                 </p>
             </form>
         </div>
@@ -103,12 +105,6 @@ function isActiveForm($formName, $activeForm)
                 <input type="text" name="name" placeholder="Full Name" class="w-full p-2 mb-3 bg-[#1E293B] border border-[#3E4B5E] rounded-xl text-white placeholder:pl-2 hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
                 <input type="email" name="email" placeholder="Email" class="w-full p-2 mb-3 bg-[#1E293B] border border-[#3E4B5E] rounded-xl text-white placeholder:pl-2 hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
                 <input type="password" name="password" placeholder="Password" class="w-full p-2 mb-3 bg-[#1E293B] border border-[#3E4B5E] rounded-xl text-white placeholder:pl-2 hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
-                <select name="role"
-                    class="w-full p-2 mb-3 bg-[#1E293B] border border-[#3E4B5E] rounded-xl text-white placeholder:pl-2 hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
-                    <option value="" hidden>-- Select Role --</option>
-                    <option value="user">User</option>
-                    <option value="admin">Admin</option>
-                </select>
                 <button type="submit" name="register"
                     class="w-full bg-green-600 hover:bg-green-700 py-2 text-xl rounded-lg text-white font-semibold rounded mt-2 transition-all hover:shadow-xl hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
                     Register
@@ -123,7 +119,7 @@ function isActiveForm($formName, $activeForm)
     </main>
 
 
-   <!-- FOOTER SECTION -->
+    <!-- FOOTER SECTION -->
     <footer class="bg-gray-950 text-white py-16 mt-16">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
             <div>
