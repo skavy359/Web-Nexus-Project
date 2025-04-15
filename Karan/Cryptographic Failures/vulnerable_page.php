@@ -64,24 +64,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- HEADER -->
     <nav class="fixed z-[999] top-0 left-0 h-[10vh] w-screen flex items-center justify-between p-4 bg-[#020617] border-b-2 border-[#3E4B5E] max-md:p-0">
         <div class="flex items-center space-x-3">
-            <a href="../Karan/index.html">
-                <img src="/Assets/Images/logo.svg" alt="logo" class="w-12" />
-            </a>
+            <img src="/Assets/Images/logo.svg" alt="logo" class="w-12" />
             <span class="text-2xl text-white font-bold font-['Press_Start_2P'] font-black drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black] max-md:text-xs">Web-Nexus</span>
         </div>
         <div class="flex items-center justify-between space-x-10 max-md:space-x-4">
             <a
-            href="#"
+            href="/Kavy (Main Branch)/Home/Home-Page.html#vulnerabilities"
             class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs"
             >Vulnerabilities</a
             >
             <a
-            href="#"
+            href="/Kavy (Main Branch)/Home/Home-Page.html"
             class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs"
-            >About Us</a
+            >Home</a
             >
             <a
-            href="#"
+            href="/Karan/About Us/contact_us.html"
             class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs"
             >Contact Us</a
             >
