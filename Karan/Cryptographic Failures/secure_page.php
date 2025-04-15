@@ -72,17 +72,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <div class="flex items-center justify-between space-x-10 max-md:space-x-4">
             <a
-            href="#"
+            href="/Kavy (Main Branch)/Home/Home-Page.html#vulnerabilities"
             class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs"
             >Vulnerabilities</a
             >
             <a
-            href="#"
+            href="/Kavy (Main Branch)/Home/Home-Page.html"
             class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs"
-            >About Us</a
+            >Home</a
             >
             <a
-            href="#"
+            href="/Karan/About Us/contact_us.html"
             class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs"
             >Contact Us</a
             >
