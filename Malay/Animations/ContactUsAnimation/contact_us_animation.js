@@ -18,8 +18,8 @@ gsap.from(".heading", {
     ease: "power4.out",
 
     scrollTrigger : {
-      trigger: ".heading",
-      start: "top 80%",
+        trigger: ".heading",
+        start: "top 80%",
     }
 })
 
@@ -50,7 +50,7 @@ gsap.from(".card", {
     ease: "sine.out",
 
     scrollTrigger : {
-      trigger: ".card",
+        trigger: ".card",
       // start: "top 80%",
     }
 })

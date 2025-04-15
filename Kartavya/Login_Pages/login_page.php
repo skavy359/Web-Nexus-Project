@@ -172,6 +172,114 @@ function isActiveForm($formName, $activeForm){
             document.getElementById('register-box').classList.add('hidden');
             document.getElementById(id).classList.remove('hidden');
         }
+
+        // Add this script at the end of your login_page.php file, before the closing </body> tag
+
+        // Form validation script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all forms on the page
+            const loginForm = document.querySelector('#login-form form');
+            const registerForm = document.querySelector('#register-box form');
+            
+            // Login form validation
+            if (loginForm) {
+                loginForm.addEventListener('submit', function(e) {
+                    const email = this.querySelector('input[name="email"]').value.trim();
+                    const password = this.querySelector('input[name="password"]').value.trim();
+                    let isValid = true;
+                    
+                    // Clear previous error messages
+                    const existingErrors = this.querySelectorAll('.validation-error');
+                    existingErrors.forEach(el => el.remove());
+                    
+                    // Email validation
+                    if (!email) {
+                        isValid = false;
+                        showError(this.querySelector('input[name="email"]'), 'Email is required');
+                    } else if (!isValidEmail(email)) {
+                        isValid = false;
+                        showError(this.querySelector('input[name="email"]'), 'Please enter a valid email');
+                    }
+                    
+                    // Password validation
+                    if (!password) {
+                        isValid = false;
+                        showError(this.querySelector('input[name="password"]'), 'Password is required');
+                    }
+                    
+                    if (!isValid) {
+                        e.preventDefault();
+                    }
+                });
+            }
+            
+            // Register form validation
+            if (registerForm) {
+                registerForm.addEventListener('submit', function(e) {
+                    const name = this.querySelector('input[name="name"]').value.trim();
+                    const email = this.querySelector('input[name="email"]').value.trim();
+                    const password = this.querySelector('input[name="password"]').value.trim();
+                    let isValid = true;
+                    
+                    // Clear previous error messages
+                    const existingErrors = this.querySelectorAll('.validation-error');
+                    existingErrors.forEach(el => el.remove());
+                    
+                    // Name validation
+                    if (!name) {
+                        isValid = false;
+                        showError(this.querySelector('input[name="name"]'), 'Full name is required');
+                    }
+                    
+                    // Email validation
+                    if (!email) {
+                        isValid = false;
+                        showError(this.querySelector('input[name="email"]'), 'Email is required');
+                    } else if (!isValidEmail(email)) {
+                        isValid = false;
+                        showError(this.querySelector('input[name="email"]'), 'Please enter a valid email');
+                    }
+                    
+                    // Password validation
+                    if (!password) {
+                        isValid = false;
+                        showError(this.querySelector('input[name="password"]'), 'Password is required');
+                    } else if (password.length < 6) {
+                        isValid = false;
+                        showError(this.querySelector('input[name="password"]'), 'Password must be at least 6 characters');
+                    }
+                    
+                    if (!isValid) {
+                        e.preventDefault();
+                    }
+                });
+            }
+            
+            // Helper functions
+            function showError(inputElement, message) {
+                const errorElement = document.createElement('p');
+                errorElement.classList.add('validation-error', 'text-red-400', 'text-sm', 'mt-1');
+                errorElement.textContent = message;
+                inputElement.parentNode.insertBefore(errorElement, inputElement.nextSibling);
+                
+                // Highlight the input field
+                inputElement.classList.add('border-red-500');
+                
+                // Remove highlight when user types again
+                inputElement.addEventListener('input', function() {
+                    this.classList.remove('border-red-500');
+                    const error = this.parentNode.querySelector('.validation-error');
+                    if (error) {
+                        error.remove();
+                    }
+                });
+            }
+            
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+        });
     </script>
 </body>
 
