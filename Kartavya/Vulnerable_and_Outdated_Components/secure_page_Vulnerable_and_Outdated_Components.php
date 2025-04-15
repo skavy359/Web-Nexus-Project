@@ -51,55 +51,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body class="bg-[#020617] text-white font-['Lexend'] selection:text-yellow-400 cursor-[url('/Assets/Images/cursor_01.png'),_auto]">
     <!-- HEADER -->
     <nav class="fixed z-[999] top-0 left-0 h-[10vh] w-screen flex items-center justify-between p-4 bg-[#020617] border-b-2 border-[#3E4B5E] max-md:p-0">
-        <div class="flex items-center space-x-3">
-            <a href="../Karan/index.html">
-                <img src="/Assets/Images/logo.svg" alt="logo" class="w-12" />
-            </a>
-            <span class="text-2xl text-white font-bold font-['Press_Start_2P'] font-black drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black] max-md:text-xs">Web-Nexus</span>
+        <div class="headerStuff flex items-center space-x-3 max-md:space-x-1">
+            <img src="/Assets/Images/logo.svg" alt="logo" class="w-12 max-md:w-8">
+            <span class="text-2xl font-bold text-white font-['Press_Start_2P'] font-black drop-shadow-[5px_5px_0px_black] max-md:text-xs hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">Web-Nexus</span>
         </div>
 
         <div class="flex items-center justify-between space-x-10 max-md:space-x-4">
-            <a
-            href="/Kavy (Main Branch)/Home/Home-Page.html#vulnerabilities"
-            class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs"
-            >Vulnerabilities</a
-            >
-            <a
-            href="/Kavy (Main Branch)/Home/Home-Page.html"
-            class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs"
-            >Home</a
-            >
-            <a
-            href="/Karan/About Us/contact_us.html"
-            class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs"
-            >Contact Us</a
-            >
+            <a href="/Kavy (Main Branch)/Home/Home-Page.html#vulnerabilities" class="headerStuff  hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a>
+            <a href="/Kavy (Main Branch)/Home/Home-Page.html" class="headerStuff  hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Home</a>
+            <a href="/Karan/About Us/contact_us.html" class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]  text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact Us</a>
         </div>
-
-        <div
-            id="menu-btn"
-            class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] md:hidden focus:outline-none"
-        >
-            <img src="/Assets/Images/menu.svg" alt="menu" class="w-8" />
-        </div>
-
-        <div class="flex items-center justify-center">
-            <div
-            onclick="window.location.href='Vulnerable_and_Outdated_Components.html'"
-            class="yellowButton yellowButtonHeader hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]"
-            >
-            <div
-                class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 mr-3 rounded-md border-3 border-[rgb(221,170,16)] transition-colors duration-500"
-            >
-                <div
-                class="font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] font-thin text-xs max-md:text-[8px] text-black"
-                >
-                Back to Vulnerabilities
+        <div class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] flex justify-center items-center">
+            <div class="yellowButton yellowButtonHeader hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
+                <div class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 mr-3 rounded-md border-3 border-[rgb(221,170,16)] transition-colors duration-500">
+                    <div class="font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] text-black font-thin text-sm max-md:text-[8px]">
+                        <a href="/Kartavya/Login_Pages/page1_login_register.php">Log In</a>
+                    </div>
+                    <div class="absolute w-[105%] h-[115%] bg-[rgb(221,170,16)] hover:bg-yellow-600 rounded-md  transition-colors duration-500 -z-1 top-[1%] left-0"></div>
                 </div>
-                <div
-                class="absolute w-[102%] h-[115%] bg-[rgb(221,170,16)] hover:bg-yellow-600 rounded-md transition-colors duration-500 -z-1 top-[1%] left-0"
-                ></div>
-            </div>
             </div>
         </div>
     </nav>
@@ -107,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <main class="pt-[15vh] px-4 pb-10 flex flex-col items-center min-h-screen">
         <div class="w-full max-w-6xl flex flex-col md:flex-row gap-10">
             <!-- Left: Secure Form -->
-            <div class="md:w-1/2 bg-[#0F172A] p-8 rounded-xl border-2 border-[#3E4B5E]">
+            <div class="formSection md:w-1/2 bg-[#0F172A] p-8 rounded-xl border-2 border-[#3E4B5E]">
                 <div class="flex items-center mb-6">
                     <div class="flex items-center justify-center font-['Press_Start_2P'] text-white font-black text-xl border-2 border-[#3E4B5E] rounded-full w-10 h-10 mr-4">✓</div>
                     <div class="text-2xl text-green-500 font-['Press_Start_2P']">Secure Form</div>
@@ -141,7 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <!-- Right: Explanation -->
             <!-- Right: Explanation -->
-<div class="md:w-1/2 bg-[#0F172A] p-6 rounded-lg border border-[#3E4B5E]">
+<div class="formSection md:w-1/2 bg-[#0F172A] p-6 rounded-lg border border-[#3E4B5E]">
     <h3 class="text-2xl font-['Press_Start_2P'] text-green-400 mb-4">Security Explained</h3>
 
     <!-- What's happening -->
@@ -229,9 +198,13 @@ if (version_compare($current_lib_version, $required_lib_version, '&lt;')) {
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="/Malay/Animations/MisconfigAnimation/vulnerable_login_animation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"
+        integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"
+        integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/Malay/Animations/DeserialisationAnimation/vulnerable_deserialisation_animation.js"></script>
 </body>
 
 </html>

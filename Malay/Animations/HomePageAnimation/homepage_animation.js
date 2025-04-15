@@ -8,6 +8,21 @@ gsap.from(".headerStuff", {
     ease: "power4.out",
 })
 
+// YELLOW BUTTON ANIMATION
+
+gsap.from(".yellowButtonHeader", {
+  scale: 0,
+  opacity: 0,
+  duration: 2,
+  delay: 1,
+  ease: "power4.out",
+
+  scrollTrigger: {
+      trigger: ".yellowButtonHeader",
+      // start: "top top",
+  }
+})
+
 //HEADING ANIMATION
 gsap.from(".heading", {
     delay: 0.8,
