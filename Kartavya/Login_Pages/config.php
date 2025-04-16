@@ -3,12 +3,13 @@
 $host = "localhost";
 $user = "root";
 $password = "";
-$database = "page1_db";
+$database = "register_db";
 
 $conn = new mysqli($host, $user, $password, $database);
 
-if ($conn->connect_error){
-    die("Connection failed: ". $conn->connect_error);
+if ($conn->connect_error) {
+    die("Database connection failed: " . $conn->connect_error);
+    // die("Database connection failed. Please try again later.");
 }
 
 ?>

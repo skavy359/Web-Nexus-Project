@@ -50,7 +50,6 @@ function checkRateLimit($email)
 
     // Save updated rate limit data
     file_put_contents($rate_file, json_encode($limits));
-
     return ['status' => true];
 }
 

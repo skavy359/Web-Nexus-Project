@@ -122,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         class="w-full bg-red-600 hover:bg-red-700 py-4 text-xl rounded-lg text-white font-bold hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">Login (Insecure)</button>
                 </form>
                 <div class="mt-4 text-center">
-                    <a href="secure_page_Vulnerable_and_Outdated_Components.php" class="text-blue-400 hover:text-blue-300 text-sm hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">Try the vulnerable version</a>
+                    <a href="secure_page_Vulnerable_and_Outdated_Components.php" class="text-blue-400 hover:text-blue-300 text-sm hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">Try the secure version</a>
                 </div>
             </div>
 
