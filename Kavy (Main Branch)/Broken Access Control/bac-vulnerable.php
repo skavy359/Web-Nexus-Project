@@ -118,7 +118,7 @@ if (isset($_GET['doc_id'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -153,17 +153,16 @@ if (isset($_GET['doc_id'])) {
             <span class="text-2xl font-bold text-white font-['Press_Start_2P'] font-black drop-shadow-[5px_5px_0px_black] max-md:text-xs hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">Web-Nexus</span>
         </div>
 
-        <div class="space-x-10 max-md:space-x-4 flex flex-1 justify-center items-center">
-            <a href="/Kavy (Main Branch)/Home/Home-Page.html#vulnerabilities" class="headerStuff transition-transform duration-300 ease-in-out hover:scale-105 hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a>
-            <a href="/Kavy (Main Branch)/Home/Home-Page.html" class="headerStuff transition-transform duration-300 ease-in-out hover:scale-105 hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Home</a>
-            <a href="/Karan/About Us/contact_us.html" class="headerStuff transition-transform duration-300 ease-in-out hover:scale-105 hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact Us</a>
+        <div class="flex items-center justify-between space-x-10 max-md:space-x-4">
+            <a href="/Kavy (Main Branch)/Home/Home-Page.html#vulnerabilities" class="headerStuff  hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a>
+            <a href="/Kavy (Main Branch)/Home/Home-Page.html" class="headerStuff  hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Home</a>
+            <a href="/Karan/About Us/contact_us.html" class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]  text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact Us</a>
         </div>
-
         <div class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] flex justify-center items-center">
             <div class="yellowButton yellowButtonHeader hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
                 <div class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 mr-3 rounded-md border-3 border-[rgb(221,170,16)] transition-colors duration-500">
                     <div class="font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] text-black font-thin text-sm max-md:text-[8px]">
-                        <a href="/Kartavya/Login_Pages/page1_login_register.php" class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">Log In</a>
+                        <a href="/Kartavya/Login_Pages/page1_login_register.php">Log In</a>
                     </div>
                     <div class="absolute w-[105%] h-[115%] bg-[rgb(221,170,16)] hover:bg-yellow-600 rounded-md  transition-colors duration-500 -z-1 top-[1%] left-0"></div>
                 </div>
@@ -175,7 +174,7 @@ if (isset($_GET['doc_id'])) {
     <div class="pt-[15vh] pb-10 px-4 flex flex-col items-center justify-start min-h-screen">
         <div class="w-full max-w-7xl flex flex-col md:flex-row gap-8">
             <!-- LEFT SIDE: FORMS -->
-            <div class="md:w-1/2 bg-[#0F172A] p-6 rounded-lg border-2 border-[#3E4B5E] shadow-lg">
+            <div class="formSection md:w-1/2 bg-[#0F172A] p-6 rounded-lg border-2 border-[#3E4B5E] shadow-lg">
                 <div class="flex items-center mb-6">
                     <div class="flex items-center justify-center font-['Press_Start_2P'] text-white font-black text-xl border-2 border-[#3E4B5E] rounded-full w-10 h-10 mr-4">!</div>
                     <h2 class="text-2xl font-['Press_Start_2P'] text-red-500">SecureNexus</h2>
@@ -352,7 +351,7 @@ if (isset($_GET['doc_id'])) {
             </div>
 
             <!-- RIGHT SIDE: EXPLANATION -->
-            <div class="md:w-1/2 bg-[#0F172A] p-6 rounded-lg border-2 border-[#3E4B5E] shadow-lg">
+            <div class="formSection md:w-1/2 bg-[#0F172A] p-6 rounded-lg border-2 border-[#3E4B5E] shadow-lg">
                 <h3 class="text-xl font-['Press_Start_2P'] text-red-500 mb-6">Broken Access Control Explained</h3>
                 
                 <div class="mb-6">
@@ -486,6 +485,14 @@ if (isset($_GET['doc_id'])) {
             &copy; 2025 Web-Nexus. All Rights Reserved.
         </div>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"
+        integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"
+        integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/Malay/Animations/DeserialisationAnimation/vulnerable_deserialisation_animation.js"></script>
 
 </body>
 </html>

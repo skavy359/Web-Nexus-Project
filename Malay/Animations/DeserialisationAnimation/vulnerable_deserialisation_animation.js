@@ -16,6 +16,28 @@ gsap.from(".deserialisationPageSection", {
     ease: "power4.out",
 })
 
+gsap.from(".formSection", {
+  opacity: 0,
+  duration: 2,
+  // stagger: 0.2,
+  ease: "power4.out",
+})
+
+// YELLOW BUTTON ANIMATION
+
+gsap.from(".yellowButtonHeader", {
+  scale: 0,
+  opacity: 0,
+  duration: 2,
+  ease: "power4.out",
+
+  scrollTrigger: {
+      trigger: ".yellowButtonHeader",
+      // start: "top top",
+  }
+})
+
+
 // POPUP TEXT ANIMATION
 
     // POPUP1 TEXT ANIMATION
@@ -716,3 +738,18 @@ if(isAdmin) {
     );
 
 }
+
+//FOOTER ANIMATION
+
+gsap.from("footer", {
+
+  opacity: 0,
+  y:100,
+  duration: 2,
+  ease: "power4.out",
+  scrollTrigger: {
+      trigger: "footer",
+      start: "top 85%",
+  }
+
+});

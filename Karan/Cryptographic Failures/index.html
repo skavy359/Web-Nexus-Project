@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sensitive Data</title>
+    <title>Cryptographic Failures</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -42,7 +42,7 @@
     <nav
       class="fixed z-[999] top-0 left-0 h-[10vh] w-screen flex items-center justify-between p-4 bg-[#020617] border-b-2 border-[#3E4B5E] max-md:p-0"
     >
-      <div class="flex items-center space-x-3">
+      <div class="headerStuff flex items-center space-x-3">
         <img src="/Assets/Images/logo.svg" alt="logo" class="w-12" />
         <span
           class="text-2xl text-white font-bold font-['Press_Start_2P'] font-black drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black] max-md:text-xs"
@@ -132,6 +132,7 @@
               class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 rounded-md mt-10 border-3 border-[rgb(221,170,16)] transition-colors duration-500"
             >
               <div
+                id="getStartedButton"
                 class="font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] font-thin text-xs"
               >
                 Get Started
@@ -151,7 +152,7 @@
     </div>
 
     <!-- DROPDOWN SECTION -->
-    <div class="w-full h-auto mt-[8vh] px-[10vw]">
+    <div id="dropdownSection" class="w-full h-auto mt-[8vh] px-[10vw]">
       <div
         class="flex flex-col items-center justify-center w-full h-full border-3 border-[#3E4B5E] rounded-md p-[2%]"
       >
@@ -259,7 +260,11 @@
           </div>
 
           <!-- GIF -->
-          <img src="/Assets/Images/terminalAndRobo.gif" class="-mt-25" alt="giff" />
+          <img
+            src="/Assets/Images/terminalAndRobo.gif"
+            class="-mt-25"
+            alt="giff"
+          />
 
           <div class="bulletPoints p-15">
             <p class="text-blue-300 text-2xl font-bold mb-10">
@@ -269,7 +274,11 @@
             <div
               class="flex flex-row items-start justify-start space-x-5 mb-[30px]"
             >
-              <img class="diamond w-auto" src="/Assets/Images/diamond.png" alt="" />
+              <img
+                class="diamond w-auto"
+                src="/Assets/Images/diamond.png"
+                alt=""
+              />
 
               <p class="text-gray-400 text-xl">
                 The application relies on weak encryption algorithms (e.g., MD5,
@@ -280,7 +289,11 @@
             <div
               class="flex flex-row items-start justify-start space-x-5 mb-[30px]"
             >
-              <img class="diamond w-auto" src="/Assets/Images/diamond.png" alt="" />
+              <img
+                class="diamond w-auto"
+                src="/Assets/Images/diamond.png"
+                alt=""
+              />
 
               <p class="text-gray-400 text-xl font-['Lexend']">
                 Sensitive data, such as passwords or credit card details, is
@@ -292,7 +305,11 @@
             <div
               class="flex flex-row items-start justify-start space-x-5 mb-[30px]"
             >
-              <img class="diamond w-auto" src="/Assets/Images/diamond.png" alt="" />
+              <img
+                class="diamond w-auto"
+                src="/Assets/Images/diamond.png"
+                alt=""
+              />
 
               <p class="text-gray-400 text-xl">
                 The application exposes encryption keys through hardcoding, weak
@@ -304,7 +321,11 @@
             <div
               class="flex flex-row items-start justify-start space-x-5 mb-[30px]"
             >
-              <img class="diamond w-auto" src="/Assets/Images/diamond.png" alt="" />
+              <img
+                class="diamond w-auto"
+                src="/Assets/Images/diamond.png"
+                alt=""
+              />
 
               <p class="text-gray-400 text-xl">
                 The application transmits data over insecure channels (e.g.,
@@ -316,7 +337,11 @@
             <div
               class="flex flex-row items-start justify-start space-x-5 mb-[30px]"
             >
-              <img class="diamond w-auto" src="/Assets/Images/diamond.png" alt="" />
+              <img
+                class="diamond w-auto"
+                src="/Assets/Images/diamond.png"
+                alt=""
+              />
 
               <p class="text-gray-400 text-xl">
                 The application does not follow best practices, such as using
@@ -328,7 +353,11 @@
             <div
               class="flex flex-row items-start justify-start space-x-5 mb-[30px]"
             >
-              <img class="diamond w-auto" src="/Assets/Images/diamond.png" alt="" />
+              <img
+                class="diamond w-auto"
+                src="/Assets/Images/diamond.png"
+                alt=""
+              />
 
               <p class="text-gray-400 text-xl">
                 The application stores sensitive information in plaintext or
@@ -352,7 +381,9 @@
               2
             </div>
 
-            <div class="font-['Press_Start_2P'] text-xl font-black text-white max-md:text-sm">
+            <div
+              class="font-['Press_Start_2P'] text-xl font-black text-white max-md:text-sm"
+            >
               Prevention Measures
             </div>
 
@@ -634,7 +665,9 @@ $conn->query("INSERT INTO users (password) VALUES ('$encrypted_password')");
               3
             </div>
 
-            <div class="font-['Press_Start_2P'] text-xl font-black text-white max-md:text-sm">
+            <div
+              class="font-['Press_Start_2P'] text-xl font-black text-white max-md:text-sm"
+            >
               Securely Configured Page
             </div>
 
@@ -669,10 +702,14 @@ $conn->query("INSERT INTO users (password) VALUES ('$encrypted_password')");
               <div
                 class="absolute p-5 text-white font-['Press_Start_2P'] text-xl font-thin left-0 w-full h-full border-3 rounded-md border-[#3E4B5E] bg-[#1E293B]"
               >
-                <p class="popupText popupText1 drop-shadow-[5px_5px_0px_#020617] max-md:text-xs">
+                <p
+                  class="popupText popupText1 drop-shadow-[5px_5px_0px_#020617] max-md:text-xs"
+                >
                   BEEP BEEP BOOP BOOP!
                 </p>
-                <p class="popupText popupText2 drop-shadow-[5px_5px_0px_#020617] max-md:text-xs">
+                <p
+                  class="popupText popupText2 drop-shadow-[5px_5px_0px_#020617] max-md:text-xs"
+                >
                   Let's simulate the secure one now!
                 </p>
               </div>
@@ -702,7 +739,9 @@ $conn->query("INSERT INTO users (password) VALUES ('$encrypted_password')");
                     alt="Image 1"
                   />
 
-                  <div class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] flex flex-col items-center justify-center">
+                  <div
+                    class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] flex flex-col items-center justify-center"
+                  >
                     <div
                       class="z-[100] font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] font-black text-2xl max-md:text-sm max-sm:text-xs"
                     >
@@ -750,21 +789,21 @@ $conn->query("INSERT INTO users (password) VALUES ('$encrypted_password')");
           <ul class="mt-4 space-y-2">
             <li>
               <a
-                href="#"
+                href="/Karan/About Us/contact_us.html"
                 class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
                 >About Us</a
               >
             </li>
             <li>
               <a
-                href="#"
+                href="#home"
                 class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
                 >Careers</a
               >
             </li>
             <li>
               <a
-                href="#"
+                href="#home"
                 class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
                 >Blog</a
               >
@@ -776,21 +815,21 @@ $conn->query("INSERT INTO users (password) VALUES ('$encrypted_password')");
           <ul class="mt-4 space-y-2">
             <li>
               <a
-                href="#"
+                href="#home"
                 class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
                 >Help Center</a
               >
             </li>
             <li>
               <a
-                href="#"
+                href="/Karan/About Us/contact_us.html"
                 class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
                 >Contact</a
               >
             </li>
             <li>
               <a
-                href="#"
+                href="#home"
                 class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
                 >FAQs</a
               >
@@ -804,24 +843,27 @@ $conn->query("INSERT INTO users (password) VALUES ('$encrypted_password')");
               href="#"
               class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
             >
-              <img src="/Assets/Images/github.svg" alt="Github" class="w-8" />
+              <img src="/Assets/Images/github.png" alt="Github" class="w-8" />
             </a>
             <a
               href="#"
               class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
             >
-              <img src="/Assets/Images/linkedin.svg" alt="Linkedin" class="w-8" />
+              <img
+                src="/Assets/Images/LinkedIn.jpg"
+                alt="Linkedin"
+                class="w-8"
+              />
             </a>
             <a
               href="#"
               class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
             >
-              <img src="/Assets/Images/twitter.svg" alt="Twitter" class="w-8" />
+              <img src="/Assets/Images/twitter.jpg" alt="Twitter" class="w-8" />
             </a>
           </div>
         </div>
       </div>
-
       <div class="mt-12 text-center text-gray-500">
         &copy; 2025 Web-Nexus. All Rights Reserved.
       </div>

@@ -6,7 +6,7 @@ if (isset($_GET['url'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,7 +58,7 @@ if (isset($_GET['url'])) {
 <body class="bg-[#020617] text-white font-['Lexend'] cursor-[url('/Assets/Images/cursor_01.png'),_auto]">
     <!-- HEADER -->
     <nav class="fixed z-[999] top-0 left-0 h-[10vh] w-screen flex items-center justify-between p-4 bg-[#020617] border-b-2 border-[#3E4B5E] max-md:p-0">
-        <div class="flex items-center space-x-3">
+        <div class="headerStuff flex items-center space-x-3">
             <a href="../Karan/index.html">
                 <img src="/Assets/Images/logo.svg" alt="logo" class="w-12" />
             </a>
@@ -115,7 +115,7 @@ if (isset($_GET['url'])) {
     <div class="pt-[15vh] pb-10 px-4 flex flex-col items-center justify-start min-h-screen">
         <div class="w-full max-w-7xl flex flex-col md:flex-row gap-8">
             <!-- LEFT SIDE: FORM -->
-            <div class="md:w-1/2 bg-[#0F172A] p-6 rounded-lg border-2 border-red-600 shadow-lg">
+            <div class="formSection md:w-1/2 bg-[#0F172A] p-6 rounded-lg border-2 border-red-600 shadow-lg">
                 <div class="flex items-center mb-6">
                     <div class="flex items-center justify-center font-['Press_Start_2P'] text-white font-black text-xl border-2 border-red-600 rounded-full w-10 h-10 mr-4">!</div>
                     <h2 class="text-2xl font-['Press_Start_2P'] text-red-500">Vulnerable SSRF</h2>
@@ -155,7 +155,7 @@ if (isset($_GET['url'])) {
             </div>
             
             <!-- RIGHT SIDE: EXPLANATION -->
-            <div class="md:w-1/2 bg-[#0F172A] p-6 rounded-lg border-2 border-red-600 shadow-lg">
+            <div class="formSection md:w-1/2 bg-[#0F172A] p-6 rounded-lg border-2 border-red-600 shadow-lg">
                 <h3 class="text-xl font-['Press_Start_2P'] text-red-300 mb-6">Vulnerability Explained</h3>
                 
                 <div class="mb-6">
@@ -209,10 +209,52 @@ if (isset($_GET['url'])) {
                 </div>
             </div>
         </div>
-        
-        <div class="mt-8 pt-4 border-t border-gray-700 text-center text-xs text-gray-500 w-full max-w-7xl">
-            <p>Part of Web Nexus Project - Secure Web Development Examples</p>
-        </div>
     </div>
+    <footer class="bg-gray-950 text-white py-16 mt-16">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+            <div>
+                <img src="/Assets/Images/logo.svg" alt="Web-Nexus Logo" class="w-24 mx-auto md:mx-0">
+                <p class="mt-4 text-gray-400">Learn security the hands-on-way.</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold text-blue-400">Company</h3>
+                <ul class="mt-4 space-y-2">
+                    <li><a href="/Karan/About Us/contact_us.html" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">About Us</a></li>
+                    <li><a href="#home" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Careers</a></li>
+                    <li><a href="#home" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold text-blue-400">Support</h3>
+                <ul class="mt-4 space-y-2">
+                    <li><a href="#home" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Help Center</a></li>
+                    <li><a href="/Karan/About Us/contact_us.html" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Contact</a></li>
+                    <li><a href="#home" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">FAQs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold text-blue-400">Follow Us</h3>
+                <div class="mt-4 flex justify-center md:justify-start space-x-4">
+                    <a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
+                        <img src="/Assets/Images/github.png" alt="Github" class="w-8">
+                    </a>
+                    <a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
+                        <img src="/Assets/Images/LinkedIn.jpg" alt="Linkedin" class="w-8">
+                    </a>
+                    <a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
+                        <img src="/Assets/Images/twitter.jpg" alt="Twitter" class="w-8">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-12 text-center text-gray-500">
+            &copy; 2025 Web-Nexus. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/Malay/Animations/DeserialisationAnimation/vulnerable_deserialisation_animation.js"></script>
+
 </body>
 </html>

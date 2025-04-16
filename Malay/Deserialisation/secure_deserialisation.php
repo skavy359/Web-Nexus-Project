@@ -120,7 +120,7 @@ if (!isset($user) && isset($_SESSION["secure_user_data"])) {
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 <head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
