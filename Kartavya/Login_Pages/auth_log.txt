@@ -16,29 +16,3 @@
 [2025-04-17 15:35:34] [::1] Successful login: karanattri022@gmail.com
 [2025-04-17 16:46:18] [::1] Successful login: malay@g.c
 [2025-04-17 16:51:07] [::1] Successful login: malay@g.c
-[2025-04-17 19:56:01] [::1] Successful login: Kavya@jhatu.com
-[2025-04-17 19:59:03] [::1] Successful login: Kavya@jhatu.com
-[2025-04-17 20:06:05] [::1] Successful login: Kavya@jhatu.com
-[2025-04-17 20:09:43] [::1] Successful login: Kavya@jhatu.com
-[2025-04-17 20:11:05] [::1] Successful login: Kavya@jhatu.com
-[2025-04-17 20:12:11] [::1] Rate limit exceeded for: Kavya@jhatu.com
-[2025-04-17 20:12:22] [::1] Rate limit exceeded for: Kavya@jhatu.com
-[2025-04-17 20:12:36] [::1] Rate limit exceeded for: Kavya@jhatu.com
-[2025-04-17 20:13:24] [::1] Rate limit exceeded for: Kavya@jhatu.com
-[2025-04-17 20:16:23] [::1] Rate limit exceeded for: Kavya@jhatu.com
-[2025-04-17 20:17:25] [::1] User registered: kartavya@gmail.com
-[2025-04-17 20:17:48] [::1] Failed login (email not found): kartaya@gmail.com
-[2025-04-17 20:18:12] [::1] Failed login (wrong password): kartavya@gmail.com
-[2025-04-17 20:18:26] [::1] Failed login (wrong password): kartavya@gmail.com
-[2025-04-17 20:18:38] [::1] Failed login (wrong password): kartavya@gmail.com
-[2025-04-17 20:18:50] [::1] Successful login: kartavya@gmail.com
-[2025-04-17 20:22:25] [::1] Successful login: kartavya@gmail.com
-[2025-04-17 20:23:22] [::1] Rate limit exceeded for: kartavya@gmail.com
-[2025-04-17 20:27:09] [::1] Successful login: kartavya@gmail.com
-[2025-04-17 20:27:34] [::1] Successful login: kartavya@gmail.com
-[2025-04-17 20:34:33] [::1] Successful login: kartavya@gmail.com
-[2025-04-17 20:34:59] [::1] Successful login: Kartavya@gmail.com
-[2025-04-17 20:38:51] [::1] Successful login: Kavya@jhatu.com
-[2025-04-17 20:39:34] [::1] Successful login: kartavya@gmail.com
-[2025-04-17 20:42:19] [::1] Rate limit exceeded for: kartavya@gmail.com
-[2025-04-17 20:42:39] [::1] Successful login: Kavya@jhatu.com
