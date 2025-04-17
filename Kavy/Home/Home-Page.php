@@ -37,19 +37,20 @@ $logged_in = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
         </div>
 
         <div class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] flex justify-center items-center">
-            <div class="yellowButton yellowButtonHeader hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
-                <div class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 mr-3 rounded-md border-3 border-[rgb(221,170,16)] transition-colors duration-500">
-                    <div class="font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] text-black font-thin text-sm max-md:text-[8px]">
-                        <?php if ($logged_in): ?>
-                            <a href="/Web-Nexus-Project/Kartavya/Login_Pages/logout.php">Log Out</a>
-                        <?php else: ?>
-                            <a href="/Web-Nexus-Project/Kartavya/Login_Pages/login_page.php">Log In</a>
-                        <?php endif; ?>
-                    </div>
-                    <div class="absolute w-[105%] h-[115%] bg-[rgb(221,170,16)] hover:bg-yellow-600 rounded-md transition-colors duration-500 -z-1 top-[1%] left-0"></div>
-                </div>
+    <div onclick="window.location.href='Insecure-design-vulnerable.php'" class="yellowButton yellowButtonHeader hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
+        <div class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 mr-3 rounded-md border-3 border-[rgb(221,170,16)] transition-colors duration-500">
+            <div class="font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] text-black font-thin text-sm max-md:text-[8px]">
+                <?php if ($logged_in): ?>
+                    <span onclick="event.stopPropagation(); window.location.href='/Web-Nexus-Project/Kartavya/Login_Pages/logout.php'">Log Out</span>
+                <?php else: ?>
+                    <span onclick="event.stopPropagation(); window.location.href='/Web-Nexus-Project/Kartavya/Login_Pages/login_page.php'">Log In</span>
+                <?php endif; ?>
             </div>
+            <div class="absolute w-[105%] h-[115%] bg-[rgb(221,170,16)] hover:bg-yellow-600 rounded-md transition-colors duration-500 -z-1 top-[1%] left-0"></div>
         </div>
+    </div>
+</div>
+
     </nav>
 
     <!-- Introduction Section -->
@@ -258,7 +259,7 @@ $logged_in = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
             <div>
                 <h3 class="text-lg font-semibold text-blue-400">Follow Us</h3>
                 <div class="mt-4 flex justify-center md:justify-start space-x-4">
-                    <a href="https://github.com/skavy359/Web-Nexus-Project" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
+                    <a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
                         <img src="/Web-Nexus-Project/Assets/Images/github.png" alt="Github" class="w-8">
                     </a>
                     <a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
