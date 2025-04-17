@@ -56,17 +56,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
         <div class="flex items-center justify-between space-x-10 max-md:space-x-4">
-            <a href="/Web-Nexus-Project/Kavy/Home/Home-Page.html#vulnerabilities" class="headerStuff  hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a>
-            <a href="/Web-Nexus-Project/Kavy/Home/Home-Page.php" class="headerStuff  hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Home</a>
-            <a href="/Web-Nexus-Project/Karan/About Us/contact_us.php" class="headerStuff hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]  text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact Us</a>
+            <a href="/Web-Nexus-Project/Kavy/Home/Home-Page.php#vulnerabilities" class="headerStuff hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a>
+            <a href="/Web-Nexus-Project/Kavy/Home/Home-Page.php" class="headerStuff hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Home</a>
+            <a href="/Web-Nexus-Project/Karan/About Us/contact us.php" class="headerStuff hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact Us</a>
         </div>
+
         <div class="hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] flex justify-center items-center">
-            <div class="yellowButton yellowButtonHeader hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">
+            <div onclick="window.location.href='Secutity_Logging_and_Monitoring_Failure.php'" class="yellowButton yellowButtonHeader hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">
                 <div class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 mr-3 rounded-md border-3 border-[rgb(221,170,16)] transition-colors duration-500">
                     <div class="font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] text-black font-thin text-sm max-md:text-[8px]">
-                        <a href="/Web-Nexus-Project/Kartavya/Login_Pages/page1_login_register.php">Log In</a>
+                        <a href="/Web-Nexus-Project/Kartavya\Secutity_Logging_and_Monitoring_Failure\Secutity_Logging_and_Monitoring_Failure.php">Back to Vulnerability</a>
                     </div>
-                    <div class="absolute w-[105%] h-[115%] bg-[rgb(221,170,16)] hover:bg-yellow-600 rounded-md  transition-colors duration-500 -z-1 top-[1%] left-0"></div>
+                    <div class="absolute w-[102%] h-[115%] bg-[rgb(221,170,16)] hover:bg-yellow-600 rounded-md transition-colors duration-500 -z-1 top-[1%] left-0"></div>
                 </div>
             </div>
         </div>
@@ -97,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="mb-6">
                 <label for="password" class="block text-xl text-gray-300 mb-2">Password</label>
                 <input type="password" name="password" id="password" placeholder="Enter password" required value="<?= htmlspecialchars($password_entered) ?>" class="w-full p-5 bg-[#1E293B] border border-[#3E4B5E] rounded-xl text-white">
-                <p class="text-xs text-gray-400 mt-1">Try: secure123</p>
+                <p class="text-xs text-gray-400 mt-1">Try: admin123</p>
             </div>
             <button type="submit" class="w-full bg-red-600 hover:bg-red-700 py-4 text-xl rounded-lg text-white font-bold hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">Login (Insecure)</button>
         </form>
