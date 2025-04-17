@@ -152,6 +152,7 @@ if (isset($_POST['register'])) {
 
 if (isset($_POST['login'])) {
     // Server-side validation
+    $_SESSION_['loggedin'] = true;
     $errors = [];
 
     // Validate email
@@ -198,14 +199,14 @@ if (isset($_POST['login'])) {
             if (password_verify($password, $user['password'])) {
                 // Regenerate session ID for security
                 session_regenerate_id(true);
-
+                $_SESSION['loggedin'] = true;
                 $_SESSION['name'] = $user['name'];
                 $_SESSION['email'] = $user['email'];
 
                 // Log successful login
                 logAuth("Successful login: $email");
 
-                header("Location: /Web-Nexus-Project/Kavy (Main Branch)\Home\Home-Page.php");
+                header("Location: /Web-Nexus-Project/Kavy (Main Branch)/Home/Home-Page.php");
                 exit();
             } else {
                 // Log failed login
