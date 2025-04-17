@@ -1,6 +1,10 @@
 <?php
 // Vulnerable: Using weak password hashing and insecure storage
 session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("Location: /Web-Nexus-Project/Kartavya/Login_Pages/login_page.php");
+    exit;
+}
 
 $md5_hash = "";
 $password_entered = "";

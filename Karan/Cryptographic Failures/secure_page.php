@@ -1,6 +1,10 @@
 <?php
 // Secure: Using strong password hashing and verification
 session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("Location: /Web-Nexus-Project/Kartavya/Login_Pages/login_page.php");
+    exit;
+}
 
 $bcrypt_hash = "";
 $password_entered = "";

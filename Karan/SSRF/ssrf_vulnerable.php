@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("Location: /Web-Nexus-Project/Kartavya/Login_Pages/login_page.php");
+    exit;
+}
 if (isset($_GET['url'])) {
     $url = $_GET['url'];
     $response = file_get_contents($url); // 🚨 Dangerous: no validation
