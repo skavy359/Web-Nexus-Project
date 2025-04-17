@@ -86,8 +86,8 @@ $logged_in = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
 
     <!-- Vulnerabilities Section -->
     <section id="vulnerabilities" class="bg-[#020617] font-['Press_Start_2P'] py-20 text-white text-center">
-        <h2 class="text-4xl font-bold">Explore and Learn</h2>
-        <p class="mt-4 font-['Lexend'] font-bold text-lg text-gray-300">Dive deep into Security Vulnerabilities and hands-on exploitation</p>
+        <h2 class="anotherHeading text-4xl font-bold">Explore and Learn</h2>
+        <p class="anotherHeading mt-4 font-['Lexend'] font-bold text-lg text-gray-300">Dive deep into Security Vulnerabilities and hands-on exploitation</p>
         <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 px-6 auto-rows-fr">
             <a href="/Web-Nexus-Project/Karan/SSRF/index.php" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">
                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">

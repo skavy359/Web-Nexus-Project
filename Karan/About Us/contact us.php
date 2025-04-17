@@ -457,16 +457,16 @@ session_start();
       <!-- CONTACT FORM SECTION -->
       <div class="mt-32 flex flex-col items-center">
         <h1
-          class="drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black] text-zinc-200 text-4xl font-semibold text-center"
+          class="contactUsHeading drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black] text-zinc-200 text-4xl font-semibold text-center"
           style="font-family: 'Press Start 2P'"
         >
           CONTACT US
         </h1>
-        <p class="text-blue-500 text-2xl font-medium text-center pt-5">
+        <p class="contactUsHeading text-blue-500 text-2xl font-medium text-center pt-5">
           Get in touch with our team
         </p>
         
-        <div class="mt-10 w-full max-w-4xl mx-auto">
+        <div class="contactUsForm mt-10 w-full max-w-4xl mx-auto">
           <div class="bg-[#1E293B] border-3 border-[#3E4B5E] p-8 rounded-lg shadow-md">
             <?php if(isset($_SESSION['contact_success'])): ?>
               <!-- Hidden element that will be detected by JS and shown as notification -->
