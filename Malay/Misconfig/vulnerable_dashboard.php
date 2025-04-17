@@ -1,6 +1,12 @@
 <?php
 session_start();
 
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("Location: /Web-Nexus-Project/Kartavya/Login_Pages/login_page.php");
+    exit;
+}
+
+
 // Check if user is logged in via URL parameters
 if (!isset($_GET['username']) || !isset($_GET['password'])) {
     header("Location: vulnerable_login.php");

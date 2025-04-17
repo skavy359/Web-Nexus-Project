@@ -1,9 +1,17 @@
+<?php
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("Location: /Web-Nexus-Project/Kartavya/Login_Pages/login_page.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en" class="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XSS</title>
+    <title>Deserialisation</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,7 +52,7 @@
             <a href="/Web-Nexus-Project/Karan/About Us/contact_us.html" class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]  text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact Us</a>
         </div>
         
-        
+        <!--  -->
 
         <div class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] flex justify-center items-center">
                 <!-- <img id="headerStuff theme-icon" src="/Web-Nexus-Project/Assets/Images/dark-mode.svg" alt="dark-mode" class="w-10 p-2 max-md:w-6"> -->
@@ -66,10 +74,12 @@
 
             <div class="flex flex-col items-start justify-center p-[10%] max-w-[50vw] max-md:max-w-full max-md:p-[5%] ">
                 
-                <h1 class="thumbnail thumbnailTitle text-white text-4xl font-black drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black] font-['Press_Start_2P'] max-md:text-2xl">Cross Site Scripting (XSS)</h1>
+                <h1 class="thumbnail thumbnailTitle text-white text-4xl font-black drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black] font-['Press_Start_2P'] max-md:text-2xl">Deserialisation</h1>
                 <!-- <h1 class="thumbnail thumbnailTitle text-white text-4xl font-black drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black] font-['Press_Start_2P'] max-md:text-2xl"></h1> -->
                 
-                <div class="thumbnail thumbnailDescription text-white text-md mt-[10%] font-semibold drop-shadow-[2px_2px_0px_black] drop-shadow-[-2px_-2px_0px_black] max-md:text-xs">XSS (Cross-Site Scripting) is a type of web security vulnerability that allows attackers to inject malicious scripts into websites viewed by other users. It occurs when a website doesn't properly sanitize user inputs, enabling attackers to execute scripts in a victim's browser.</div>
+                <div class="thumbnail thumbnailDescription text-white text-md mt-[10%] font-semibold drop-shadow-[2px_2px_0px_black] drop-shadow-[-2px_-2px_0px_black] max-md:text-xs">In secure applications, data is often serialized—converted into a format such as JSON, XML, or binary—for storage or transmission. Deserialization is the process of reversing that: converting the data back into a usable object in memory.
+
+                    </div>
                 <div class="yellowButton yellowButtonThumbnail hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] ">
                     <div class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 rounded-md mt-10 border-3 border-[rgb(221,170,16)] transition-colors duration-500">
                         
@@ -84,7 +94,7 @@
             </div>
 
         </div>
-        <img src="/Web-Nexus-Project/Assets/Images/CrossSiteScriptingThumbnail.gif" class="absolute object-cover w-full h-full opacity-[0.6]" alt="">
+        <img src="/Web-Nexus-Project/Assets/Images/DeserialisationThumbnail.gif" class="absolute object-cover w-full h-full opacity-[0.6]" alt="">
 
 
     </div>
@@ -102,7 +112,7 @@
                     </div>
 
                     <div class="font-['Press_Start_2P'] text-xl font-black text-white max-md:text-sm"> 
-                        XSS - Vulnerable Page
+                        Deserialisation - Vulnerable Page
                     </div>
 
                     <!-- DROPDOWN ARROW -->
@@ -119,13 +129,13 @@
                     
                     <div class="flex flex-row items-center justify-between space-x-10 py-10 ">
                         
-                        <div class="text-gray-400 max-w-[50%] p-5 text-xl max-sm:text-xs"><span class="font-bold text-blue-300">Cross-Site Scripting (XSS)</span> is a type of security vulnerability that allows attackers to inject malicious scripts into web pages viewed by other users. These scripts are usually written in JavaScript and execute in the victim's browser, enabling attackers to steal sensitive data, manipulate web content, impersonate users, or even take full control of a user's session.
+                        <div class="text-gray-400 max-w-[50%] p-5 text-xl max-sm:text-xs"><span class="font-bold text-blue-300">Deserialisation vulnerability</span> occurs when untrusted or malicious data is used to perform deserialization in a program, and the system does not properly validate or sanitize the input before converting it back into objects.
 
-                            XSS occurs when a web application fails to properly validate or sanitize user input before including it in the webpage.</div>
+                            This can allow an attacker to inject malicious objects or data payloads that, when deserialized, trigger unintended behavior, including remote code execution, denial of service, or access control bypass.</div>
 
                         <!-- BUTTON -->
                         
-                        <div onclick="window.location.href='vulnerable_xss.php'" class="yellowButton yellowButtonVulnerable  hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] h-full py-10 w-full relative z-[100] max-w-[50%]">
+                        <div onclick="window.location.href='vulnerable_deserialisation.php'" class="yellowButton yellowButtonVulnerable  hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] h-full py-10 w-full relative z-[100] max-w-[50%]">
 
                             <div class="z-[100] flex flex-row h-full w-full items-center justify-center px-3 py-2">
                                 
@@ -167,49 +177,51 @@
                     <div class="flex flex-row items-start justify-start space-x-5 mb-[30px]">
                         <img class="diamond w-auto" src="/Web-Nexus-Project/Assets//Images/diamond.png" alt="">
 
-                        <p class="text-gray-400  text-xl">Accepts user input and displays it without proper sanitization</p>
+                        <p class="text-gray-400  text-xl">Deserializing data from untrusted sources, such as user input, cookies, HTTP requests, or external APIs</p>
 
                     </div>
 
                     <div class="flex flex-row items-start justify-start space-x-5 mb-[30px]">
                         <img class="diamond w-auto" src="/Web-Nexus-Project/Assets//Images/diamond.png" alt="">
 
-                        <p class="text-gray-400  text-xl font-['Lexend']">Allows HTML or JavaScript execution within user-generated content</p>
+                        <p class="text-gray-400  text-xl font-['Lexend']">Using generic deserialization methods (e.g., pickle.load(), ObjectInputStream.readObject(), unserialize()) without strict validation</p>
 
                     </div>
 
                     <div class="flex flex-row items-start justify-start space-x-5 mb-[30px]">
                         <img class="diamond w-auto" src="/Web-Nexus-Project/Assets//Images/diamond.png" alt="">
 
-                        <p class="text-gray-400  text-xl">Uses innerHTML, document.write(), eval(), or setTimeout() insecurely</p>
+                        <p class="text-gray-400  text-xl">Relying on object types during deserialization without implementing class whitelisting or input filtering</p>
 
                     </div>
 
                     <div class="flex flex-row items-start justify-start space-x-5 mb-[30px]">
                         <img class="diamond w-auto" src="/Web-Nexus-Project/Assets//Images/diamond.png" alt="">
 
-                        <p class="text-gray-400  text-xl">Fails to use a Content Security Policy (CSP)</p>
+                        <p class="text-gray-400  text-xl">Lacking input validation or integrity checks (e.g., checksums, digital signatures) for serialized data
+
+                        </p>
 
                     </div>
 
                     <div class="flex flex-row items-start justify-start space-x-5 mb-[30px]">
                         <img class="diamond w-auto" src="/Web-Nexus-Project/Assets//Images/diamond.png" alt="">
 
-                        <p class="text-gray-400  text-xl">Reflects user input in URLs or error messages without escaping</p>
+                        <p class="text-gray-400  text-xl">Running deserialization logic with elevated privileges, increasing the impact of a successful exploit</p>
 
                     </div>
 
                     <div class="flex flex-row items-start justify-start space-x-5 mb-[30px]">
                         <img class="diamond w-auto" src="/Web-Nexus-Project/Assets//Images/diamond.png" alt="">
 
-                        <p class="text-gray-400  text-xl">Allows user-uploaded files with executable content</p>
+                        <p class="text-gray-400  text-xl">Allowing deserialized objects to trigger class constructors, method calls, or code execution during loading</p>
 
                     </div>
 
                     <div class="flex flex-row items-start justify-start space-x-5 mb-[30px]">
                         <img class="diamond w-auto" src="/Web-Nexus-Project/Assets//Images/diamond.png" alt="">
 
-                        <p class="text-gray-400  text-xl">Uses outdated or vulnerable libraries/frameworks</p>
+                        <p class="text-gray-400  text-xl">Deserializing binary data formats that can embed complex objects and execution logic (e.g., Java’s native serialization format)</p>
 
                     </div>
 
@@ -256,7 +268,7 @@
                         
                         <div class="flex items-center justify-between w-full">
 
-                            <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">Output Encoding</p>
+                            <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">Class Whitelisting</p>
             
                             <div class="flex flex-row justify-end items-center gap-2 h-7 mb-2 w-auto">
                                 
@@ -270,10 +282,12 @@
                         <pre class="whitespace-pre-wrap flex items-center w-full h-full" >
                         
                           <code class=" rounded-md text-sm font-mono w-full h-full" >
-// Convert special characters like < > " ' & into HTML entities
-// The ENT_QUOTES flag ensures both single and double quotes are encoded
-$safeOutput = htmlspecialchars($userInput, ENT_QUOTES, 'UTF-8');
-echo $safeOutput; // Safe to display
+// VULNERABLE: Direct unserialization without restrictions
+$user = unserialize($serializedData);
+
+// SECURE: Using allowed_classes to whitelist safe classes
+$options = ['allowed_classes' => ['SafeUser', 'OtherSafeClass']];
+$user = unserialize($serializedData, $options);
                           </code>
                         </pre>
                     </div>
@@ -285,7 +299,8 @@ echo $safeOutput; // Safe to display
 
                         <img src="/Web-Nexus-Project/Assets/Images/robot.gif" class="h-16 w-auto" alt="">
 
-                        <p class="preventionDescription mt-2 text-gray-600 italic">Convert potentially dangerous characters into their HTML entity equivalents to prevent them from being interpreted as executable code by the browser. When user-supplied content contains characters like <, >, ", ', or &, these could be interpreted as HTML or script tags if not properly encoded. Output encoding ensures these characters are displayed as text rather than executed as code.</p>
+                        <p class="preventionDescription mt-2 text-gray-600 italic">Restrict which classes can be unserialized using PHP's allowed_classes option to prevent arbitrary class instantiation.
+                            This prevents attackers from creating instances of dangerous classes that might exist in your application.</p>
 
 
                     </div>
@@ -296,7 +311,7 @@ echo $safeOutput; // Safe to display
                         
                         <div class="flex items-center justify-between w-full">
 
-                            <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">Use POST instead of GET</p>
+                            <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">Implement Signature Verification</p>
             
                             <div class="flex flex-row justify-end items-center gap-2 h-7 mb-2 w-auto">
                                 
@@ -310,88 +325,26 @@ echo $safeOutput; // Safe to display
                         <pre class="whitespace-pre-wrap flex items-center w-full h-full" >
                         
                           <code class=" rounded-md text-sm font-mono w-full h-full" >
-// Change this in your HTML form:
-&lt;form method="POST" action=""&gt; // Instead of GET
-// This prevents parameters from appearing in the URL
-                          </code>
-                        </pre>
-                    </div>
-
-                    
-                    <!-- ROBO WITH DESC -->
-                    <div class="flex flex-row items-start gap-2 justify-start mt-8 mb-20">
-
-
-                        <img src="/Web-Nexus-Project/Assets/Images/robot.gif" class="h-16 w-auto" alt="">
-
-                        <p class="preventionDescription mt-2 text-gray-600 italic">GET parameters appear in the URL and browser history, making them vulnerable to manipulation and easier to share as attack vectors. Using POST method helps prevent XSS attacks by keeping form data in the HTTP request body instead of the URL. This reduces the risk of attack persistence through bookmarked or shared URLs and limits exposure of sensitive data in server logs and browser history.</p>
-
-                    </div>
-
-                    <!-- WINDOW -->
-                    <div class="windowPopup flex flex-col items-center justify-center bg-[#3E4B5E] rounded-md p-2">
-                        
-                        <div class="flex items-center justify-between w-full">
-
-                            <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">Content Security Policy (CSP)</p>
-            
-                            <div class="flex flex-row justify-end items-center gap-2 h-7 mb-2 w-auto">
-                                
-                                <div class="bg-[#0F172A] w-5 h-[4px]"></div>
-                                <div class="bg-transparent border-4 border-[#0F172A] w-5 h-5"></div>
-                                <div class="bg-transparent border-4 border-[#0F172A] rounded-full w-5 h-5"></div>
-                                
-                            </div>
-                        </div>
-
-                        <pre class="whitespace-pre-wrap flex items-center w-full h-full" >
-                        
-                          <code class=" rounded-md text-sm font-mono w-full h-full" >
-// Only allow scripts from your own domain to execute
-// This prevents inline scripts and scripts from other domains
-header("Content-Security-Policy: default-src 'self'; script-src 'self'");
-                          </code>
-                        </pre>
-                    </div>
-
-                    
-                    <!-- ROBO WITH DESC -->
-                    <div class="flex flex-row items-start gap-2 justify-start mt-8 mb-20">
-
-
-                        <img src="/Web-Nexus-Project/Assets/Images/robot.gif" class="h-16 w-auto" alt="">
-
-                        <p class="preventionDescription mt-2 text-gray-600 italic">A Content Security Policy provides an additional layer of security by defining which content sources the browser should consider valid. It helps prevent XSS attacks by restricting what resources (scripts, styles, images, etc.) can be loaded and executed on your page. CSP acts as a whitelist, telling browsers exactly which sources of content are permitted, greatly reducing the attack surface for XSS vulnerabilities even if other defenses fail.</p>
-
-                    </div>
-
-                    <!-- WINDOW -->
-                    <div class="windowPopup flex flex-col items-center justify-center bg-[#3E4B5E] rounded-md p-2">
-                        
-                        <div class="flex items-center justify-between w-full">
-
-                            <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">Input Validation</p>
-            
-                            <div class="flex flex-row justify-end items-center gap-2 h-7 mb-2 w-auto">
-                                
-                                <div class="bg-[#0F172A] w-5 h-[4px]"></div>
-                                <div class="bg-transparent border-4 border-[#0F172A] w-5 h-5"></div>
-                                <div class="bg-transparent border-4 border-[#0F172A] rounded-full w-5 h-5"></div>
-                                
-                            </div>
-                        </div>
-
-                        <pre class="whitespace-pre-wrap flex items-center w-full h-full" >
-                        
-                          <code class=" rounded-md text-sm font-mono w-full h-full" >
-// Validate input before processing
-// This prevents excessively long inputs that might be used for attacks
-if (strlen($comment) > 1000) {
-    die("Comment too long");
+// SECURE: Creating signed serialized data
+function createSignedObject($object) {
+    $serialized = serialize($object);
+    $signature = hash_hmac('sha256', $serialized, SECRET_KEY);
+    return ['data' => $serialized, 'signature' => $signature];
 }
 
-// Remove potentially malicious patterns like event handlers and JavaScript protocol
-$filteredComment = preg_replace('/on\w+=|javascript:|&\#|alert\s*\(/i', '', $userInput);
+// SECURE: Verifying and unserializing data
+function unserializeSignedObject($signedData) {
+    if (!isset($signedData['data']) || !isset($signedData['signature'])) {
+        return false;
+    }
+    
+    $expectedSignature = hash_hmac('sha256', $signedData['data'], SECRET_KEY);
+    if (!hash_equals($signedData['signature'], $expectedSignature)) {
+        return false; // Signature verification failed
+    }
+    
+    return unserialize($signedData['data'], ['allowed_classes' => true]);
+}
                           </code>
                         </pre>
                     </div>
@@ -403,7 +356,8 @@ $filteredComment = preg_replace('/on\w+=|javascript:|&\#|alert\s*\(/i', '', $use
 
                         <img src="/Web-Nexus-Project/Assets/Images/robot.gif" class="h-16 w-auto" alt="">
 
-                        <p class="preventionDescription mt-2 text-gray-600 italic">Input validation checks that user-submitted data conforms to expected formats, lengths, and patterns before processing. This acts as a first line of defense by rejecting potentially malicious input early in the processing pipeline. While not sufficient on its own, strong input validation can block many common attack patterns and reduce the risk of XSS by limiting what special characters or sequences can be submitted in the first place.</p>
+                        <p class="preventionDescription mt-2 text-gray-600 italic">Add a cryptographic signature to serialized data and verify it before unserialization to ensure data hasn't been tampered with.
+                            This prevents attackers from modifying the serialized string to change property values or class types.</p>
 
                     </div>
 
@@ -412,7 +366,7 @@ $filteredComment = preg_replace('/on\w+=|javascript:|&\#|alert\s*\(/i', '', $use
                         
                         <div class="flex items-center justify-between w-full">
 
-                            <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">Context Specific Encoding</p>
+                            <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">Override Magic Methods</p>
             
                             <div class="flex flex-row justify-end items-center gap-2 h-7 mb-2 w-auto">
                                 
@@ -426,15 +380,20 @@ $filteredComment = preg_replace('/on\w+=|javascript:|&\#|alert\s*\(/i', '', $use
                         <pre class="whitespace-pre-wrap flex items-center w-full h-full" >
                         
                           <code class=" rounded-md text-sm font-mono w-full h-full" >
-// For HTML context - prevents HTML and script tags from being interpreted
-$htmlSafe = htmlspecialchars($input, ENT_QUOTES, 'UTF-8');
-
-// For JavaScript context (when embedding user data in scripts)
-// Ensures data is treated as a string literal, not executable code
-$jsSafe = json_encode($input);
-
-// For URL parameters - prevents URL manipulation and ensures proper formatting
-$urlSafe = urlencode($input);
+class User {
+    private $username;
+    private $isAdmin = false;
+    private $token;
+    
+    // SECURE: Validate object state during unserialization
+    function __wakeup() {
+        // Verify token matches what's in the session to prevent property tampering
+        if ($this->isAdmin && (!isset($_SESSION['admin_token']) || $_SESSION['admin_token'] !== $this->token)) {
+            $this->isAdmin = false; // Reset admin status if token doesn't match
+            // Log potential attack attempt
+        }
+    }
+}
                           </code>
                         </pre>
                     </div>
@@ -446,11 +405,54 @@ $urlSafe = urlencode($input);
 
                         <img src="/Web-Nexus-Project/Assets/Images/robot.gif" class="h-16 w-auto" alt="">
 
-                        <p class="preventionDescription mt-2 text-gray-600 italic"> Different parts of a web page interpret special characters differently, so encoding must be tailored to the specific context where user data will appear. HTML content, JavaScript code, CSS values, and URL parameters each have their own set of dangerous characters and encoding requirements. Using the wrong encoding method for a particular context can leave XSS vulnerabilities even when you think you're protecting the data.</p>
+                        <p class="preventionDescription mt-2 text-gray-600 italic">Description: Implement validation in the __wakeup() or __construct() methods to maintain object integrity during unserialization.
+                            This allows objects to validate their state and prevent manipulation of sensitive properties.</p>
 
                     </div>
 
-                </div>
+                    <!-- WINDOW -->
+                    <div class="windowPopup flex flex-col items-center justify-center bg-[#3E4B5E] rounded-md p-2">
+                        
+                        <div class="flex items-center justify-between w-full">
+
+                            <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">Use Type Checking</p>
+            
+                            <div class="flex flex-row justify-end items-center gap-2 h-7 mb-2 w-auto">
+                                
+                                <div class="bg-[#0F172A] w-5 h-[4px]"></div>
+                                <div class="bg-transparent border-4 border-[#0F172A] w-5 h-5"></div>
+                                <div class="bg-transparent border-4 border-[#0F172A] rounded-full w-5 h-5"></div>
+                                
+                            </div>
+                        </div>
+
+                        <pre class="whitespace-pre-wrap flex items-center w-full h-full" >
+                        
+                          <code class=" rounded-md text-sm font-mono w-full h-full" >
+// SECURE: Type checking after unserialization
+$user = unserialize($serializedData, ['allowed_classes' => ['User']]);
+
+if (!($user instanceof User)) {
+    // Handle error: unexpected object type
+    throw new SecurityException('Invalid object type after unserialization');
+}
+                          </code>
+                        </pre>
+                    </div>
+
+                    
+                    <!-- ROBO WITH DESC -->
+                    <div class="flex flex-row items-start gap-2 justify-start mt-8 mb-20">
+
+
+                        <img src="/Web-Nexus-Project/Assets/Images/robot.gif" class="h-16 w-auto" alt="">
+
+                        <p class="preventionDescription mt-2 text-gray-600 italic">Always verify that unserialized objects are of the expected type before using them.
+                            This prevents unexpected behavior from incorrect object types.</p>
+
+                    </div>
+
+                    
 
                 
             </details>
@@ -467,7 +469,7 @@ $urlSafe = urlencode($input);
                     </div>
 
                     <div class="font-['Press_Start_2P'] text-xl font-black text-white max-md:text-sm"> 
-                        XSS - Resistant Page
+                        Deserialisation - Resistant Page
                     </div>
 
                     <!-- DROPDOWN ARROW -->
@@ -506,7 +508,7 @@ $urlSafe = urlencode($input);
 
                         <!-- BUTTON -->
 
-                        <div onclick="window.location.href='secure_xss.php'" class="yellowButton yellowButtonSecure hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]  h-full py-10 w-full relative z-[100] max-w-[50%]">
+                        <div onclick="window.location.href='secure_deserialisation.php'" class="yellowButton yellowButtonSecure hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]  h-full py-10 w-full relative z-[100] max-w-[50%]">
 
                             <div class="z-[100] flex flex-row h-full w-full items-center justify-center px-3 py-2">
                                 

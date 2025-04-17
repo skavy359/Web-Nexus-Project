@@ -1,6 +1,12 @@
 <?php
 session_start();
 
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("Location: /Web-Nexus-Project/Kartavya/Login_Pages/login_page.php");
+    exit;
+}
+
+
 // Extremely insecure user "database"
 $users = [
     'john' => ['password' => '123', 'role' => 'user', 'id' => 1234],

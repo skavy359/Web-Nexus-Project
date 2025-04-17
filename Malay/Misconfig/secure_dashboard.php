@@ -1,5 +1,11 @@
 <?php
+
 session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("Location: /Web-Nexus-Project/Kartavya/Login_Pages/login_page.php");
+    exit;
+}
+
 
 // Implement strict authentication checks
 function is_authenticated() {

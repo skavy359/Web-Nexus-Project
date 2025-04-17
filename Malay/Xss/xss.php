@@ -1,9 +1,17 @@
+<?php
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("Location: /Web-Nexus-Project/Kartavya/Login_Pages/login_page.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en" class="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Security Misconfiguration</title>
+    <title>XSS</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
 
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
     <!-- Highlight.js CSS for syntax highlighting -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
@@ -47,6 +55,7 @@
         
 
         <div class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] flex justify-center items-center">
+                <!-- <img id="headerStuff theme-icon" src="/Web-Nexus-Project/Assets/Images/dark-mode.svg" alt="dark-mode" class="w-10 p-2 max-md:w-6"> -->
                 <div class="yellowButton yellowButtonHeader hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] ">
                     <div class=" relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 mr-3 rounded-md border-3 border-[rgb(221,170,16)]  transition-colors duration-500">
                         <div class=" font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] font-thin text-xs max-md:text-[8px]">
@@ -65,10 +74,10 @@
 
             <div class="flex flex-col items-start justify-center p-[10%] max-w-[50vw] max-md:max-w-full max-md:p-[5%] ">
                 
-                <h1 class="thumbnail thumbnailTitle text-white text-4xl font-black drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black] font-['Press_Start_2P'] max-md:text-2xl">Security</h1>
-                <h1 class="thumbnail thumbnailTitle text-white text-4xl font-black drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black] font-['Press_Start_2P'] max-md:text-2xl">Misconfiguration</h1>
+                <h1 class="thumbnail thumbnailTitle text-white text-4xl font-black drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black] font-['Press_Start_2P'] max-md:text-2xl">Cross Site Scripting (XSS)</h1>
+                <!-- <h1 class="thumbnail thumbnailTitle text-white text-4xl font-black drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black] font-['Press_Start_2P'] max-md:text-2xl"></h1> -->
                 
-                <div class="thumbnail thumbnailDescription text-white text-md mt-[10%] font-semibold drop-shadow-[2px_2px_0px_black] drop-shadow-[-2px_-2px_0px_black] max-md:text-xs">Security misconfiguration is a common vulnerability that occurs when an application, server, database, or cloud service is improperly set up, leaving security gaps that attackers can exploit. These misconfigurations can stem from default settings, unnecessary features, weak permissions, unpatched systems, or exposing sensitive information.</div>
+                <div class="thumbnail thumbnailDescription text-white text-md mt-[10%] font-semibold drop-shadow-[2px_2px_0px_black] drop-shadow-[-2px_-2px_0px_black] max-md:text-xs">XSS (Cross-Site Scripting) is a type of web security vulnerability that allows attackers to inject malicious scripts into websites viewed by other users. It occurs when a website doesn't properly sanitize user inputs, enabling attackers to execute scripts in a victim's browser.</div>
                 <div class="yellowButton yellowButtonThumbnail hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] ">
                     <div class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 rounded-md mt-10 border-3 border-[rgb(221,170,16)] transition-colors duration-500">
                         
@@ -83,7 +92,7 @@
             </div>
 
         </div>
-        <img src="/Web-Nexus-Project/Assets/Images/CoverImageMisconfig.gif" class="absolute object-cover w-full h-full opacity-[0.6]" alt="">
+        <img src="/Web-Nexus-Project/Assets/Images/CrossSiteScriptingThumbnail.gif" class="absolute object-cover w-full h-full opacity-[0.6]" alt="">
 
 
     </div>
@@ -101,15 +110,15 @@
                     </div>
 
                     <div class="font-['Press_Start_2P'] text-xl font-black text-white max-md:text-sm"> 
-                        Vulnerable Misconfigured Page
+                        XSS - Vulnerable Page
                     </div>
 
                     <!-- DROPDOWN ARROW -->
                     <span class="text-white transition-transform duration-300 group-open:rotate-0 origin-center rotate-180">
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="48" viewBox="0 0 25 24" fill="none" 
-                            class="transition-transform duration-400 origin-center">
+                             class="transition-transform duration-400 origin-center">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 16H5.5V14H7.5V12H9.5V10H11.5V8H13.5V10H15.5V12H17.5V14H19.5V16H17.5V14H15.5V12H13.5V10H11.5V12H9.5V14H7.5V16Z" 
-                                fill="#94A3B8"></path>
+                                  fill="#94A3B8"></path>
                         </svg>
                     </span>
 
@@ -118,11 +127,13 @@
                     
                     <div class="flex flex-row items-center justify-between space-x-10 py-10 ">
                         
-                        <div class="text-gray-400 max-w-[50%] p-5 text-xl max-sm:text-xs"><span class="font-bold text-blue-300">Security Misconfiguration</span> is a critical vulnerability that occurs when a system, application, or network is improperly configured, leaving it exposed to potential attacks. It typically arises due to default settings, incomplete configurations, unnecessary features, excessive permissions, or a failure to apply security best practices. Misconfigurations can exist in various layers, including web servers, databases, cloud services, APIs, and operating systems.</div>
+                        <div class="text-gray-400 max-w-[50%] p-5 text-xl max-sm:text-xs"><span class="font-bold text-blue-300">Cross-Site Scripting (XSS)</span> is a type of security vulnerability that allows attackers to inject malicious scripts into web pages viewed by other users. These scripts are usually written in JavaScript and execute in the victim's browser, enabling attackers to steal sensitive data, manipulate web content, impersonate users, or even take full control of a user's session.
+
+                            XSS occurs when a web application fails to properly validate or sanitize user input before including it in the webpage.</div>
 
                         <!-- BUTTON -->
                         
-                        <div onclick="window.location.href='vulnerable_login.php'" class="yellowButton yellowButtonVulnerable  hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] h-full py-10 w-full relative z-[100] max-w-[50%]">
+                        <div onclick="window.location.href='vulnerable_xss.php'" class="yellowButton yellowButtonVulnerable  hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] h-full py-10 w-full relative z-[100] max-w-[50%]">
 
                             <div class="z-[100] flex flex-row h-full w-full items-center justify-center px-3 py-2">
                                 
@@ -130,7 +141,7 @@
                                 
                                 <div class="flex flex-col items-center justify-center">
                                     <div class="z-[100] font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] font-black text-2xl max-md:text-sm max-sm:text-xs">
-                                        Simulate
+                                        Simulate 
                                     </div>
                                     <div class="z-[100] font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] font-black text-2xl max-md:text-sm max-sm:text-xs">
                                         Vulnerability
@@ -164,49 +175,49 @@
                     <div class="flex flex-row items-start justify-start space-x-5 mb-[30px]">
                         <img class="diamond w-auto" src="/Web-Nexus-Project/Assets//Images/diamond.png" alt="">
 
-                        <p class="text-gray-400  text-xl">Missing appropriate security hardening across any part of the application stack or improperly configured permissions on cloud services.</p>
+                        <p class="text-gray-400  text-xl">Accepts user input and displays it without proper sanitization</p>
 
                     </div>
 
                     <div class="flex flex-row items-start justify-start space-x-5 mb-[30px]">
                         <img class="diamond w-auto" src="/Web-Nexus-Project/Assets//Images/diamond.png" alt="">
 
-                        <p class="text-gray-400  text-xl font-['Lexend']">Unnecessary features are enabled or installed (e.g., unnecessary ports, services, pages, accounts, or privileges).</p>
+                        <p class="text-gray-400  text-xl font-['Lexend']">Allows HTML or JavaScript execution within user-generated content</p>
 
                     </div>
 
                     <div class="flex flex-row items-start justify-start space-x-5 mb-[30px]">
                         <img class="diamond w-auto" src="/Web-Nexus-Project/Assets//Images/diamond.png" alt="">
 
-                        <p class="text-gray-400  text-xl">Default accounts and their passwords are still enabled and unchanged.</p>
+                        <p class="text-gray-400  text-xl">Uses innerHTML, document.write(), eval(), or setTimeout() insecurely</p>
 
                     </div>
 
                     <div class="flex flex-row items-start justify-start space-x-5 mb-[30px]">
                         <img class="diamond w-auto" src="/Web-Nexus-Project/Assets//Images/diamond.png" alt="">
 
-                        <p class="text-gray-400  text-xl">Error handling reveals stack traces or other overly informative error messages to users.</p>
+                        <p class="text-gray-400  text-xl">Fails to use a Content Security Policy (CSP)</p>
 
                     </div>
 
                     <div class="flex flex-row items-start justify-start space-x-5 mb-[30px]">
                         <img class="diamond w-auto" src="/Web-Nexus-Project/Assets//Images/diamond.png" alt="">
 
-                        <p class="text-gray-400  text-xl">For upgraded systems, the latest security features are disabled or not configured securely.</p>
+                        <p class="text-gray-400  text-xl">Reflects user input in URLs or error messages without escaping</p>
 
                     </div>
 
                     <div class="flex flex-row items-start justify-start space-x-5 mb-[30px]">
                         <img class="diamond w-auto" src="/Web-Nexus-Project/Assets//Images/diamond.png" alt="">
 
-                        <p class="text-gray-400  text-xl">The security settings in the application servers, application frameworks (e.g., Struts, Spring, ASP.NET), libraries, databases, etc., are not set to secure values.</p>
+                        <p class="text-gray-400  text-xl">Allows user-uploaded files with executable content</p>
 
                     </div>
 
                     <div class="flex flex-row items-start justify-start space-x-5 mb-[30px]">
                         <img class="diamond w-auto" src="/Web-Nexus-Project/Assets//Images/diamond.png" alt="">
 
-                        <p class="text-gray-400  text-xl">The server does not send security headers or directives, or they are not set to secure values.</p>
+                        <p class="text-gray-400  text-xl">Uses outdated or vulnerable libraries/frameworks</p>
 
                     </div>
 
@@ -235,9 +246,9 @@
                     <!-- DROPDOWN ARROW -->
                     <span class="text-white transition-transform duration-300 group-open:rotate-0 origin-center rotate-180">
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="48" viewBox="0 0 25 24" fill="none" 
-                            class="transition-transform duration-400 origin-center">
+                             class="transition-transform duration-400 origin-center">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 16H5.5V14H7.5V12H9.5V10H11.5V8H13.5V10H15.5V12H17.5V14H19.5V16H17.5V14H15.5V12H13.5V10H11.5V12H9.5V14H7.5V16Z" 
-                                fill="#94A3B8"></path>
+                                  fill="#94A3B8"></path>
                         </svg>
                     </span>
 
@@ -248,102 +259,6 @@
 
                     
                     
-                    <!-- WINDOW -->
-                    <div class="windowPopup flex flex-col items-center justify-center bg-[#3E4B5E] rounded-md p-2">
-                        
-                        <div class="flex items-center justify-between w-full">
-
-                            <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">Robust Session Management</p>
-            
-                            <div class="flex flex-row justify-end items-center gap-2 h-7 mb-2 w-auto">
-                                
-                                <div class="bg-[#0F172A] w-5 h-[4px]"></div>
-                                <div class="bg-transparent border-4 border-[#0F172A] w-5 h-5"></div>
-                                <div class="bg-transparent border-4 border-[#0F172A] rounded-full w-5 h-5"></div>
-                                
-                            </div>
-                        </div>
-
-                        <pre class="whitespace-pre-wrap flex items-center w-full h-full" >
-                        
-                        <code class=" rounded-md text-sm font-mono w-full h-full" >
-// SECURE: Robust session management with multiple security layers
-session_start();
-
-// Regenerate session ID prevents session fixation attacks
-// Old session data is deleted to prevent orphaned sessions
-session_regenerate_id(true);
-
-// Store only necessary non-sensitive information
-// Add timeout tracking and IP binding for hijacking protection
-$_SESSION['user_id'] = $users[$username]['id'];
-$_SESSION['user_role'] = $users[$username]['role'];
-$_SESSION['last_activity'] = time();
-$_SESSION['ip_address'] = $_SERVER['REMOTE_ADDR'];
-                        </code>
-                        </pre>
-                    </div>
-
-                    
-                    <!-- ROBO WITH DESC -->
-                    <div class="flex flex-row items-start gap-2 justify-start mt-8 mb-20">
-
-
-                        <img src="/Web-Nexus-Project/Assets/Images/robot.gif" class="h-16 w-auto" alt="">
-
-                        <p class="preventionDescription mt-2 text-gray-600 italic">The improved code replaces basic session handling with comprehensive protection. Instead of storing complete user data (including passwords) in the session, it only stores necessary information like user ID and role. The code adds session_regenerate_id() to prevent session fixation attacks and implements timeout tracking and IP binding for added security against hijacking attempts.</p>
-
-
-                    </div>
-
-
-                    <!-- WINDOW -->
-                    <div class="windowPopup flex flex-col items-center justify-center bg-[#3E4B5E] rounded-md p-2">
-                        
-                        <div class="flex items-center justify-between w-full">
-
-                            <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">Preventing URL Parameter Vulnerabilities</p>
-            
-                            <div class="flex flex-row justify-end items-center gap-2 h-7 mb-2 w-auto">
-                                
-                                <div class="bg-[#0F172A] w-5 h-[4px]"></div>
-                                <div class="bg-transparent border-4 border-[#0F172A] w-5 h-5"></div>
-                                <div class="bg-transparent border-4 border-[#0F172A] rounded-full w-5 h-5"></div>
-                                
-                            </div>
-                        </div>
-
-                        <pre class="whitespace-pre-wrap flex items-center w-full h-full" >
-                        
-                        <code class=" rounded-md text-sm font-mono w-full h-full" >
-// SECURE: POST method with CSRF protection
-// Credentials not visible in URL or server logs
-// CSRF token prevents cross-site request forgery attacks
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Validate token to ensure request originated from your form
-    if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
-        die("CSRF attack detected");
-    }
-    
-    // Sanitize username but preserve password for verification
-    $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS);
-    $password = $_POST['password']; // Never sanitize before verification
-}
-                        </code>
-                        </pre>
-                    </div>
-
-                    
-                    <!-- ROBO WITH DESC -->
-                    <div class="flex flex-row items-start gap-2 justify-start mt-8 mb-20">
-
-
-                        <img src="/Web-Nexus-Project/Assets/Images/robot.gif" class="h-16 w-auto" alt="">
-
-                        <p class="preventionDescription mt-2 text-gray-600 italic"> The code changes from using exposed GET parameters for authentication to more secure POST requests with CSRF protection. This prevents credentials from appearing in browser history, logs, or referrer headers. The implementation adds a CSRF token validation to protect against cross-site request forgery attacks and properly sanitizes the username input while preserving password integrity. </p>
-
-                    </div>
-
                     <!-- WINDOW -->
                     <div class="windowPopup flex flex-col items-center justify-center bg-[#3E4B5E] rounded-md p-2">
                         
@@ -362,12 +277,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                         <pre class="whitespace-pre-wrap flex items-center w-full h-full" >
                         
-                        <code class=" rounded-md text-sm font-mono w-full h-full" >
-// SECURE: Proper HTML encoding prevents XSS by converting special characters
-// ENT_QUOTES handles both single and double quotes for comprehensive protection
-// UTF-8 ensures proper handling of international characters
-echo htmlspecialchars($user['username'], ENT_QUOTES, 'UTF-8');
-                        </code>
+                          <code class=" rounded-md text-sm font-mono w-full h-full" >
+// Convert special characters like < > " ' & into HTML entities
+// The ENT_QUOTES flag ensures both single and double quotes are encoded
+$safeOutput = htmlspecialchars($userInput, ENT_QUOTES, 'UTF-8');
+echo $safeOutput; // Safe to display
+                          </code>
                         </pre>
                     </div>
 
@@ -378,7 +293,83 @@ echo htmlspecialchars($user['username'], ENT_QUOTES, 'UTF-8');
 
                         <img src="/Web-Nexus-Project/Assets/Images/robot.gif" class="h-16 w-auto" alt="">
 
-                        <p class="preventionDescription mt-2 text-gray-600 italic"> The secure code implements htmlspecialchars() with ENT_QUOTES and UTF-8 encoding when outputting user data, replacing direct unencoded output. This prevents cross-site scripting (XSS) attacks by converting special characters that could be interpreted as HTML or JavaScript into their harmless HTML entity equivalents. </p>
+                        <p class="preventionDescription mt-2 text-gray-600 italic">Convert potentially dangerous characters into their HTML entity equivalents to prevent them from being interpreted as executable code by the browser. When user-supplied content contains characters like <, >, ", ', or &, these could be interpreted as HTML or script tags if not properly encoded. Output encoding ensures these characters are displayed as text rather than executed as code.</p>
+
+
+                    </div>
+
+
+                    <!-- WINDOW -->
+                    <div class="windowPopup flex flex-col items-center justify-center bg-[#3E4B5E] rounded-md p-2">
+                        
+                        <div class="flex items-center justify-between w-full">
+
+                            <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">Use POST instead of GET</p>
+            
+                            <div class="flex flex-row justify-end items-center gap-2 h-7 mb-2 w-auto">
+                                
+                                <div class="bg-[#0F172A] w-5 h-[4px]"></div>
+                                <div class="bg-transparent border-4 border-[#0F172A] w-5 h-5"></div>
+                                <div class="bg-transparent border-4 border-[#0F172A] rounded-full w-5 h-5"></div>
+                                
+                            </div>
+                        </div>
+
+                        <pre class="whitespace-pre-wrap flex items-center w-full h-full" >
+                        
+                          <code class=" rounded-md text-sm font-mono w-full h-full" >
+// Change this in your HTML form:
+&lt;form method="POST" action=""&gt; // Instead of GET
+// This prevents parameters from appearing in the URL
+                          </code>
+                        </pre>
+                    </div>
+
+                    
+                    <!-- ROBO WITH DESC -->
+                    <div class="flex flex-row items-start gap-2 justify-start mt-8 mb-20">
+
+
+                        <img src="/Web-Nexus-Project/Assets/Images/robot.gif" class="h-16 w-auto" alt="">
+
+                        <p class="preventionDescription mt-2 text-gray-600 italic">GET parameters appear in the URL and browser history, making them vulnerable to manipulation and easier to share as attack vectors. Using POST method helps prevent XSS attacks by keeping form data in the HTTP request body instead of the URL. This reduces the risk of attack persistence through bookmarked or shared URLs and limits exposure of sensitive data in server logs and browser history.</p>
+
+                    </div>
+
+                    <!-- WINDOW -->
+                    <div class="windowPopup flex flex-col items-center justify-center bg-[#3E4B5E] rounded-md p-2">
+                        
+                        <div class="flex items-center justify-between w-full">
+
+                            <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">Content Security Policy (CSP)</p>
+            
+                            <div class="flex flex-row justify-end items-center gap-2 h-7 mb-2 w-auto">
+                                
+                                <div class="bg-[#0F172A] w-5 h-[4px]"></div>
+                                <div class="bg-transparent border-4 border-[#0F172A] w-5 h-5"></div>
+                                <div class="bg-transparent border-4 border-[#0F172A] rounded-full w-5 h-5"></div>
+                                
+                            </div>
+                        </div>
+
+                        <pre class="whitespace-pre-wrap flex items-center w-full h-full" >
+                        
+                          <code class=" rounded-md text-sm font-mono w-full h-full" >
+// Only allow scripts from your own domain to execute
+// This prevents inline scripts and scripts from other domains
+header("Content-Security-Policy: default-src 'self'; script-src 'self'");
+                          </code>
+                        </pre>
+                    </div>
+
+                    
+                    <!-- ROBO WITH DESC -->
+                    <div class="flex flex-row items-start gap-2 justify-start mt-8 mb-20">
+
+
+                        <img src="/Web-Nexus-Project/Assets/Images/robot.gif" class="h-16 w-auto" alt="">
+
+                        <p class="preventionDescription mt-2 text-gray-600 italic">A Content Security Policy provides an additional layer of security by defining which content sources the browser should consider valid. It helps prevent XSS attacks by restricting what resources (scripts, styles, images, etc.) can be loaded and executed on your page. CSP acts as a whitelist, telling browsers exactly which sources of content are permitted, greatly reducing the attack surface for XSS vulnerabilities even if other defenses fail.</p>
 
                     </div>
 
@@ -400,31 +391,16 @@ echo htmlspecialchars($user['username'], ENT_QUOTES, 'UTF-8');
 
                         <pre class="whitespace-pre-wrap flex items-center w-full h-full" >
                         
-                        <code class=" rounded-md text-sm font-mono w-full h-full" >
-// SECURE: Comprehensive input validation with specific rules
-// Enforces length limits and character restrictions
-// Prevents malformed input from entering the application
-function validateUsername($username) {
-    // Check length requirements to prevent buffer overflow attempts
-    if (strlen($username) < 3 || strlen($username) > 20) {
-        return false;
-    }
-    
-    // Restrict to alphanumeric plus safe special characters
-    // Prevents injection of dangerous characters
-    if (!preg_match('/^[a-zA-Z0-9_.-]+$/', $username)) {
-        return false;
-    }
-    
-    return true;
+                          <code class=" rounded-md text-sm font-mono w-full h-full" >
+// Validate input before processing
+// This prevents excessively long inputs that might be used for attacks
+if (strlen($comment) > 1000) {
+    die("Comment too long");
 }
 
-// Apply validation and handle invalid input appropriately
-$username = $_POST['username'] ?? '';
-if (!validateUsername($username)) {
-    $error = 'Invalid username format';
-}
-                        </code>
+// Remove potentially malicious patterns like event handlers and JavaScript protocol
+$filteredComment = preg_replace('/on\w+=|javascript:|&\#|alert\s*\(/i', '', $userInput);
+                          </code>
                         </pre>
                     </div>
 
@@ -435,7 +411,7 @@ if (!validateUsername($username)) {
 
                         <img src="/Web-Nexus-Project/Assets/Images/robot.gif" class="h-16 w-auto" alt="">
 
-                        <p class="preventionDescription mt-2 text-gray-600 italic"> The improved code adds comprehensive validation for user input rather than accepting any value. It creates a validateUsername() function that enforces specific rules including length requirements (3-20 characters) and character restrictions (alphanumeric plus safe special characters), preventing injection attacks and ensuring data integrity. </p>
+                        <p class="preventionDescription mt-2 text-gray-600 italic">Input validation checks that user-submitted data conforms to expected formats, lengths, and patterns before processing. This acts as a first line of defense by rejecting potentially malicious input early in the processing pipeline. While not sufficient on its own, strong input validation can block many common attack patterns and reduce the risk of XSS by limiting what special characters or sequences can be submitted in the first place.</p>
 
                     </div>
 
@@ -444,7 +420,7 @@ if (!validateUsername($username)) {
                         
                         <div class="flex items-center justify-between w-full">
 
-                            <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">HTTPS and Secure Cookies</p>
+                            <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">Context Specific Encoding</p>
             
                             <div class="flex flex-row justify-end items-center gap-2 h-7 mb-2 w-auto">
                                 
@@ -458,23 +434,15 @@ if (!validateUsername($username)) {
                         <pre class="whitespace-pre-wrap flex items-center w-full h-full" >
                         
                           <code class=" rounded-md text-sm font-mono w-full h-full" >
-// Force HTTPS to encrypt all traffic between client and server
-// Prevents network sniffing and man-in-the-middle attacks
-if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== 'on') {
-    header("Location: https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
-    exit();
-}
+// For HTML context - prevents HTML and script tags from being interpreted
+$htmlSafe = htmlspecialchars($input, ENT_QUOTES, 'UTF-8');
 
-// Configure session with security-focused cookie settings
-// cookie_secure: HTTPS-only transmission prevents interception
-// cookie_httponly: JavaScript cannot access cookies, blocking XSS cookie theft
-// cookie_samesite: Controls cross-origin requests to prevent CSRF
-session_start([
-    'cookie_secure' => true,
-    'cookie_httponly' => true,
-    'cookie_samesite' => 'Lax',
-    'use_strict_mode' => true
-]);
+// For JavaScript context (when embedding user data in scripts)
+// Ensures data is treated as a string literal, not executable code
+$jsSafe = json_encode($input);
+
+// For URL parameters - prevents URL manipulation and ensures proper formatting
+$urlSafe = urlencode($input);
                           </code>
                         </pre>
                     </div>
@@ -486,7 +454,7 @@ session_start([
 
                         <img src="/Web-Nexus-Project/Assets/Images/robot.gif" class="h-16 w-auto" alt="">
 
-                        <p class="preventionDescription mt-2 text-gray-600 italic"> This security measure forces HTTPS connections by redirecting HTTP requests and implements secure cookie settings for sessions. It enables cookie_secure to ensure cookies are only transmitted via HTTPS, cookie_httponly to prevent JavaScript access to cookies, and cookie_samesite to control cross-origin requests, collectively protecting against various cookie-based attacks. </p>
+                        <p class="preventionDescription mt-2 text-gray-600 italic"> Different parts of a web page interpret special characters differently, so encoding must be tailored to the specific context where user data will appear. HTML content, JavaScript code, CSS values, and URL parameters each have their own set of dangerous characters and encoding requirements. Using the wrong encoding method for a particular context can leave XSS vulnerabilities even when you think you're protecting the data.</p>
 
                     </div>
 
@@ -507,7 +475,7 @@ session_start([
                     </div>
 
                     <div class="font-['Press_Start_2P'] text-xl font-black text-white max-md:text-sm"> 
-                        Securely Configured Page
+                        XSS - Resistant Page
                     </div>
 
                     <!-- DROPDOWN ARROW -->
@@ -546,7 +514,7 @@ session_start([
 
                         <!-- BUTTON -->
 
-                        <div onclick="window.location.href='secure_login.php'" class="yellowButton yellowButtonSecure hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]  h-full py-10 w-full relative z-[100] max-w-[50%]">
+                        <div onclick="window.location.href='secure_xss.php'" class="yellowButton yellowButtonSecure hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]  h-full py-10 w-full relative z-[100] max-w-[50%]">
 
                             <div class="z-[100] flex flex-row h-full w-full items-center justify-center px-3 py-2">
                                 

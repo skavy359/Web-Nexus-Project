@@ -1,7 +1,10 @@
 <?php
-// secure-page.php
-session_start();
 
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("Location: /Web-Nexus-Project/Kartavya/Login_Pages/login_page.php");
+    exit;
+}
 // Define allowed classes for deserialization
 class SecureUser {
     private $username;
