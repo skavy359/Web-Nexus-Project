@@ -37,21 +37,19 @@ $logged_in = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
         </div>
 
         <div class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] flex justify-center items-center">
-    <div onclick="window.location.href='Insecure-design-vulnerable.php'" class="yellowButton yellowButtonHeader hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
-        <div class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 mr-3 rounded-md border-3 border-[rgb(221,170,16)] transition-colors duration-500">
-            <div class="font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] text-black font-thin text-sm max-md:text-[8px]">
-                <?php if ($logged_in): ?>
-                    <span onclick="event.stopPropagation(); window.location.href='/Web-Nexus-Project/Kartavya/Login_Pages/logout.php'">Log Out</span>
-                <?php else: ?>
-                    <span onclick="event.stopPropagation(); window.location.href='/Web-Nexus-Project/Kartavya/Login_Pages/login_page.php'">Log In</span>
-                <?php endif; ?>
+            <div class="yellowButton yellowButtonHeader hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
+                <div class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 mr-3 rounded-md border-3 border-[rgb(221,170,16)] transition-colors duration-500">
+                    <div class="font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] text-black font-thin text-sm max-md:text-[8px]">
+                        <?php if ($logged_in): ?>
+                            <span onclick="event.stopPropagation(); window.location.href='/Web-Nexus-Project/Kartavya/Login_Pages/logout.php'">Log Out</span>
+                        <?php else: ?>
+                            <span onclick="event.stopPropagation(); window.location.href='/Web-Nexus-Project/Kartavya/Login_Pages/login_page.php'">Log In</span>
+                        <?php endif; ?>
+                    </div>
+                <div class="absolute w-[105%] h-[115%] bg-[rgb(221,170,16)] hover:bg-yellow-600 rounded-md transition-colors duration-500 -z-1 top-[1%] left-0"></div>
             </div>
-            <div class="absolute w-[105%] h-[115%] bg-[rgb(221,170,16)] hover:bg-yellow-600 rounded-md transition-colors duration-500 -z-1 top-[1%] left-0"></div>
         </div>
-    </div>
-</div>
-
-    </nav>
+</nav>
 
     <!-- Introduction Section -->
     <section id="home" class="h-screen flex items-center justify-center flex-col bg-[#020617] font-['Press_Start_2P'] text-center px-6">
@@ -63,7 +61,7 @@ $logged_in = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
             </p>
             <div class="mt-6 space-x-4 flex">
                 <div class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] flex justify-center items-center">
-                    <div class="yellowButton yellowButtonHeader hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
+                    <div onclick="window.location.href='/Web-Nexus-Project/Kavy/Home/Home-Page.php#vulnerabilities'" class="yellowButton yellowButtonHeader hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
                         <div class="relative bg-yellow-300 hover:bg-yellow-600 px-3  py-2 mr-3 rounded-md border-3 border-[rgb(221,170,16)] transition-colors duration-500">
                             <div class="font-['Press_Start_2P'] p-1 drop-shadow-[2px_2px_0px_rgb(221,170,16)] text-black font-thin text-sm max-md:text-[8px]">
                                 <a href="#vulnerabilities" class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">Get Started</a>
@@ -73,7 +71,7 @@ $logged_in = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
                     </div>
                 </div>
                 <div class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] flex justify-center items-center">
-                    <div class="yellowButton yellowButtonHeader hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
+                    <div onclick="window.location.href='/Web-Nexus-Project/Karan/About Us/contact us.php'" class="yellowButton yellowButtonHeader hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
                         <div class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 mr-3 rounded-md border-3 border-[rgb(221,170,16)] transition-colors duration-500">
                             <div class="font-['Press_Start_2P'] p-1 drop-shadow-[2px_2px_0px_rgb(221,170,16)] text-black font-thin text-sm max-md:text-[8px]">
                                 <a href="/Web-Nexus-Project/Karan/About Us/contact us.php" class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">Learn More</a>

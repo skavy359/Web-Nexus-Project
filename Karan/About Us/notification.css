@@ -1,0 +1,67 @@
+/* Notification styles */
+.notification-container {
+    position: fixed;
+    top: 80px; /* Below the navbar */
+    right: 20px;
+    z-index: 1000;
+    width: 300px;
+    max-width: 90%;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.notification {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transform: translateX(120%);
+    transition: transform 0.4s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification.hide {
+    transform: translateX(120%);
+}
+
+.notification-success {
+    background-color: #10B981; /* Green */
+    color: white;
+    border-left: 5px solid #059669;
+}
+
+.notification-error {
+    background-color: #EF4444; /* Red */
+    color: white;
+    border-left: 5px solid #B91C1C;
+}
+
+.notification-content {
+    flex: 1;
+    font-size: 0.8rem;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0 5px;
+    margin-left: 10px;
+}
+
+/* Animation for fade out */
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.notification.fade-out {
+    animation: fadeOut 0.5s ease-in-out forwards;
+}

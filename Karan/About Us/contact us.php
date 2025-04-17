@@ -8,6 +8,7 @@ session_start();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="output.css" rel="stylesheet" />
+    <link href="notification.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,6 +16,7 @@ session_start();
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="notification.js" defer></script>
     <style>
       .perspective {
         perspective: 1000px;
@@ -60,7 +62,7 @@ session_start();
     </nav>
   
   </nav>
-    <main class="p-4 mt-20 flex flex-col items-center justify-center">
+    <main id="home" class="p-4 mt-20 flex flex-col items-center justify-center">
       <div class="flex justify-center gap-x-20 mt-13">
         <div class="pokedex mt-5 flex justify-center relative">
           <img
@@ -451,6 +453,89 @@ session_start();
           </div>
         </div>
       </div>
+
+      <!-- CONTACT FORM SECTION -->
+      <div class="mt-32 flex flex-col items-center">
+        <h1
+          class="drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black] text-zinc-200 text-4xl font-semibold text-center"
+          style="font-family: 'Press Start 2P'"
+        >
+          CONTACT US
+        </h1>
+        <p class="text-blue-500 text-2xl font-medium text-center pt-5">
+          Get in touch with our team
+        </p>
+        
+        <div class="mt-10 w-full max-w-4xl mx-auto">
+          <div class="bg-[#1E293B] border-3 border-[#3E4B5E] p-8 rounded-lg shadow-md">
+            <?php if(isset($_SESSION['contact_success'])): ?>
+              <!-- Hidden element that will be detected by JS and shown as notification -->
+              <div class="contact-success-message" style="display: none;">
+                <?php echo $_SESSION['contact_success']; ?>
+                <?php unset($_SESSION['contact_success']); ?>
+              </div>
+            <?php endif; ?>
+            
+            <?php if(isset($_SESSION['contact_error'])): ?>
+              <!-- Hidden element that will be detected by JS and shown as notification -->
+              <div class="contact-error-message" style="display: none;">
+                <?php echo $_SESSION['contact_error']; ?>
+                <?php unset($_SESSION['contact_error']); ?>
+              </div>
+            <?php endif; ?>
+            
+            <form id="contactForm" action="process_contact.php" method="POST" class="space-y-6">
+              <div>
+                <label for="email" class="block text-white font-semibold mb-2 font-['Press_Start_2P'] text-sm">Email Address</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  required 
+                  class="w-full p-3 bg-[#1E293B] border border-[#3E4B5E] rounded-md text-white focus:outline-none focus:ring-2 focus:ring-yellow-300 hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]"
+                  placeholder="your@email.com"
+                />
+              </div>
+              
+              <div>
+                <label for="phone" class="block text-white font-semibold mb-2 font-['Press_Start_2P'] text-sm">Contact Number</label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone" 
+                  required 
+                  class="w-full p-3 bg-[#1E293B] border border-[#3E4B5E] rounded-md text-white focus:outline-none focus:ring-2 focus:ring-yellow-300 hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]"
+                  placeholder="Your phone number"
+                />
+              </div>
+              
+              <div>
+                <label for="message" class="block text-white font-semibold mb-2 font-['Press_Start_2P'] text-sm">Message (Optional)</label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  rows="4" 
+                  class="w-full p-3 bg-[#1E293B] border border-[#3E4B5E] rounded-md text-white focus:outline-none focus:ring-2 focus:ring-yellow-300 hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]"
+                  placeholder="Your message here..."
+                ></textarea>
+              </div>
+              
+              <div class="flex justify-center">
+                <button 
+                  type="submit" 
+                  class="relative bg-yellow-300 hover:bg-yellow-600 px-6 py-3 rounded-md border-3 border-[rgb(221,170,16)] transition-colors duration-500 hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]"
+                >
+                  <span class="font-['Press_Start_2P'] text-black drop-shadow-[2px_2px_0px_rgb(221,170,16)] font-thin text-sm">
+                    SUBMIT
+                  </span>
+                  <div class="absolute w-[105%] h-[115%] bg-[rgb(221,170,16)] hover:bg-yellow-600 rounded-md transition-colors duration-500 -z-1 top-[1%] left-0"></div>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
       <script>
         const flipCards = document.querySelectorAll(".flip-card");
 
@@ -463,51 +548,75 @@ session_start();
             }, 3000); // 3 seconds later it flips back
           });
         });
+        
+        // Form validation before submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+          const email = document.getElementById('email').value;
+          const phone = document.getElementById('phone').value;
+          
+          // Basic client-side validation
+          if (!email || !phone) {
+            e.preventDefault();
+            alert('Please fill in all required fields');
+            return false;
+          }
+          
+          // Email validation
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) {
+            e.preventDefault();
+            alert('Please enter a valid email address');
+            return false;
+          }
+          
+          // If validation passes, the form will submit to process_contact.php
+          return true;
+        });
       </script>
     </main>
 
     <!-- FOOTER -->
     <footer class="bg-gray-950 text-white py-16 mt-16">
-      <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
-          <div>
-              <img src="/Web-Nexus-Project/Assets/Images/logo.svg" alt="Web-Nexus Logo" class="w-24 mx-auto md:mx-0">
-              <p class="mt-4 text-gray-400">Learn security the hands-on-way.</p>
-          </div>
-          <div>
-              <h3 class="text-lg font-semibold text-blue-400">Company</h3>
-              <ul class="mt-4 space-y-2">
-                  <li><a href="/Web-Nexus-Project/Karan/About Us/contact_us.php" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">About Us</a></li>
-                  <li><a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Careers</a></li>
-                  <li><a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Blog</a></li>
-              </ul>
-          </div>
-          <div>
-              <h3 class="text-lg font-semibold text-blue-400">Support</h3>
-              <ul class="mt-4 space-y-2">
-                  <li><a href="/Web-Nexus-Project/Karan/About Us/contact_us.php" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Help Center</a></li>
-                  <li><a href="/Web-Nexus-Project/Karan/About Us/contact_us.php" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Contact</a></li>
-                  <li><a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">FAQs</a></li>
-              </ul>
-          </div>
-          <div>
-              <h3 class="text-lg font-semibold text-blue-400">Follow Us</h3>
-              <div class="mt-4 flex justify-center md:justify-start space-x-4">
-                  <a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
-                      <img src="/Web-Nexus-Project/Assets/Images/github.png" alt="Github" class="w-8">
-                  </a>
-                  <a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
-                      <img src="/Web-Nexus-Project/Assets/Images/LinkedIn.jpg" alt="Linkedin" class="w-8">
-                  </a>
-                  <a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
-                      <img src="/Web-Nexus-Project/Assets/Images/twitter.jpg" alt="Twitter" class="w-8">
-                  </a>
-              </div>
-          </div>
-      </div>
-      <div class="mt-12 text-center text-gray-500">
-          &copy; 2025 Web-Nexus. All Rights Reserved.
-      </div>
-  </footer>
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+            <div>
+                <img src="/Web-Nexus-Project/Assets/Images/logo.svg" alt="Web-Nexus Logo" class="w-24 mx-auto md:mx-0">
+                <p class="mt-4 text-gray-400">Learn security the hands-on-way.</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold text-blue-400">Company</h3>
+                <ul class="mt-4 space-y-2">
+                    <li><a href="/Web-Nexus-Project/Karan/About Us/contact us.php" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">About Us</a></li>
+                    <li><a href="#home" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Careers</a></li>
+                    <li><a href="#home" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold text-blue-400">Support</h3>
+                <ul class="mt-4 space-y-2">
+                    <li><a href="#home" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Help Center</a></li>
+                    <li><a href="/Web-Nexus-Project/Karan/About Us/contact us.php" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Contact</a></li>
+                    <li><a href="#home" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">FAQs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold text-blue-400">Follow Us</h3>
+                <div class="mt-4 flex justify-center md:justify-start space-x-4">
+                    <a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
+                        <img src="/Web-Nexus-Project/Assets/Images/github.png" alt="Github" class="w-8">
+                    </a>
+                    <a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
+                        <img src="/Web-Nexus-Project/Assets/Images/LinkedIn.jpg" alt="Linkedin" class="w-8">
+                    </a>
+                    <a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
+                        <img src="/Web-Nexus-Project/Assets/Images/twitter.jpg" alt="Twitter" class="w-8">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-12 text-center text-gray-500">
+            &copy; 2025 Web-Nexus. All Rights Reserved.
+        </div>
+    </footer>
 
   </body>
 
