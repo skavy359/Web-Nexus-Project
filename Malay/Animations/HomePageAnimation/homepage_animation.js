@@ -38,6 +38,21 @@ gsap.from(".heading", {
     }
 })
 
+//HEADING ANIMATION
+gsap.from(".secondHeading", {
+  delay: 0.8,
+  y: 50,
+  opacity: 0,
+  duration: 2,
+  stagger: 0.2,
+  ease: "power4.out",
+
+  scrollTrigger : {
+    trigger: ".secondHeading",
+    start: "top 80%",
+  }
+})
+
 // VULNERABILITY TILE ANIMATION
 gsap.utils.toArray(".vulnerabilityTile").forEach((vulnerabilityTile) => {
     gsap.from(vulnerabilityTile, {
