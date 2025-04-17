@@ -80,24 +80,24 @@ if (isset($_GET['url'])) {
     <nav class="fixed z-[999] top-0 left-0 h-[10vh] w-screen flex items-center justify-between p-4 bg-[#020617] border-b-2 border-[#3E4B5E] max-md:p-0">
         <div class="flex items-center space-x-3">
             <a href="../Karan/index.html">
-                <img src="/Assets/Images/logo.svg" alt="logo" class="w-12" />
+                <img src="/Web-Nexus-Project/Assets/Images/logo.svg" alt="logo" class="w-12" />
             </a>
             <span class="text-2xl text-white font-bold font-['Press_Start_2P'] font-black drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black] max-md:text-xs">Web-Nexus</span>
         </div>
 
         <div class="flex items-center justify-between space-x-10 max-md:space-x-4">
             <a
-            href="/Kavy (Main Branch)/Home/Home-Page.html#vulnerabilities"
+            href="/Web-Nexus-Project/Kavy (Main Branch)/Home/Home-Page.html#vulnerabilities"
             class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs"
             >Vulnerabilities</a
             >
             <a
-            href="/Kavy (Main Branch)/Home/Home-Page.html"
+            href="/Web-Nexus-Project/Kavy (Main Branch)/Home/Home-Page.html"
             class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs"
             >Home</a
             >
             <a
-            href="/Karan/About Us/contact_us.html"
+            href="/Web-Nexus-Project/Karan/About Us/contact_us.html"
             class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs"
             >Contact Us</a
             >
@@ -107,7 +107,7 @@ if (isset($_GET['url'])) {
             id="menu-btn"
             class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] md:hidden focus:outline-none"
         >
-            <img src="/Assets/Images/menu.svg" alt="menu" class="w-8" />
+            <img src="/Web-Nexus-Project/Assets/Images/menu.svg" alt="menu" class="w-8" />
         </div>
 
         <div class="flex items-center justify-center">
@@ -257,13 +257,13 @@ function isValidURL($url) {
     <footer class="bg-gray-950 text-white py-16 mt-16">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
             <div>
-                <img src="/Assets/Images/logo.svg" alt="Web-Nexus Logo" class="w-24 mx-auto md:mx-0">
+                <img src="/Web-Nexus-Project/Assets/Images/logo.svg" alt="Web-Nexus Logo" class="w-24 mx-auto md:mx-0">
                 <p class="mt-4 text-gray-400">Learn security the hands-on-way.</p>
             </div>
             <div>
                 <h3 class="text-lg font-semibold text-blue-400">Company</h3>
                 <ul class="mt-4 space-y-2">
-                    <li><a href="/Karan/About Us/contact_us.html" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">About Us</a></li>
+                    <li><a href="/Web-Nexus-Project/Karan/About Us/contact_us.html" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">About Us</a></li>
                     <li><a href="#home" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Careers</a></li>
                     <li><a href="#home" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Blog</a></li>
                 </ul>
@@ -272,7 +272,7 @@ function isValidURL($url) {
                 <h3 class="text-lg font-semibold text-blue-400">Support</h3>
                 <ul class="mt-4 space-y-2">
                     <li><a href="#home" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Help Center</a></li>
-                    <li><a href="/Karan/About Us/contact_us.html" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Contact</a></li>
+                    <li><a href="/Web-Nexus-Project/Karan/About Us/contact_us.html" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Contact</a></li>
                     <li><a href="#home" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">FAQs</a></li>
                 </ul>
             </div>
@@ -280,13 +280,13 @@ function isValidURL($url) {
                 <h3 class="text-lg font-semibold text-blue-400">Follow Us</h3>
                 <div class="mt-4 flex justify-center md:justify-start space-x-4">
                     <a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
-                        <img src="/Assets/Images/github.png" alt="Github" class="w-8">
+                        <img src="/Web-Nexus-Project/Assets/Images/github.png" alt="Github" class="w-8">
                     </a>
                     <a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
-                        <img src="/Assets/Images/LinkedIn.jpg" alt="Linkedin" class="w-8">
+                        <img src="/Web-Nexus-Project/Assets/Images/LinkedIn.jpg" alt="Linkedin" class="w-8">
                     </a>
                     <a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
-                        <img src="/Assets/Images/twitter.jpg" alt="Twitter" class="w-8">
+                        <img src="/Web-Nexus-Project/Assets/Images/twitter.jpg" alt="Twitter" class="w-8">
                     </a>
                 </div>
             </div>
@@ -298,7 +298,7 @@ function isValidURL($url) {
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="/Malay/Animations/DeserialisationAnimation/vulnerable_deserialisation_animation.js"></script>
+    <script src="/Web-Nexus-Project/Malay/Animations/DeserialisationAnimation/vulnerable_deserialisation_animation.js"></script>
 
 </body>
 </html>
