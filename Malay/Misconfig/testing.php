@@ -50,7 +50,7 @@ if (isset($_GET['username']) && isset($_GET['password'])) {
 
 
 </head>
-<body class="bg-[#020617] font-['Lexend'] selection:text-yellow-400 cursor-[url('/Assets/Images/cursor_01.png'),_auto]">
+<body class="bg-[#020617] font-['Lexend'] selection:text-yellow-400 cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_01.png'),_auto]">
     <div class="flex flex-row max-md:flex-col items-center justify-center">
         <div class="bg-green-400">
         <div class="bg-white p-8 rounded-lg shadow-md w-96">
