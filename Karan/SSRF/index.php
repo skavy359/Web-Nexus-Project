@@ -7,7 +7,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -98,13 +98,12 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
           </div>
 
           <div
-            class="yellowButton yellowButtonThumbnail hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]"
+          id="getStartedButton" class="yellowButton yellowButtonThumbnail hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]"
           >
             <div
               class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 rounded-md mt-10 border-3 border-[rgb(221,170,16)] transition-colors duration-500"
             >
               <div
-                id="getStartedButton"
                 class="font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] font-thin text-xs"
               >
                 Get Started
@@ -745,100 +744,45 @@ function safeFetch($url) {
     </div>
 
     <footer class="bg-gray-950 text-white py-16 mt-16">
-      <div
-        class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left"
-      >
-        <div>
-          <img
-            src="/Web-Nexus-Project/Assets/Images/logo.svg"
-            alt="Web-Nexus Logo"
-            class="w-24 mx-auto md:mx-0"
-          />
-          <p class="mt-4 text-gray-400">Learn security the hands-on-way.</p>
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+            <div>
+                <img src="/Web-Nexus-Project/Assets/Images/logo.svg" alt="Web-Nexus Logo" class="w-24 mx-auto md:mx-0">
+                <p class="mt-4 text-gray-400">Learn security the hands-on-way.</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold text-blue-400">Company</h3>
+                <ul class="mt-4 space-y-2">
+                    <li><a href="/Web-Nexus-Project/Karan/About Us/contact_us.php" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">About Us</a></li>
+                    <li><a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Careers</a></li>
+                    <li><a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold text-blue-400">Support</h3>
+                <ul class="mt-4 space-y-2">
+                    <li><a href="/Web-Nexus-Project/Karan/About Us/contact_us.php" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Help Center</a></li>
+                    <li><a href="/Web-Nexus-Project/Karan/About Us/contact_us.php" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Contact</a></li>
+                    <li><a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">FAQs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold text-blue-400">Follow Us</h3>
+                <div class="mt-4 flex justify-center md:justify-start space-x-4">
+                    <a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
+                        <img src="/Web-Nexus-Project/Assets/Images/github.png" alt="Github" class="w-8">
+                    </a>
+                    <a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
+                        <img src="/Web-Nexus-Project/Assets/Images/LinkedIn.jpg" alt="Linkedin" class="w-8">
+                    </a>
+                    <a href="#" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
+                        <img src="/Web-Nexus-Project/Assets/Images/twitter.jpg" alt="Twitter" class="w-8">
+                    </a>
+                </div>
+            </div>
         </div>
-        <div>
-          <h3 class="text-lg font-semibold text-blue-400">Company</h3>
-          <ul class="mt-4 space-y-2">
-            <li>
-              <a
-                href="/Web-Nexus-Project/Karan/About Us/contact_us.php"
-                class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
-                >About Us</a
-              >
-            </li>
-            <li>
-              <a
-                href="#home"
-                class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
-                >Careers</a
-              >
-            </li>
-            <li>
-              <a
-                href="#home"
-                class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
-                >Blog</a
-              >
-            </li>
-          </ul>
+        <div class="mt-12 text-center text-gray-500">
+            &copy; 2025 Web-Nexus. All Rights Reserved.
         </div>
-        <div>
-          <h3 class="text-lg font-semibold text-blue-400">Support</h3>
-          <ul class="mt-4 space-y-2">
-            <li>
-              <a
-                href="#home"
-                class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
-                >Help Center</a
-              >
-            </li>
-            <li>
-              <a
-                href="/Web-Nexus-Project/Karan/About Us/contact_us.php"
-                class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
-                >Contact</a
-              >
-            </li>
-            <li>
-              <a
-                href="#home"
-                class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
-                >FAQs</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-lg font-semibold text-blue-400">Follow Us</h3>
-          <div class="mt-4 flex justify-center md:justify-start space-x-4">
-            <a
-              href="#"
-              class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
-            >
-              <img src="/Web-Nexus-Project/Assets/Images/github.png" alt="Github" class="w-8" />
-            </a>
-            <a
-              href="#"
-              class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
-            >
-              <img
-                src="/Web-Nexus-Project/Assets/Images/LinkedIn.jpg"
-                alt="Linkedin"
-                class="w-8"
-              />
-            </a>
-            <a
-              href="#"
-              class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
-            >
-              <img src="/Web-Nexus-Project/Assets/Images/twitter.jpg" alt="Twitter" class="w-8" />
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="mt-12 text-center text-gray-500">
-        &copy; 2025 Web-Nexus. All Rights Reserved.
-      </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
