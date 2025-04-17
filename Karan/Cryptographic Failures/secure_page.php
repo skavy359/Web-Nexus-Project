@@ -72,12 +72,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <div class="flex items-center justify-between space-x-10 max-md:space-x-4">
             <a
-            href="/Web-Nexus-Project/Kavy (Main Branch)/Home/Home-Page.html#vulnerabilities"
+            href="/Web-Nexus-Project/Kavy/Home/Home-Page.html#vulnerabilities"
             class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs"
             >Vulnerabilities</a
             >
             <a
-            href="/Web-Nexus-Project/Kavy (Main Branch)/Home/Home-Page.php"
+            href="/Web-Nexus-Project/Kavy/Home/Home-Page.php"
             class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs"
             >Home</a
             >

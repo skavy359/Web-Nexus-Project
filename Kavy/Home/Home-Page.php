@@ -31,8 +31,8 @@ $logged_in = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
         </div>
 
         <div class="flex items-center justify-between space-x-10 max-md:space-x-4">
-            <a href="/Web-Nexus-Project/Kavy (Main Branch)/Home/index.php#vulnerabilities" class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a>
-            <a href="/Web-Nexus-Project/Kavy (Main Branch)/Home/index.php" class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Home</a>
+            <a href="/Web-Nexus-Project/Kavy/Home/index.php#vulnerabilities" class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a>
+            <a href="/Web-Nexus-Project/Kavy/Home/index.php" class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Home</a>
             <a href="/Web-Nexus-Project/Karan/About Us/contact_us.php" class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact Us</a>
         </div>
 
@@ -120,7 +120,7 @@ $logged_in = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
                     </div>
                 </div>
             </a>
-            <a href="/Web-Nexus-Project/Kavy (Main Branch)/Insecure Design/Insecure-design.php" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
+            <a href="/Web-Nexus-Project/Kavy/Insecure Design/Insecure-design.php" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
                     <img src="/Web-Nexus-Project/Assets/Images/Insecure-Design.gif" alt="Insecure Design" class="w-full h-40 object-cover rounded-md">
                     <h3 class="text-lg font-semibold mt-5">Insecure Design</h3>
@@ -150,7 +150,7 @@ $logged_in = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
                     </div>
                 </div>
             </a>
-            <a href="/Web-Nexus-Project/Kavy (Main Branch)/Broken Access Control/Broken-access-control.php" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
+            <a href="/Web-Nexus-Project/Kavy/Broken Access Control/Broken-access-control.php" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
                     <img src="/Web-Nexus-Project/Assets/Images/Data-Integrity-Failures.gif" alt="Integrity Failures" class="w-full h-40 object-cover rounded-md">
                     <h3 class="text-lg font-semibold mt-5">Broken Access Control</h3>
@@ -160,7 +160,7 @@ $logged_in = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
                     </div>
                 </div>
             </a>
-            <a href="/Web-Nexus-Project/Kavy (Main Branch)/SQL Injection/Sql-injection.php" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
+            <a href="/Web-Nexus-Project/Kavy/SQL Injection/Sql-injection.php" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
                     <img src="/Web-Nexus-Project/Assets/Images/SQL-Injection.gif" alt="Injection" class="w-full h-40 object-cover rounded-md">
                     <h3 class="text-lg font-semibold mt-5">SQL Injection</h3>
