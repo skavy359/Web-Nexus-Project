@@ -1,6 +1,6 @@
 <?php
 
-$host = "localhost:8000";
+$host = "localhost";
 $user = "root";
 $password = "";
 $database = "register_db";

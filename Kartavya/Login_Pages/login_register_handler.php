@@ -205,13 +205,7 @@ if (isset($_POST['login'])) {
                 // Log successful login
                 logAuth("Successful login: $email");
 
-                // Redirect based on role if you still want to use this logic
-                // You may need to adjust this based on your database schema
-                if (isset($user['role']) && $user['role'] === 'admin') {
-                    header("Location: admin_page.php");
-                } else {
-                    header("Location: user_page.php");
-                }
+                header("Location: /Web-Nexus-Project/Kavy (Main Branch)\Home\Home-Page.html");
                 exit();
             } else {
                 // Log failed login

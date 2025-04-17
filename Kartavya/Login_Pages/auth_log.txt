@@ -1,0 +1,2 @@
+[2025-04-17 12:14:51] [::1] Successful login: Kavya@jhatu.com
+[2025-04-17 12:27:59] [::1] User registered: Kavya@jhatu.com
