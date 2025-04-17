@@ -60,12 +60,12 @@
           >Vulnerabilities</a
         >
         <a
-          href="/Web-Nexus-Project/Kavy (Main Branch)/Home/Home-Page.html"
+          href="/Web-Nexus-Project/Kavy (Main Branch)/Home/Home-Page.php"
           class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs"
           >Home</a
         >
         <a
-          href="/Web-Nexus-Project/Karan/About Us/contact_us.html"
+          href="/Web-Nexus-Project/Karan/About Us/contact_us.php"
           class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs"
           >Contact Us</a
         >
@@ -790,7 +790,7 @@ function safeFetch($url) {
           <ul class="mt-4 space-y-2">
             <li>
               <a
-                href="/Web-Nexus-Project/Karan/About Us/contact_us.html"
+                href="/Web-Nexus-Project/Karan/About Us/contact_us.php"
                 class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
                 >About Us</a
               >
@@ -823,7 +823,7 @@ function safeFetch($url) {
             </li>
             <li>
               <a
-                href="/Web-Nexus-Project/Karan/About Us/contact_us.html"
+                href="/Web-Nexus-Project/Karan/About Us/contact_us.php"
                 class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
                 >Contact</a
               >

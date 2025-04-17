@@ -87,8 +87,8 @@ $user_sensitive_data = $sensitive_data[$user['id']];
 
         <div class="flex items-center justify-between space-x-10 max-md:space-x-4">
             <a href="/Web-Nexus-Project/Kavy (Main Branch)/Home/Home-Page.html#vulnerabilities" class="headerStuff  hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a>
-            <a href="/Web-Nexus-Project/Kavy (Main Branch)/Home/Home-Page.html" class="headerStuff  hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Home</a>
-            <a href="/Web-Nexus-Project/Karan/About Us/contact_us.html" class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]  text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact Us</a>
+            <a href="/Web-Nexus-Project/Kavy (Main Branch)/Home/Home-Page.php" class="headerStuff  hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Home</a>
+            <a href="/Web-Nexus-Project/Karan/About Us/contact_us.php" class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]  text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact Us</a>
         </div>
         
         
@@ -173,7 +173,7 @@ $user_sensitive_data = $sensitive_data[$user['id']];
                         <a href="vulnerable_login.php" class="flex items-center justify-center w-full py-3 mt-6 bg-[#3E4B5E] text-[#1E293B] font-bold text-xl px-4  rounded hover:bg-[#0F172A] hover:text-[#3E4B5E] transition-colors duration-500">
                             Logout
                         </a>
-                        <a href="misconfig.html" class="flex items-center justify-center w-full py-3 mt-6 bg-[#3E4B5E] text-[#1E293B] font-bold text-xl px-4  rounded hover:bg-[#0F172A] hover:text-[#3E4B5E] transition-colors duration-500">
+                        <a href="misconfig.php" class="flex items-center justify-center w-full py-3 mt-6 bg-[#3E4B5E] text-[#1E293B] font-bold text-xl px-4  rounded hover:bg-[#0F172A] hover:text-[#3E4B5E] transition-colors duration-500">
                             Go Back
                         </a>
                     </div>

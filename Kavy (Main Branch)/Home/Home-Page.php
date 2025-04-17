@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -7,15 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-        hljs.highlightAll();
+            hljs.highlightAll();
         });
     </script>
 </head>
@@ -24,35 +23,33 @@
 
     <!-- HEADER -->
     <nav class="fixed z-[999] top-0 left-0 h-[10vh] w-screen flex items-center justify-between p-4 bg-[#020617] border-b-2 border-[#3E4B5E] max-md:p-0">
-        <div class="headerStuff flex items-center space-x-3">
-            <img src="/Web-Nexus-Project/Assets/Images/logo.svg" alt="logo" class="w-12">
-            <span class="text-2xl text-white font-bold font-['Press_Start_2P'] font-black drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black] max-md:text-xs">
-                Web-Nexus</span>
+        <div class="headerStuff flex items-center space-x-3 max-md:space-x-1">
+            <img src="/Web-Nexus-Project/Assets/Images/logo.svg" alt="logo" class="w-12 max-md:w-8">
+            <span class="text-2xl font-bold text-white font-['Press_Start_2P'] font-black drop-shadow-[5px_5px_0px_black] max-md:text-xs hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">Web-Nexus</span>
         </div>
 
         <div class="flex items-center justify-between space-x-10 max-md:space-x-4">
-            <!-- <a href="Home-Page.html#vulnerabilities" class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a> -->
-            <a href="Home-Page.html" class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Home</a>
-            <a href="/Web-Nexus-Project/Karan/About Us/contact_us.html" class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact Us</a>
-        </div>
-        
-        <div id="menu-btn" class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] md:hidden focus:outline-none">
-            <img src="/Web-Nexus-Project/Assets/Images/menu.svg" alt="menu" class="w-8">
+            <a href="/Web-Nexus-Project/Kavy (Main Branch)/Home/index.php#vulnerabilities" class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a>
+            <a href="/Web-Nexus-Project/Kavy (Main Branch)/Home/index.php" class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Home</a>
+            <a href="/Web-Nexus-Project/Karan/About Us/contact_us.php" class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact Us</a>
         </div>
 
         <div class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] flex justify-center items-center">
-                <div class="yellowButton yellowButtonHeader hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
-                    <div class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 mr-3 rounded-md border-3 border-[rgb(221,170,16)] transition-colors duration-500">
-                        <div class="font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] font-thin text-xs max-md:text-[8px]">
-                            <a href="Home-Page.html#vulnerabilities">Vulnerabilities</a>
-                        </div>
-                        <div class="absolute w-[105%] h-[115%] bg-[rgb(221,170,16)] hover:bg-yellow-600 rounded-md transition-colors duration-500 -z-1 top-[1%] left-0"></div>
+            <div class="yellowButton yellowButtonHeader hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
+                <div class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 mr-3 rounded-md border-3 border-[rgb(221,170,16)] transition-colors duration-500">
+                    <div class="font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] text-black font-thin text-sm max-md:text-[8px]">
+                        <?php if ($logged_in): ?>
+                            <a href="/Web-Nexus-Project/Kartavya/Login_Pages/logout.php">Log Out</a>
+                        <?php else: ?>
+                            <a href="/Web-Nexus-Project/Kartavya/Login_Pages/login_page.php">Log In</a>
+                        <?php endif; ?>
                     </div>
+                    <div class="absolute w-[105%] h-[115%] bg-[rgb(221,170,16)] hover:bg-yellow-600 rounded-md transition-colors duration-500 -z-1 top-[1%] left-0"></div>
                 </div>
+            </div>
         </div>
-    
     </nav>
-    
+
     <!-- Introduction Section -->
     <section id="home" class="h-screen flex items-center justify-center flex-col bg-[#020617] font-['Press_Start_2P'] text-center px-6">
         <img src="/Web-Nexus-Project/Assets/Images/lake_side.gif" alt="CoverImageHome" class="absolute h-full w-full opacity-[0.5] object-cover">
@@ -76,7 +73,7 @@
                     <div class="yellowButton yellowButtonHeader hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
                         <div class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 mr-3 rounded-md border-3 border-[rgb(221,170,16)] transition-colors duration-500">
                             <div class="font-['Press_Start_2P'] p-1 drop-shadow-[2px_2px_0px_rgb(221,170,16)] text-black font-thin text-sm max-md:text-[8px]">
-                                <a href="/Web-Nexus-Project/Karan/About Us/contact_us.html" class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">Learn More</a>
+                                <a href="/Web-Nexus-Project/Karan/About Us/contact_us.php" class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">Learn More</a>
                             </div>
                             <div class="absolute w-[105%] h-[115%] bg-[rgb(221,170,16)] hover:bg-yellow-600 rounded-md  transition-colors duration-500 -z-1 top-[1%] left-0"></div>
                         </div>
@@ -91,7 +88,7 @@
         <h2 class="text-4xl font-bold">Explore and Learn</h2>
         <p class="mt-4 font-['Lexend'] font-bold text-lg text-gray-300">Dive deep into Security Vulnerabilities and hands-on exploitation</p>
         <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 px-6 auto-rows-fr">
-            <a href="/Web-Nexus-Project/Karan/SSRF/index.html" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
+            <a href="/Web-Nexus-Project/Karan/SSRF/index.php" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
                     <img src="/Web-Nexus-Project/Assets/Images/Fish.gif" alt="Broken Access Control" class="w-full h-40 object-cover rounded-md">
                     <h3 class="text-lg font-semibold mt-5">Server Side Request Forgery</h3>
@@ -101,7 +98,7 @@
                     </div>
                 </div>
             </a>
-            <a href="/Web-Nexus-Project/Malay/Xss/xss.html" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
+            <a href="/Web-Nexus-Project/Malay/Xss/xss.php" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
                     <img src="/Web-Nexus-Project/Assets/Images/CrossSiteScriptingThumbnail.gif" alt="Auth Failures" class="w-full h-40 object-cover rounded-md">
                     <h3 class="text-lg font-semibold mt-5">Cross Side Scripting</h3>
@@ -111,7 +108,7 @@
                     </div>
                 </div>
             </a>
-            <a href="/Web-Nexus-Project/Karan/Cryptographic Failures/index.html" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
+            <a href="/Web-Nexus-Project/Karan/Cryptographic Failures/index.php" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
                     <img src="/Web-Nexus-Project/Assets/Images/lofi.gif" alt="Crypto Failures" class="w-full h-40 object-cover rounded-md">
                     <h3 class="text-lg font-semibold mt-5">Cryptographic Failures</h3>
@@ -121,7 +118,7 @@
                     </div>
                 </div>
             </a>
-            <a href="/Web-Nexus-Project/Kavy (Main Branch)/Insecure Design/Insecure-design.html" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
+            <a href="/Web-Nexus-Project/Kavy (Main Branch)/Insecure Design/Insecure-design.php" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
                     <img src="/Web-Nexus-Project/Assets/Images/Insecure-Design.gif" alt="Insecure Design" class="w-full h-40 object-cover rounded-md">
                     <h3 class="text-lg font-semibold mt-5">Insecure Design</h3>
@@ -131,7 +128,7 @@
                     </div>
                 </div>
             </a>
-            <a href="/Web-Nexus-Project/Kartavya/Secutity_Logging_and_Monitoring_Failure/Secutity_Logging_and_Monitoring_Failure.html" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
+            <a href="/Web-Nexus-Project/Kartavya/Secutity_Logging_and_Monitoring_Failure/Secutity_Logging_and_Monitoring_Failure.php" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
                     <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
                         <img src="/Web-Nexus-Project/Assets/Images/Insufficient-Logging.gif" alt="Logging & Monitoring" class="w-full h-40 object-cover rounded-md">
                         <h3 class="text-lg font-semibold mt-5">Insufficient Logging & Monitoring</h3>
@@ -141,7 +138,7 @@
                         </div>
                     </div>
             </a>
-            <a href="/Web-Nexus-Project/Malay/Misconfig/misconfig.html" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
+            <a href="/Web-Nexus-Project/Malay/Misconfig/misconfig.php" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
                     <img src="/Web-Nexus-Project/Assets/Images/CoverImageMisconfig.gif" alt="Security Misconfiguration" class="w-full h-40 object-cover rounded-md">
                     <h3 class="text-lg font-semibold mt-5">Security Misconfiguration</h3>
@@ -151,7 +148,7 @@
                     </div>
                 </div>
             </a>
-            <a href="/Web-Nexus-Project/Kavy (Main Branch)/Broken Access Control/Broken-access-control.html" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
+            <a href="/Web-Nexus-Project/Kavy (Main Branch)/Broken Access Control/Broken-access-control.php" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
                     <img src="/Web-Nexus-Project/Assets/Images/Data-Integrity-Failures.gif" alt="Integrity Failures" class="w-full h-40 object-cover rounded-md">
                     <h3 class="text-lg font-semibold mt-5">Broken Access Control</h3>
@@ -161,7 +158,7 @@
                     </div>
                 </div>
             </a>
-            <a href="/Web-Nexus-Project/Kavy (Main Branch)/SQL Injection/Sql-injection.html" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
+            <a href="/Web-Nexus-Project/Kavy (Main Branch)/SQL Injection/Sql-injection.php" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
                     <img src="/Web-Nexus-Project/Assets/Images/SQL-Injection.gif" alt="Injection" class="w-full h-40 object-cover rounded-md">
                     <h3 class="text-lg font-semibold mt-5">SQL Injection</h3>
@@ -171,7 +168,7 @@
                     </div>
                 </div>
             </a>
-            <a href="/Web-Nexus-Project/Kartavya/Vulnerable_and_Outdated_Components/Vulnerable_and_Outdated_Components.html" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
+            <a href="/Web-Nexus-Project/Kartavya/Vulnerable_and_Outdated_Components/Vulnerable_and_Outdated_Components.php" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
                     <img src="/Web-Nexus-Project/Assets/Images/VulnerableComponents.gif" alt="Outdated Components" class="w-full h-40 object-cover rounded-md">
                     <h3 class="text-lg font-semibold mt-5">Vulnerable and Outdated Components</h3>
@@ -184,7 +181,7 @@
             <a href="#" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
                 <div class="bg-[#020617]  p-6 rounded-lg shadow-lg flex flex-col col-span-3 justify-between h-full"></div>
             </a>
-            <a href="/Web-Nexus-Project/Malay/Deserialisation/deserialisation.html" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
+            <a href="/Web-Nexus-Project/Malay/Deserialisation/deserialisation.php" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Assets/Images/cursor_02.png'),_pointer]">
                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col col-span-3 justify-between h-full">
                     <img src="/Web-Nexus-Project/Assets/Images/DeserialisationThumbnail.gif" alt="Outdated Components" class="w-full h-40 object-cover rounded-md">
                     <h3 class="text-lg font-semibold mt-5">Deserialization</h3>
@@ -243,7 +240,7 @@
             <div>
                 <h3 class="text-lg font-semibold text-blue-400">Company</h3>
                 <ul class="mt-4 space-y-2">
-                    <li><a href="/Web-Nexus-Project/Karan/About Us/contact_us.html" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">About Us</a></li>
+                    <li><a href="/Web-Nexus-Project/Karan/About Us/contact_us.php" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">About Us</a></li>
                     <li><a href="#home" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Careers</a></li>
                     <li><a href="#home" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Blog</a></li>
                 </ul>
@@ -252,7 +249,7 @@
                 <h3 class="text-lg font-semibold text-blue-400">Support</h3>
                 <ul class="mt-4 space-y-2">
                     <li><a href="#home" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Help Center</a></li>
-                    <li><a href="/Web-Nexus-Project/Karan/About Us/contact_us.html" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Contact</a></li>
+                    <li><a href="/Web-Nexus-Project/Karan/About Us/contact_us.php" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Contact</a></li>
                     <li><a href="#home" class=" hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">FAQs</a></li>
                 </ul>
             </div>

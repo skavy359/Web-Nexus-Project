@@ -119,8 +119,8 @@ if (!isset($user) && isset($_SESSION["user_data"])) {
 
         <div class="flex items-center justify-between space-x-10 max-md:space-x-4">
             <a href="/Web-Nexus-Project/Kavy (Main Branch)/Home/Home-Page.html#vulnerabilities" class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a>
-            <a href="/Web-Nexus-Project/Kavy (Main Branch)/Home/Home-Page.html" class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Home</a>
-            <a href="/Web-Nexus-Project/Karan/About Us/contact_us.html" class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact Us</a>
+            <a href="/Web-Nexus-Project/Kavy (Main Branch)/Home/Home-Page.php" class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Home</a>
+            <a href="/Web-Nexus-Project/Karan/About Us/contact_us.php" class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact Us</a>
         </div>
         
         <div id="menu-btn" class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] md:hidden focus:outline-none">
@@ -206,7 +206,7 @@ if (!isset($user) && isset($_SESSION["user_data"])) {
                         </div>
                         <div>
                             <button type="submit" class="submitButton hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] flex items-center justify-center font-bold w-full mt-6 bg-[#3E4B5E] text-[#0F172A] text-xl hover:text-[#3E4B5E] py-3 rounded-md hover:bg-[#0F172A] transition duration-300 mb-6">Unserialize Modified Data</button>
-                            <a href="deserialisation.html" class="flex items-center justify-center w-full py-3 mt-6 bg-[#3E4B5E] text-[#0F172A] font-bold text-xl px-4 rounded hover:bg-[#0F172A] hover:text-[#3E4B5E] transition-colors duration-500">
+                            <a href="deserialisation.php" class="flex items-center justify-center w-full py-3 mt-6 bg-[#3E4B5E] text-[#0F172A] font-bold text-xl px-4 rounded hover:bg-[#0F172A] hover:text-[#3E4B5E] transition-colors duration-500">
                                 Go Back
                             </a>
                         </div>

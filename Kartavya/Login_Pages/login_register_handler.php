@@ -205,7 +205,7 @@ if (isset($_POST['login'])) {
                 // Log successful login
                 logAuth("Successful login: $email");
 
-                header("Location: /Web-Nexus-Project/Kavy (Main Branch)\Home\Home-Page.html");
+                header("Location: /Web-Nexus-Project/Kavy (Main Branch)\Home\Home-Page.php");
                 exit();
             } else {
                 // Log failed login
