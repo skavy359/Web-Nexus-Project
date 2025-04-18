@@ -32,14 +32,12 @@ Welcome to our interactive platform designed to **learn, exploit, and prevent** 
 
 ```
 OWASP-Top10-Interactive/
-├── index.html
-├── Tailwind Files/
+├── assets/
+│   └── fonts/, gifs/, icons/, screenshots/
 ├── Kartavya/
 ├── Karan/
 ├── Malay/
 ├── Kavy/
-├── assets/
-│   └── fonts/, gifs/, icons/, screenshots/
 └── README.md
 ```
 
@@ -50,15 +48,15 @@ OWASP-Top10-Interactive/
 | #  | Vulnerability                              | Status     | Lead Developer |
 |----|--------------------------------------------|------------|----------------|
 | 1  | Broken Access Control                      | ✅ Completed | Kavy           |
-| 2  | Cryptographic Failures                     | ✅ Completed | Malay          |
-| 3  | Injection (SQLi)                           | ✅ Completed | Kavy           |
+| 2  | Cryptographic Failures                     | ✅ Completed | Karan          |
+| 3  | Injection (SQL)                            | ✅ Completed | Kavy           |
 | 4  | Insecure Design                            | ✅ Completed | Kavy           |
-| 5  | Security Misconfiguration                  | ✅ Completed | Karan          |
+| 5  | Security Misconfiguration                  | ✅ Completed | Malay          |
 | 6  | Vulnerable & Outdated Components           | ✅ Completed | Kartavya       |
-| 7  | Identification & Authentication Failures   | ✅ Completed | Malay          |
-| 8  | Software & Data Integrity Failures         | ✅ Completed | Kartavya       |
-| 9  | Security Logging & Monitoring Failures     | ✅ Completed | Karan          |
-| 10 | Server-Side Request Forgery (SSRF)         | ✅ Completed | Kartavya       |
+| 7  | Cross Side Server Scripting                | ✅ Completed | Malay          |
+| 8  | Deserialisation                            | ✅ Completed | Malay          |
+| 9  | Security Logging & Monitoring Failures     | ✅ Completed | Kartavya       |
+| 10 | Server-Side Request Forgery (SSRF)         | ✅ Completed | Karan          |
 
 ---
 
@@ -66,8 +64,8 @@ OWASP-Top10-Interactive/
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/OWASP-Top10-Interactive.git
-cd OWASP-Top10-Interactive
+git clone https://github.com/skavy359/Web-Nexus-Project.git
+cd OWASP-Top10
 
 # Start PHP server
 php -S localhost:8000
@@ -75,17 +73,6 @@ php -S localhost:8000
 # Open in browser
 http://localhost:8000
 ```
-
----
-
-## 🤝 Contributors
-
-| Name      | Modules                              |
-|-----------|--------------------------------------|
-| **Kavy**      | Home Page, SQL Injection, Broken Access Control, Insecure Design |
-| **Kartavya**  | Vulnerable Components, SSRF, Data Integrity Failures |
-| **Karan**     | Security Misconfig, Logging & Monitoring Failures |
-| **Malay**     | Cryptographic Failures, Auth Failures |
 
 ---
 
