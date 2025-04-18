@@ -62,14 +62,6 @@ OWASP-Top10-Interactive/
 
 ---
 
-## 🖼️ Screenshots
-
-| Vulnerable Page | Secure Page |
-|-----------------|-------------|
-| ![Vulnerable](assets/screenshots/sqli_vulnerable.png) | ![Secure](assets/screenshots/sqli_secure.png) |
-
----
-
 ## 🛠️ How to Run Locally
 
 ```bash
