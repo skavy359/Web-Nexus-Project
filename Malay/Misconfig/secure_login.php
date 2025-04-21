@@ -48,6 +48,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         sleep(1);
         $error = 'Invalid credentials';
     }
+
+    // Prevents malformed input from entering the application
+    function validateUsername($username) {
+        // Check length requirements to prevent buffer overflow attempts
+        if (strlen($username) < 3 || strlen($username) > 20) {
+            return false;
+        }
+        
+        // Restrict to alphanumeric plus safe special characters
+        // Prevents injection of dangerous characters
+        if (!preg_match('/^[a-zA-Z0-9_.-]+$/', $username)) {
+            return false;
+        }
+        
+        return true;
+    }
+
+    // Apply validation and handle invalid input appropriately
+    $username = $_POST['username'] ?? '';
+    if (!validateUsername($username)) {
+        $error = 'Invalid username format';
+    }
+
 }
 ?>
 <!DOCTYPE html>

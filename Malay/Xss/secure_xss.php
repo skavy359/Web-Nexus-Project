@@ -12,7 +12,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 <head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XSS Vulnerable Page</title>
+    <title>XSS Secure Page</title>
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
     <!-- Highlight.js CSS for syntax highlighting -->
@@ -131,10 +131,17 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                     // Sanitize inputs using htmlspecialchars
                     $name = htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8');
                     $comment = htmlspecialchars($_POST['comment'], ENT_QUOTES, 'UTF-8');
+
+                    if (strlen($comment) > 1000) {
+                        die("Comment too long");
+                    }
+
+                    $name = json_encode($name);
+                    $comment = json_encode($comment);
                     
                     echo '<div class="bg-[#3E4B5E] border-l-6 border-[#0F172A] p-4 mb-20">';
-                    echo '<p><strong>Name:</strong> ' . $name . '</p>';
-                    echo '<p><strong>Comment:</strong> ' . $comment . '</p>';
+                    echo '<p><strong>Name:</strong> ' . json_decode($name) . '</p>';
+                    echo '<p><strong>Comment:</strong> ' . json_decode($comment) . '</p>';
                     echo '</div>';
                 }
                 ?>
