@@ -20,7 +20,7 @@ Welcome to our interactive platform designed to **learn, exploit, and prevent** 
 
 ## 🧩 Tech Stack
 
-- **Frontend**: HTML, Tailwind CSS, JavaScript, jQuery  
+- **Frontend**: HTML, Tailwind CSS, JavaScript  
 - **Backend**: PHP  
 - **Data**: JSON  
 - **Fonts**: Lexend, Press Start 2P  
@@ -33,7 +33,7 @@ Welcome to our interactive platform designed to **learn, exploit, and prevent** 
 ```
 OWASP-Top10-Interactive/
 ├── assets/
-│   └── fonts/, gifs/, icons/, screenshots/
+│   └── fonts/, gifs/, icons/
 ├── Kartavya/
 ├── Karan/
 ├── Malay/
