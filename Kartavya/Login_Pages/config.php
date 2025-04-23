@@ -1,6 +1,6 @@
 <?php
 
-$host = "localhost:8000";
+$host = "localhost";
 $user = "root";
 $password = "";
 $database = "register_db";
@@ -9,7 +9,6 @@ $conn = new mysqli($host, $user, $password, $database);
 
 if ($conn->connect_error) {
     die("Database connection failed: " . $conn->connect_error);
-    // die("Database connection failed. Please try again later.");
 }
 
 ?>

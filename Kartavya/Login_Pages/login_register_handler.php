@@ -1,8 +1,9 @@
 <?php
 
+//session_start();
+//require_once 'config.php';
+include("config.php");
 session_start();
-require_once 'config.php';
-
 // Initialize log file
 $log_file = 'auth_log.txt';
 
