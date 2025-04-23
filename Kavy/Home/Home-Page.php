@@ -102,7 +102,7 @@ $logged_in = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
             <a href="/Web-Nexus-Project/Malay/Xss/xss.php" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">
                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
                     <img src="/Web-Nexus-Project/Assets/Images/CrossSiteScriptingThumbnail.gif" alt="Auth Failures" class="w-full h-40 object-cover rounded-md">
-                    <h3 class="text-lg font-semibold mt-5">Cross Side Scripting</h3>
+                    <h3 class="text-lg font-semibold mt-5">Cross Site Scripting</h3>
                     <p class="text-gray-300 font-bold font-['Lexend'] text-md mt-3">Involves injecting malicious code into a trusted website or web application.</p>
                     <div class="mt-auto pt-6">
                         <span class="font-['Lexend'] text-xl font-semibold">Try It ></span>
@@ -132,7 +132,7 @@ $logged_in = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
             <a href="/Web-Nexus-Project/Kartavya/Secutity_Logging_and_Monitoring_Failure/Secutity_Logging_and_Monitoring_Failure.php" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">
                     <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
                         <img src="/Web-Nexus-Project/Assets/Images/Insufficient-Logging.gif" alt="Logging & Monitoring" class="w-full h-40 object-cover rounded-md">
-                        <h3 class="text-lg font-semibold mt-5">Insufficient Logging & Monitoring</h3>
+                        <h3 class="text-lg font-semibold mt-5">Security Logging & Monitoring</h3>
                         <p class="text-gray-300 font-bold font-['Lexend'] text-md mt-3">Lack of proper logging and alert mechanisms allows attackers to remain undetected for longer.</p>
                         <div class="mt-auto pt-6">
                             <span class="font-['Lexend'] text-xl font-semibold">Try It ></span>
