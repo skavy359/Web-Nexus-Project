@@ -1,9 +1,17 @@
+<?php
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("Location: /Web-Nexus-Project/Kartavya/Login_Pages/login_page.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en" class="">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Server-Side Request Forgery (SSRF)</title>
+    <title>Cryptographic Failures</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,68 +44,31 @@
     </script>
   </head>
   <body
-    class="bg-[#020617] font-['Lexend'] selection:text-yellow-400 cursor-[url('/Assets/Images/cursor_01.png'),_auto]"
+    id="home" class="bg-[#020617] font-['Lexend'] selection:text-yellow-400 cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_01.png'),_auto]"
   >
     <!-- HEADER -->
-    <nav
-      class="fixed z-[999] top-0 left-0 h-[10vh] w-screen flex items-center justify-between p-4 bg-[#020617] border-b-2 border-[#3E4B5E] max-md:p-0"
-    >
-      <div class="headerStuff flex items-center space-x-3">
-        <img src="/Assets/Images/logo.svg" alt="logo" class="w-12" />
-        <span
-          class="text-2xl text-white font-bold font-['Press_Start_2P'] font-black drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black] max-md:text-xs"
-        >
-          Web-Nexus</span
-        >
-      </div>
-
-      <div
-        class="flex items-center justify-between space-x-10 max-md:space-x-4"
-      >
-        <a
-          href="/Kavy (Main Branch)/Home/Home-Page.html#vulnerabilities"
-          class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs"
-          >Vulnerabilities</a
-        >
-        <a
-          href="/Kavy (Main Branch)/Home/Home-Page.html"
-          class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs"
-          >Home</a
-        >
-        <a
-          href="/Karan/About Us/contact_us.html"
-          class="headerStuff hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs"
-          >Contact Us</a
-        >
-      </div>
-
-      <div
-        id="menu-btn"
-        class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] md:hidden focus:outline-none"
-      >
-        <img src="/Assets/Images/menu.svg" alt="menu" class="w-8" />
-      </div>
-
-      <div
-        class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] flex justify-center items-center"
-      >
-        <div
-          class="yellowButton yellowButtonHeader hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]"
-        >
-          <div
-            class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 mr-3 rounded-md border-3 border-[rgb(221,170,16)] transition-colors duration-500"
-          >
-            <div
-              class="font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] font-thin text-xs max-md:text-[8px]"
-            >
-              Log Out
-            </div>
-            <div
-              class="absolute w-[105%] h-[115%] bg-[rgb(221,170,16)] hover:bg-yellow-600 rounded-md transition-colors duration-500 -z-1 top-[1%] left-0"
-            ></div>
-          </div>
+    <nav class="fixed z-[999] top-0 left-0 h-[10vh] w-screen flex items-center justify-between p-4 bg-[#020617] border-b-2 border-[#3E4B5E] max-md:p-0">
+        <div class="headerStuff flex items-center space-x-3 max-md:space-x-1">
+            <img src="/Web-Nexus-Project/Assets/Images/logo.svg" alt="logo" class="w-12 max-md:w-8">
+            <span class="text-2xl font-bold text-white font-['Press_Start_2P'] font-black drop-shadow-[5px_5px_0px_black] max-md:text-xs hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">Web-Nexus</span>
         </div>
-      </div>
+
+        <div class="flex items-center justify-between space-x-10 max-md:space-x-4">
+            <a href="/Web-Nexus-Project/Kavy/Home/Home-Page.php#vulnerabilities" class="headerStuff hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a>
+            <a href="/Web-Nexus-Project/Kavy/Home/Home-Page.php" class="headerStuff hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Home</a>
+            <a href="/Web-Nexus-Project/Karan/About Us/contact us.php" class="headerStuff hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact Us</a>
+        </div>
+
+        <div class="hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] flex justify-center items-center">
+            <div onclick="window.location.href='/Web-Nexus-Project/Kartavya/Login_Pages/logout.php'" class="yellowButton yellowButtonHeader hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">
+                <div class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 mr-3 rounded-md border-3 border-[rgb(221,170,16)] transition-colors duration-500">
+                    <div class="font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] text-black font-thin text-sm max-md:text-[8px]">
+                        <a href="/Web-Nexus-Project/Kartavya/Login_Pages/logout.php">Log Out</a>
+                    </div>
+                    <div class="absolute w-[105%] h-[115%] bg-[rgb(221,170,16)] hover:bg-yellow-600 rounded-md transition-colors duration-500 -z-1 top-[1%] left-0"></div>
+                </div>
+            </div>
+        </div>
     </nav>
 
     <!-- THUMBNAIL SECTION -->
@@ -109,51 +80,41 @@
           <h1
             class="thumbnail thumbnailTitle text-white text-4xl font-black drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black] font-['Press_Start_2P'] max-md:text-2xl"
           >
-            Server-Side
+            Cryptographic
           </h1>
           <h7
             class="thumbnail thumbnailTitle text-white text-4xl font-black drop-shadow-[5px_5px_0px_black] drop-shadow-[-5px_-5px_0px_black] font-['Press_Start_2P'] max-md:text-2xl"
-            >Request Forgery</h7
+            >Failures</h7
           >
 
           <div
             class="thumbnail thumbnailDescription text-white text-md mt-[10%] font-semibold drop-shadow-[2px_2px_0px_black] drop-shadow-[-2px_-2px_0px_black] max-md:text-xs"
           >
-            SSRF (Server-Side Request Forgery) is a vulnerability where an
-            attacker tricks a server into making unintended requests to internal
-            or external systems. This happens when user input is used to fetch
-            URLs without proper validation, allowing access to internal services
-            or sensitive data.
+            Sensitive Data Exposure occurs when applications do not properly
+            protect sensitive information such as passwords, credit card
+            numbers, health records, etc. Attackers may steal or modify poorly
+            protected data to commit fraud, identity theft, or other crimes.
           </div>
 
-          <div
-            class="yellowButton yellowButtonThumbnail hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer]"
-          >
-            <div
-              class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 rounded-md mt-10 border-3 border-[rgb(221,170,16)] transition-colors duration-500"
-            >
-              <div
-                id="getStartedButton"
-                class="font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] font-thin text-xs"
-              >
+          <div id="getStartedButton" class="yellowButton yellowButtonThumbnail hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">
+            <div class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 rounded-md mt-10 border-3 border-[rgb(221,170,16)] transition-colors duration-500">
+              <div class="font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] font-thin text-xs">
                 Get Started
               </div>
-              <div
-                class="absolute w-[104%] h-[120%] bg-[rgb(221,170,16)] hover:bg-yellow-600 rounded-md transition-colors duration-500 -z-1 top-[1%] left-0"
-              ></div>
+              <div class="absolute w-[104%] h-[120%] bg-[rgb(221,170,16)] hover:bg-yellow-600 rounded-md transition-colors duration-500 -z-1 top-[1%] left-0"></div>
             </div>
           </div>
         </div>
       </div>
       <img
-        src="/Assets/Images/Fish.gif"
+        src="/Web-Nexus-Project/Assets/Images/lofi.gif"
         class="absolute object-cover w-full h-full opacity-[0.6]"
         alt=""
       />
     </div>
 
     <!-- DROPDOWN SECTION -->
-    <div id="dropdownSection"class="w-full h-auto mt-[8vh] px-[10vw]">
+    <div id="dropdownSection" class="w-full h-auto mt-[8vh] px-[10vw]">
       <div
         class="flex flex-col items-center justify-center w-full h-full border-3 border-[#3E4B5E] rounded-md p-[2%]"
       >
@@ -162,7 +123,7 @@
           class="relative group w-full bg-[#020617] shadow-md rounded-lg p-4 hover:bg-[#0F172A] transition-colors duration-500"
         >
           <summary
-            class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] cursor-pointer text-lg font-semibold flex justify-between items-center rounded-md p-2"
+            class="hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] cursor-pointer text-lg font-semibold flex justify-between items-center rounded-md p-2"
           >
             <div
               class="flex items-center justify-center ['Press_Start_2P'] text-white font-black text-3xl border-3 border-[#3E4B5E] rounded-full w-16 h-16 max-md:w-12 max-md:h-12 max-md:text-sm p-4 mx-2"
@@ -173,7 +134,7 @@
             <div
               class="font-['Press_Start_2P'] text-xl font-black text-white max-md:text-sm"
             >
-              Vulnerable Page
+              Vulnerable Insecure Page
             </div>
 
             <!-- DROPDOWN ARROW -->
@@ -206,30 +167,30 @@
             >
               <div class="text-gray-400 max-w-[50%] p-5 text-xl max-sm:text-xs">
                 <span class="font-bold text-blue-300"
-                  >SSRF (Server-Side Request Forgery)</span
+                  >Cryptographic Failures</span
                 >
-                is a web security vulnerability where an attacker tricks a
-                server into making unauthorized requests to internal or external
-                systems. This usually happens when a web application accepts a
-                URL or address as user input and uses it to fetch data—without
-                properly validating it. Attackers can exploit this to access
-                internal services (like localhost or cloud metadata endpoints),
-                bypass firewalls, or even perform actions on behalf of the
-                server, potentially leading to data exposure or further network
-                compromise.
+                occurs when an application fails to protect sensitive data using
+                proper encryption or security measures. This can happen due to
+                weak encryption algorithms, improper key management,
+                transmitting data in plaintext, or exposing encryption keys.
+                Attackers can exploit these flaws to steal or manipulate
+                sensitive information such as passwords, credit card details, or
+                personal data. Proper encryption standards (like AES, TLS, and
+                hashing techniques) and secure implementation practices help
+                mitigate this risk.
               </div>
 
               <!-- BUTTON -->
 
               <div
-                onclick="window.location.href='ssrf_vulnerable.php'"
-                class="yellowButton yellowButtonVulnerable hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] h-full py-10 w-full relative z-[100] max-w-[50%]"
+                onclick="window.location.href='vulnerable_page.php'"
+                class="yellowButton yellowButtonVulnerable hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] h-full py-10 w-full relative z-[100] max-w-[50%]"
               >
                 <div
                   class="z-[100] flex flex-row h-full w-full items-center justify-center px-3 py-2"
                 >
                   <img
-                    src="/Assets/Images/playButton.png"
+                    src="/Web-Nexus-Project/Assets/Images/playButton.png"
                     class="z-[100] w-[20%] m-1 h-auto drop-shadow-[2px_2px_0px_rgb(221,170,16)]"
                     alt="Image 1"
                   />
@@ -262,7 +223,7 @@
 
           <!-- GIF -->
           <img
-            src="/Assets/Images/terminalAndRobo.gif"
+            src="/Web-Nexus-Project/Assets/Images/terminalAndRobo.gif"
             class="-mt-25"
             alt="giff"
           />
@@ -277,13 +238,13 @@
             >
               <img
                 class="diamond w-auto"
-                src="/Assets/Images/diamond.png"
+                src="/Web-Nexus-Project/Assets/Images/diamond.png"
                 alt=""
               />
 
               <p class="text-gray-400 text-xl">
-                User input is directly used in server-side HTTP requests without
-                proper validation or sanitization.
+                The application relies on weak encryption algorithms (e.g., MD5,
+                SHA-1) that can be easily broken by attackers.
               </p>
             </div>
 
@@ -292,13 +253,14 @@
             >
               <img
                 class="diamond w-auto"
-                src="/Assets/Images/diamond.png"
+                src="/Web-Nexus-Project/Assets/Images/diamond.png"
                 alt=""
               />
 
               <p class="text-gray-400 text-xl font-['Lexend']">
-                Lack of URL filtering, allowing requests to internal services
-                like localhost, 127.0.0.1, or cloud metadata endpoints
+                Sensitive data, such as passwords or credit card details, is
+                stored or transmitted without encryption, making it readable if
+                intercepted.
               </p>
             </div>
 
@@ -307,13 +269,14 @@
             >
               <img
                 class="diamond w-auto"
-                src="/Assets/Images/diamond.png"
+                src="/Web-Nexus-Project/Assets/Images/diamond.png"
                 alt=""
               />
 
               <p class="text-gray-400 text-xl">
-                Use of unsafe functions like file_get_contents(), curl_exec(),
-                or fsockopen() without restricting the destination.
+                The application exposes encryption keys through hardcoding, weak
+                storage, or improper handling, allowing attackers to decrypt
+                data.
               </p>
             </div>
 
@@ -322,13 +285,14 @@
             >
               <img
                 class="diamond w-auto"
-                src="/Assets/Images/diamond.png"
+                src="/Web-Nexus-Project/Assets/Images/diamond.png"
                 alt=""
               />
 
               <p class="text-gray-400 text-xl">
-                Parsing user-supplied XML or JSON that includes external
-                references (can lead to SSRF through XXE)
+                The application transmits data over insecure channels (e.g.,
+                HTTP instead of HTTPS), making it vulnerable to
+                man-in-the-middle (MITM) attacks.
               </p>
             </div>
 
@@ -337,13 +301,14 @@
             >
               <img
                 class="diamond w-auto"
-                src="/Assets/Images/diamond.png"
+                src="/Web-Nexus-Project/Assets/Images/diamond.png"
                 alt=""
               />
 
               <p class="text-gray-400 text-xl">
-                Open network access from the server, enabling it to reach
-                internal or external IPs without restriction.
+                The application does not follow best practices, such as using
+                proper padding, randomization, or secure key exchange
+                mechanisms, leading to weaknesses.
               </p>
             </div>
 
@@ -352,28 +317,14 @@
             >
               <img
                 class="diamond w-auto"
-                src="/Assets/Images/diamond.png"
+                src="/Web-Nexus-Project/Assets/Images/diamond.png"
                 alt=""
               />
 
               <p class="text-gray-400 text-xl">
-                Improper firewall or network segmentation, allowing access to
-                sensitive internal services from the application server.
-              </p>
-            </div>
-
-            <div
-              class="flex flex-row items-start justify-start space-x-5 mb-[30px]"
-            >
-              <img
-                class="diamond w-auto"
-                src="/Assets/Images/diamond.png"
-                alt=""
-              />
-
-              <p class="text-gray-400 text-xl">
-                No allowlist or blocklist mechanism, so the server fetches any
-                URL the attacker supplies.
+                The application stores sensitive information in plaintext or
+                improperly encrypted databases, making it easy for attackers to
+                access in case of a breach.
               </p>
             </div>
           </div>
@@ -384,7 +335,7 @@
           class="relative group w-full bg-[#020617] shadow-md rounded-lg p-4 hover:bg-[#0F172A] transition-colors duration-500"
         >
           <summary
-            class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] cursor-pointer text-lg font-semibold flex justify-between items-center rounded-md p-2"
+            class="hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] cursor-pointer text-lg font-semibold flex justify-between items-center rounded-md p-2"
           >
             <div
               class="flex items-center justify-center ['Press_Start_2P'] text-white font-black text-3xl border-3 border-[#3E4B5E] rounded-full w-16 h-16 max-md:w-12 max-md:h-12 max-md:text-sm p-4 mx-2"
@@ -430,7 +381,7 @@
             >
               <div class="flex items-center justify-between w-full">
                 <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">
-                  Validate User Input URL
+                  Use Strong Hashing for Passwords
                 </p>
 
                 <div
@@ -449,12 +400,13 @@
               <pre class="whitespace-pre-wrap flex items-center w-full h-full">
                         
                           <code class=" rounded-md text-sm font-mono w-full h-full" >
-// Validate that the input is a proper HTTP/HTTPS URL
-function isValidURL($url) {
-  // Check if the input is a valid URL format and starts with http or https
-  return filter_var($url, FILTER_VALIDATE_URL) &&
-          in_array(parse_url($url, PHP_URL_SCHEME), ['http', 'https']);
-}             
+$password = "my_secure_password";
+
+// Hash the password securely using Bcrypt
+$hashed_password = password_hash($password, PASSWORD_BCRYPT);
+
+// Output the hashed password (should not be stored in plaintext)
+echo $hashed_password;  
                           </code>
                         </pre>
             </div>
@@ -463,14 +415,15 @@ function isValidURL($url) {
             <div
               class="flex flex-row items-start gap-2 justify-start mt-8 mb-20"
             >
-              <img src="/Assets/Images/robot.gif" class="h-16 w-auto" alt="" />
+              <img src="/Web-Nexus-Project/Assets/Images/robot.gif" class="h-16 w-auto" alt="" />
 
               <p class="preventionDescription mt-2 text-gray-600 italic">
-                This function strictly checks that the user-supplied URL is
-                valid and only uses http or https schemes. By blocking
-                unsupported schemes like file:// or ftp://, it prevents misuse
-                of the server to access local files or execute unintended
-                protocols.
+                The improved code replaces outdated hashing methods like MD5
+                with a secure password hashing function that automatically
+                includes salting and a strong hashing algorithm (Bcrypt). Using
+                password_hash(), the system ensures that even if two users have
+                the same password, their hashes are different, preventing
+                rainbow table attacks.
               </p>
             </div>
 
@@ -480,7 +433,7 @@ function isValidURL($url) {
             >
               <div class="flex items-center justify-between w-full">
                 <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">
-                  Prevent Access to Internal IP Addresses
+                  Ensure Secure Data Transmission
                 </p>
 
                 <div
@@ -499,20 +452,22 @@ function isValidURL($url) {
               <pre class="whitespace-pre-wrap flex items-center w-full h-full">
                         
                           <code class=" rounded-md text-sm font-mono w-full h-full" >
-// Prevent access to internal/private IP addresses
-function isSafeHost($url) {
-  // Extract the host from the URL
-  $host = parse_url($url, PHP_URL_HOST);
+$url = "https://example.com/login"; // Enforce HTTPS for secure communication
+$data = ['username' => 'user', 'password' => 'pass'];
+                            
+$options = [
+    'http' => [
+        'header'  => "Content-Type: application/json", // Set header for JSON data
+        'method'  => 'POST', // Use POST method to send sensitive data
+        'content' => json_encode($data), // Convert data to JSON format
+    ],
+];
 
-  // Resolve the host to its IP address
-  $ip = gethostbyname($host);
+$context = stream_context_create($options);
 
-  // Use regex to block internal/private IP ranges (localhost, 192.168.x.x, etc.)
-  if (preg_match('/^(127\.|10\.|192\.168\.|169\.254\.|172\.(1[6-9]|2[0-9]|3[0-1])\.)/', $ip)) {
-      return false; // Unsafe IP
-  }
-  return true; // Safe IP
-}
+// Securely send the request over HTTPS
+$response = file_get_contents($url, false, $context);
+
                           </code>
                         </pre>
             </div>
@@ -521,14 +476,14 @@ function isSafeHost($url) {
             <div
               class="flex flex-row items-start gap-2 justify-start mt-8 mb-20"
             >
-              <img src="/Assets/Images/robot.gif" class="h-16 w-auto" alt="" />
+              <img src="/Web-Nexus-Project/Assets/Images/robot.gif" class="h-16 w-auto" alt="" />
 
               <p class="preventionDescription mt-2 text-gray-600 italic">
-                This logic ensures that requests don’t reach internal services
-                or network addresses. By resolving the hostname to an IP and
-                checking against private ranges, it stops attackers from
-                targeting local environments or metadata endpoints inside cloud
-                infrastructure.
+                Switching from HTTP to HTTPS ensures encrypted communication,
+                preventing attackers from intercepting sensitive data such as
+                login credentials. This security measure effectively thwarts
+                Man-in-the-Middle (MITM) attacks by securing the transmission
+                channel.
               </p>
             </div>
 
@@ -538,7 +493,7 @@ function isSafeHost($url) {
             >
               <div class="flex items-center justify-between w-full">
                 <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">
-                  Set a Timeout and Disable Redirects
+                  Secure Key Management
                 </p>
 
                 <div
@@ -557,19 +512,8 @@ function isSafeHost($url) {
               <pre class="whitespace-pre-wrap flex items-center w-full h-full">
                         
                           <code class=" rounded-md text-sm font-mono w-full h-full" >
-// Add timeout and disable redirect to prevent abuse
-function fetchWithTimeout($url) {
-  // Create an HTTP context with a 3-second timeout and no redirect following
-  $context = stream_context_create([
-      'http' => [
-          'timeout' => 3,            // 3-second timeout
-          'follow_location' => false // Disable redirects
-      ]
-  ]);
-  
-  // Fetch the content using the configured context
-  return @file_get_contents($url, false, $context);
-}                           
+// Fetch encryption key securely from environment variables
+$encryption_key = getenv('ENCRYPTION_KEY'); 
                             
                           </code>
                         </pre>
@@ -579,14 +523,13 @@ function fetchWithTimeout($url) {
             <div
               class="flex flex-row items-start gap-2 justify-start mt-8 mb-20"
             >
-              <img src="/Assets/Images/robot.gif" class="h-16 w-auto" alt="" />
+              <img src="/Web-Nexus-Project/Assets/Images/robot.gif" class="h-16 w-auto" alt="" />
 
               <p class="preventionDescription mt-2 text-gray-600 italic">
-                This function adds a layer of control by setting a timeout and
-                disabling redirects during remote requests. A short timeout
-                reduces the risk of resource exhaustion through slow or hanging
-                requests. Disabling redirects helps prevent abuse via open
-                redirect chains or redirecting to internal IPs.
+                Rather than storing encryption keys directly in the source code,
+                this method retrieves them from a secure environment variable,
+                reducing the risk of key leakage through code exposure or
+                version control repositories.
               </p>
             </div>
 
@@ -596,7 +539,7 @@ function fetchWithTimeout($url) {
             >
               <div class="flex items-center justify-between w-full">
                 <p class="text-[#0F172A] font-bold text-2xl ml-2 py-2">
-                  Final Secure Fetch Wrapper
+                  Encrypt Sensitive Data Before Storing
                 </p>
 
                 <div
@@ -615,20 +558,37 @@ function fetchWithTimeout($url) {
               <pre class="whitespace-pre-wrap flex items-center w-full h-full">
                         
                           <code class=" rounded-md text-sm font-mono w-full h-full" >
-// Final secure wrapper function to fetch external content safely
-function safeFetch($url) {
-  // Check if the URL format is valid
-  if (!isValidURL($url)) {
-      return "Invalid URL format.";
-  }
-         
-  // Check if the host is safe and does not resolve to a private/internal IP
-  if (!isSafeHost($url)) {
-      return "Blocked: URL points to a restricted or internal address.";
-  }
-                          
-  return fetchWithTimeout($url);
-}                  
+/**
+* Function to encrypt sensitive data using AES-256 encryption.
+*
+* @param string $data The data to encrypt
+* @param string $key The encryption key
+* @return string Encrypted data in base64 format
+*/
+function encryptData($data, $key) {
+    $iv = random_bytes(16); // Generate a secure 16-byte IV (Initialization Vector)
+                               
+    // Encrypt the data using AES-256-CBC encryption
+    $ciphertext = openssl_encrypt($data, 'AES-256-CBC', $key, 0, $iv);
+                               
+    // Concatenate IV with encrypted data and encode in base64 for storage
+    return base64_encode($iv . $ciphertext);
+}
+                           
+// Fetch encryption key securely from environment variable
+$key = getenv('ENCRYPTION_KEY'); 
+                           
+// User password to be encrypted
+$password = "my_secure_password";
+                           
+// Encrypt the password before storing it in the database
+$encrypted_password = encryptData($password, $key);
+                           
+// Connect to the database securely
+$conn = new mysqli("localhost", "root", "", "test_db");
+                           
+// Store the encrypted password instead of plaintext
+$conn->query("INSERT INTO users (password) VALUES ('$encrypted_password')");
 
                           </code>
                         </pre>
@@ -638,14 +598,15 @@ function safeFetch($url) {
             <div
               class="flex flex-row items-start gap-2 justify-start mt-8 mb-20"
             >
-              <img src="/Assets/Images/robot.gif" class="h-16 w-auto" alt="" />
+              <img src="/Web-Nexus-Project/Assets/Images/robot.gif" class="h-16 w-auto" alt="" />
 
               <p class="preventionDescription mt-2 text-gray-600 italic">
-                This function ties together all safeguards before executing any
-                remote request from the backend. By combining URL validation, IP
-                filtering, timeouts, and redirect control, it forms a robust
-                defense against SSRF attacks. The server only fetches content
-                from safe, well-validated, and externally hosted sources.
+                This solution ensures that sensitive data is securely encrypted
+                before storage using AES-256 encryption, making it resistant to
+                unauthorized access. By incorporating an Initialization Vector
+                (IV), it also prevents attackers from detecting patterns in
+                encrypted data. Even if the database is breached, passwords
+                remain unreadable without the encryption key.
               </p>
             </div>
           </div>
@@ -658,7 +619,7 @@ function safeFetch($url) {
           class="relative group w-full bg-[#020617] shadow-md rounded-lg p-4 hover:bg-[#0F172A] transition-colors duration-500"
         >
           <summary
-            class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] cursor-pointer text-lg font-semibold flex justify-between items-center rounded-md p-2"
+            class="hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] cursor-pointer text-lg font-semibold flex justify-between items-center rounded-md p-2"
           >
             <div
               class="flex items-center justify-center ['Press_Start_2P'] text-white font-black text-3xl border-3 border-[#3E4B5E] rounded-full w-16 h-16 max-md:w-12 max-md:h-12 max-md:text-sm p-4 mx-2"
@@ -669,7 +630,7 @@ function safeFetch($url) {
             <div
               class="font-['Press_Start_2P'] text-xl font-black text-white max-md:text-sm"
             >
-              Secure Page
+              Securely Configured Page
             </div>
 
             <!-- DROPDOWN ARROW -->
@@ -720,7 +681,7 @@ function safeFetch($url) {
               <!-- MASCOT -->
 
               <img
-                src="/Assets/Images/mascot.gif"
+                src="/Web-Nexus-Project/Assets/Images/mascot.gif"
                 class="max-w-[50%] w-100 h-auto"
                 alt="mascot"
               />
@@ -728,20 +689,20 @@ function safeFetch($url) {
               <!-- BUTTON -->
 
               <div
-                onclick="window.location.href='ssrf_secure.php'"
-                class="yellowButton yellowButtonSecure hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] h-full py-10 w-full relative z-[100] max-w-[50%]"
+                onclick="window.location.href='secure_page.php'"
+                class="yellowButton yellowButtonSecure hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] h-full py-10 w-full relative z-[100] max-w-[50%]"
               >
                 <div
                   class="z-[100] flex flex-row h-full w-full items-center justify-center px-3 py-2"
                 >
                   <img
-                    src="/Assets/Images/playButton.png"
+                    src="/Web-Nexus-Project/Assets/Images/playButton.png"
                     class="z-[100] w-[20%] m-1 h-auto drop-shadow-[2px_2px_0px_rgb(221,170,16)]"
                     alt="Image 1"
                   />
 
                   <div
-                    class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] flex flex-col items-center justify-center"
+                    class="hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] flex flex-col items-center justify-center"
                   >
                     <div
                       class="z-[100] font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] font-black text-2xl max-md:text-sm max-sm:text-xs"
@@ -766,7 +727,7 @@ function safeFetch($url) {
           </div>
 
           <!-- <marquee behavior="scroll" direction="left" scrollamount="10">
-                    <img src="/Assets/Images/Ronit-User1.JPG" class="w-40 h-40 inline-block mx-4" alt="Image 1">
+                    <img src="/Web-Nexus-Project/Assets/Images/Ronit-User1.JPG" class="w-40 h-40 inline-block mx-4" alt="Image 1">
                 
                 </marquee> -->
         </details>
@@ -774,105 +735,59 @@ function safeFetch($url) {
     </div>
 
     <footer class="bg-gray-950 text-white py-16 mt-16">
-      <div
-        class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left"
-      >
-        <div>
-          <img
-            src="/Assets/Images/logo.svg"
-            alt="Web-Nexus Logo"
-            class="w-24 mx-auto md:mx-0"
-          />
-          <p class="mt-4 text-gray-400">Learn security the hands-on-way.</p>
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+            <div>
+                <img src="/Web-Nexus-Project/Assets/Images/logo.svg" alt="Web-Nexus Logo" class="w-24 mx-auto md:mx-0">
+                <p class="mt-4 text-gray-400">Learn security the hands-on-way.</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold text-blue-400">Company</h3>
+                <ul class="mt-4 space-y-2">
+                    <li><a href="/Web-Nexus-Project/Karan/About Us/contact us.php" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">About Us</a></li>
+                    <li><a href="#home" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Careers</a></li>
+                    <li><a href="#home" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold text-blue-400">Support</h3>
+                <ul class="mt-4 space-y-2">
+                    <li><a href="#home" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Help Center</a></li>
+                    <li><a href="/Web-Nexus-Project/Karan/About Us/contact us.php" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Contact</a></li>
+                    <li><a href="#home" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">FAQs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold text-blue-400">Follow Us</h3>
+                <div class="mt-4 flex justify-center md:justify-start space-x-4">
+                    <a href="#" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
+                        <img src="/Web-Nexus-Project/Assets/Images/github.png" alt="Github" class="w-8">
+                    </a>
+                    <a href="#" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
+                        <img src="/Web-Nexus-Project/Assets/Images/LinkedIn.jpg" alt="Linkedin" class="w-8">
+                    </a>
+                    <a href="#" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
+                        <img src="/Web-Nexus-Project/Assets/Images/twitter.jpg" alt="Twitter" class="w-8">
+                    </a>
+                </div>
+            </div>
         </div>
-        <div>
-          <h3 class="text-lg font-semibold text-blue-400">Company</h3>
-          <ul class="mt-4 space-y-2">
-            <li>
-              <a
-                href="/Karan/About Us/contact_us.html"
-                class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
-                >About Us</a
-              >
-            </li>
-            <li>
-              <a
-                href="#home"
-                class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
-                >Careers</a
-              >
-            </li>
-            <li>
-              <a
-                href="#home"
-                class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
-                >Blog</a
-              >
-            </li>
-          </ul>
+        <div class="mt-12 text-center text-gray-500">
+            &copy; 2025 Web-Nexus. All Rights Reserved.
         </div>
-        <div>
-          <h3 class="text-lg font-semibold text-blue-400">Support</h3>
-          <ul class="mt-4 space-y-2">
-            <li>
-              <a
-                href="#home"
-                class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
-                >Help Center</a
-              >
-            </li>
-            <li>
-              <a
-                href="/Karan/About Us/contact_us.html"
-                class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
-                >Contact</a
-              >
-            </li>
-            <li>
-              <a
-                href="#home"
-                class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
-                >FAQs</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-lg font-semibold text-blue-400">Follow Us</h3>
-          <div class="mt-4 flex justify-center md:justify-start space-x-4">
-            <a
-              href="#"
-              class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
-            >
-              <img src="/Assets/Images/github.png" alt="Github" class="w-8" />
-            </a>
-            <a
-              href="#"
-              class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
-            >
-              <img
-                src="/Assets/Images/LinkedIn.jpg"
-                alt="Linkedin"
-                class="w-8"
-              />
-            </a>
-            <a
-              href="#"
-              class="hover:cursor-[url('/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white"
-            >
-              <img src="/Assets/Images/twitter.jpg" alt="Twitter" class="w-8" />
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="mt-12 text-center text-gray-500">
-        &copy; 2025 Web-Nexus. All Rights Reserved.
-      </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="/Malay/Animations/vulnerabilityPageAnimation.js"></script>
-    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"
+      integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"
+      integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="/Web-Nexus-Project/Malay/Animations/vulnerabilityPageAnimation.js"></script>
   </body>
 </html>

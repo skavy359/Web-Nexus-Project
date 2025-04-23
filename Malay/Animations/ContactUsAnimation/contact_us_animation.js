@@ -68,6 +68,34 @@ gsap.from(".card", {
         trigger: ".card",
       // start: "top 80%",
     }
+});
+
+// CONTACT US HEADING ANIMATION
+gsap.from(".contactUsHeading", {
+    // delay: 0.8,
+    y: 70,
+    opacity: 0,
+    duration: 2.5,
+    stagger: 0.2,
+    ease: "power4.out",
+
+    scrollTrigger : {
+        trigger: ".contactUsHeading",
+        start: "top 80%",
+    }
+
+});
+
+// CONTACT US FORM ANIMATION
+gsap.from(".contactUsForm", {
+    opacity: 0,
+    duration: 2,
+    ease: "power4.out",
+
+    scrollTrigger : {
+        trigger: ".contactUsForm",
+        start: "top 80%",
+    }
 })
 
 //FOOTER ANIMATION

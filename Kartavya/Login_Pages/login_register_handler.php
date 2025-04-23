@@ -153,6 +153,7 @@ if (isset($_POST['register'])) {
 
 if (isset($_POST['login'])) {
     // Server-side validation
+    $_SESSION_['loggedin'] = true;
     $errors = [];
 
     // Validate email
@@ -199,20 +200,14 @@ if (isset($_POST['login'])) {
             if (password_verify($password, $user['password'])) {
                 // Regenerate session ID for security
                 session_regenerate_id(true);
-
+                $_SESSION['loggedin'] = true;
                 $_SESSION['name'] = $user['name'];
                 $_SESSION['email'] = $user['email'];
 
                 // Log successful login
                 logAuth("Successful login: $email");
 
-                // Redirect based on role if you still want to use this logic
-                // You may need to adjust this based on your database schema
-                if (isset($user['role']) && $user['role'] === 'admin') {
-                    header("Location: admin_page.php");
-                } else {
-                    header("Location: user_page.php");
-                }
+                header("Location: /Web-Nexus-Project/Kavy/Home/Home-Page.php");
                 exit();
             } else {
                 // Log failed login
