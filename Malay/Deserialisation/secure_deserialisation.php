@@ -109,7 +109,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
     elseif (isset($_POST["make_admin"]) && isset($_SESSION["secure_user_data"])) {
-        // This would normally involve proper authentication
         // For demo purposes only
         $serializedData = $_SESSION["secure_user_data"];
         $user = secure_unserialize($serializedData);
