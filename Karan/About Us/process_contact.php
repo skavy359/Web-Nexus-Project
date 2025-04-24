@@ -22,7 +22,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
     
-    if(!filter_var($phone, FILTER_VALIDATE_INT)){
+    if(strlen($phone) != 10){
+        $_SESSION['contact_error'] = "Phone number should be of 10 digits";
+        header("Location: contact us.php#contactForm");
+        exit;
+    }
+    
+    if(!filter_var($phone, FILTER_VALIDATE_INT) || strlen($phone) != 10){
         $_SESSION['contact_error'] = "Phone number should not contain any alphabets and special characters";
         header("Location: contact us.php#contactForm");
         exit;
