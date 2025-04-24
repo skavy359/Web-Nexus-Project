@@ -1,46 +1,38 @@
 <?php
 
-//session_start();
-//require_once 'config.php';
 include("config.php");
 session_start();
-// Initialize log file
 $log_file = 'auth_log.txt';
 
 // Rate limiting function
 function checkRateLimit($email)
 {
     $max_attempts = 5;
-    $lockout_time = 15 * 60; // 15 minutes in seconds
+    $lockout_time = 15 * 60;
 
     $rate_file = 'rate_limits.json';
     $current_time = time();
 
-    // Read existing rate limit data
     if (file_exists($rate_file)) {
         $limits = json_decode(file_get_contents($rate_file), true);
     } else {
         $limits = [];
     }
 
-    // Clean up expired entries
     foreach ($limits as $key => $data) {
         if ($current_time - $data['timestamp'] > $lockout_time) {
             unset($limits[$key]);
         }
     }
 
-    // Check if user is locked out
     if (isset($limits[$email]) && $limits[$email]['attempts'] >= $max_attempts) {
         if ($current_time - $limits[$email]['timestamp'] < $lockout_time) {
             $remaining = $lockout_time - ($current_time - $limits[$email]['timestamp']);
             return ['status' => false, 'message' => "Too many failed attempts. Please try again in " . ceil($remaining / 60) . " minutes."];
         } else {
-            // Reset attempts if lockout period has passed
             $limits[$email] = ['attempts' => 1, 'timestamp' => $current_time];
         }
     } else {
-        // Initialize or increment attempts
         if (!isset($limits[$email])) {
             $limits[$email] = ['attempts' => 1, 'timestamp' => $current_time];
         } else {
@@ -49,12 +41,10 @@ function checkRateLimit($email)
         }
     }
 
-    // Save updated rate limit data
     file_put_contents($rate_file, json_encode($limits));
     return ['status' => true];
 }
 
-// Log function
 function logAuth($message)
 {
     global $log_file;
@@ -63,9 +53,7 @@ function logAuth($message)
     file_put_contents($log_file, "[$timestamp] [$ip] $message" . PHP_EOL, FILE_APPEND);
 }
 
-// Server-side validation functions
-function validateEmail($email)
-{
+function validateEmail($email){
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         return false;
     }
@@ -84,13 +72,11 @@ if (isset($_POST['register'])) {
     // Server-side validation
     $errors = [];
 
-    // Validate name
     $name = trim($_POST['name']);
     if (empty($name)) {
         $errors[] = "Name is required";
     }
 
-    // Validate email
     $email = trim($_POST['email']);
     if (empty($email)) {
         $errors[] = "Email is required";
@@ -98,7 +84,6 @@ if (isset($_POST['register'])) {
         $errors[] = "Invalid email format";
     }
 
-    // Validate password
     $password = $_POST['password'];
     if (empty($password)) {
         $errors[] = "Password is required";
@@ -106,7 +91,6 @@ if (isset($_POST['register'])) {
         $errors[] = "Password must be at least 6 characters long";
     }
 
-    // If validation fails
     if (!empty($errors)) {
         $_SESSION['register_error'] = implode(', ', $errors);
         $_SESSION['active_form'] = 'register';
@@ -134,10 +118,8 @@ if (isset($_POST['register'])) {
                 throw new Exception("Database error during registration: " . $conn->error);
             }
 
-            // Log successful registration
             logAuth("User registered: $email");
 
-            // Set success message
             $_SESSION['register_success'] = 'Registration successful! You can now log in.';
             $_SESSION['active_form'] = 'login';
         }
@@ -152,11 +134,9 @@ if (isset($_POST['register'])) {
 }
 
 if (isset($_POST['login'])) {
-    // Server-side validation
-    $_SESSION_['loggedin'] = true;
+    $_SESSION['loggedin'] = true;
     $errors = [];
 
-    // Validate email
     $email = trim($_POST['email']);
     if (empty($email)) {
         $errors[] = "Email is required";
@@ -164,13 +144,11 @@ if (isset($_POST['login'])) {
         $errors[] = "Invalid email format";
     }
 
-    // Validate password
     $password = $_POST['password'];
     if (empty($password)) {
         $errors[] = "Password is required";
     }
 
-    // If validation fails
     if (!empty($errors)) {
         $_SESSION['login_error'] = implode(', ', $errors);
         $_SESSION['active_form'] = 'login';
@@ -178,7 +156,6 @@ if (isset($_POST['login'])) {
         exit();
     }
 
-    // Check rate limiting
     $rate_check = checkRateLimit($email);
     if (!$rate_check['status']) {
         $_SESSION['login_error'] = $rate_check['message'];
@@ -198,23 +175,19 @@ if (isset($_POST['login'])) {
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
             if (password_verify($password, $user['password'])) {
-                // Regenerate session ID for security
                 session_regenerate_id(true);
                 $_SESSION['loggedin'] = true;
                 $_SESSION['name'] = $user['name'];
                 $_SESSION['email'] = $user['email'];
 
-                // Log successful login
                 logAuth("Successful login: $email");
 
                 header("Location: /Web-Nexus-Project/Kavy/Home/Home-Page.php");
                 exit();
             } else {
-                // Log failed login
                 logAuth("Failed login (wrong password): $email");
             }
         } else {
-            // Log failed login
             logAuth("Failed login (email not found): $email");
         }
 

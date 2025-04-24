@@ -41,7 +41,7 @@ function isActiveForm($formName, $activeForm){
             <span class="text-2xl font-bold text-white font-['Press_Start_2P'] font-black drop-shadow-[5px_5px_0px_black] max-md:text-xs hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">Web-Nexus</span>
         </div>
 
-        <div class="flex items-center justify-between space-x-10 max-md:space-x-04 pr-75">
+        <div class="flex items-center justify-between space-x-10 max-md:space-x-04 pr-70">
             
             <a href="/Web-Nexus-Project/Kavy/Home/Home-Page.php#vulnerabilities" class="headerStuff hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a>
             <a href="/Web-Nexus-Project/Kavy/Home/Home-Page.php" class="headerStuff hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Home</a>
@@ -93,7 +93,7 @@ function isActiveForm($formName, $activeForm){
                 <input type="email" name="email" placeholder="Email" class="w-full p-2 mb-3 bg-[#1E293B] border border-[#3E4B5E] rounded-xl text-white placeholder:pl-2 hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">
                 <input type="password" name="password" placeholder="Password" class="w-full p-2 mb-3 bg-[#1E293B] border border-[#3E4B5E] rounded-xl text-white placeholder:pl-2 hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">
                 <button type="submit" name="register"
-                    class="w-full bg-green-600 hover:bg-green-700 py-2 text-xl rounded-lg text-white font-semibold rounded mt-2 transition-all hover:shadow-xl hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">
+                    class="w-full bg-green-600 hover:bg-green-700 py-2 text-xl rounded-lg text-white font-semibold mt-2 transition-all hover:shadow-xl hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">
                     Register
                 </button>
                 <p class="text-sm mt-4 text-green-200">Already have an account?
@@ -160,11 +160,8 @@ function isActiveForm($formName, $activeForm){
             document.getElementById(id).classList.remove('hidden');
         }
 
-        // Add this script at the end of your login_page.php file, before the closing </body> tag
-
         // Form validation script
         document.addEventListener('DOMContentLoaded', function() {
-            // Get all forms on the page
             const loginForm = document.querySelector('#login-form form');
             const registerForm = document.querySelector('#register-box form');
             
@@ -175,11 +172,9 @@ function isActiveForm($formName, $activeForm){
                     const password = this.querySelector('input[name="password"]').value.trim();
                     let isValid = true;
                     
-                    // Clear previous error messages
                     const existingErrors = this.querySelectorAll('.validation-error');
                     existingErrors.forEach(el => el.remove());
                     
-                    // Email validation
                     if (!email) {
                         isValid = false;
                         showError(this.querySelector('input[name="email"]'), 'Email is required');
@@ -188,7 +183,6 @@ function isActiveForm($formName, $activeForm){
                         showError(this.querySelector('input[name="email"]'), 'Please enter a valid email');
                     }
                     
-                    // Password validation
                     if (!password) {
                         isValid = false;
                         showError(this.querySelector('input[name="password"]'), 'Password is required');
@@ -200,7 +194,6 @@ function isActiveForm($formName, $activeForm){
                 });
             }
             
-            // Register form validation
             if (registerForm) {
                 registerForm.addEventListener('submit', function(e) {
                     const name = this.querySelector('input[name="name"]').value.trim();
@@ -212,13 +205,11 @@ function isActiveForm($formName, $activeForm){
                     const existingErrors = this.querySelectorAll('.validation-error');
                     existingErrors.forEach(el => el.remove());
                     
-                    // Name validation
                     if (!name) {
                         isValid = false;
                         showError(this.querySelector('input[name="name"]'), 'Full name is required');
                     }
                     
-                    // Email validation
                     if (!email) {
                         isValid = false;
                         showError(this.querySelector('input[name="email"]'), 'Email is required');
@@ -227,7 +218,6 @@ function isActiveForm($formName, $activeForm){
                         showError(this.querySelector('input[name="email"]'), 'Please enter a valid email');
                     }
                     
-                    // Password validation
                     if (!password) {
                         isValid = false;
                         showError(this.querySelector('input[name="password"]'), 'Password is required');
@@ -242,17 +232,14 @@ function isActiveForm($formName, $activeForm){
                 });
             }
             
-            // Helper functions
             function showError(inputElement, message) {
                 const errorElement = document.createElement('p');
                 errorElement.classList.add('validation-error', 'text-red-400', 'text-sm', 'mt-1');
                 errorElement.textContent = message;
                 inputElement.parentNode.insertBefore(errorElement, inputElement.nextSibling);
                 
-                // Highlight the input field
                 inputElement.classList.add('border-red-500');
                 
-                // Remove highlight when user types again
                 inputElement.addEventListener('input', function() {
                     this.classList.remove('border-red-500');
                     const error = this.parentNode.querySelector('.validation-error');
