@@ -38,3 +38,6 @@
 [2025-04-21 16:37:36] [::1] User registered: k1@g.com
 [2025-04-21 16:37:49] [::1] Successful login: k1@g.com
 [2025-04-23 08:15:04] [::1] Successful login: kartavya@gmail.com
+[2025-04-23 12:13:13] [::1] User registered: k1@g.com
+[2025-04-23 12:13:37] [::1] Successful login: k1@g.com
+[2025-04-23 12:14:08] [::1] Successful login: karanattri022@gmail.com

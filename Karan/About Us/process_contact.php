@@ -22,6 +22,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
     
+    if(!filter_var($phone, FILTER_VALIDATE_INT)){
+        $_SESSION['contact_error'] = "Phone number should not contain any alphabets and special characters";
+        header("Location: contact us.php#contactForm");
+        exit;
+    }
     // Prepare email content
     $to = "karanattri022@gmail.com";
     $subject = "New Contact Form Submission from Web-Nexus";
