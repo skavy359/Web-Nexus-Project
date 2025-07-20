@@ -33,7 +33,7 @@ $logged_in = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
         <div class="flex items-center justify-between space-x-10 max-md:space-x-4">
             <a href="/Web-Nexus-Project/Kavy/Home/Home-Page.php#vulnerabilities" class="headerStuff hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a>
             <a href="/Web-Nexus-Project/Kavy/Home/Home-Page.php" class="headerStuff hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Home</a>
-            <a href="/Web-Nexus-Project/Karan/About Us/contact us.php" class="headerStuff hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact Us</a>
+            <a href="/Web-Nexus-Project/About Us/contact us.php" class="headerStuff hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact Us</a>
         </div>
 
         <div class="hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] flex justify-center items-center">
@@ -71,10 +71,10 @@ $logged_in = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
                     </div>
                 </div>
                 <div class="hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] flex justify-center items-center">
-                    <div onclick="window.location.href='/Web-Nexus-Project/Karan/About Us/contact us.php'" class="yellowButton yellowButtonHeader hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">
+                    <div onclick="window.location.href='/Web-Nexus-Project/About Us/contact us.php'" class="yellowButton yellowButtonHeader hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">
                         <div class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 mr-3 rounded-md border-3 border-[rgb(221,170,16)] transition-colors duration-500">
                             <div class="font-['Press_Start_2P'] p-1 drop-shadow-[2px_2px_0px_rgb(221,170,16)] text-black font-thin text-sm max-md:text-[8px]">
-                                <a href="/Web-Nexus-Project/Karan/About Us/contact us.php" class="hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">Learn More</a>
+                                <a href="/Web-Nexus-Project/About Us/contact us.php" class="hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">Learn More</a>
                             </div>
                             <div class="absolute w-[105%] h-[115%] bg-[rgb(221,170,16)] hover:bg-yellow-600 rounded-md  transition-colors duration-500 -z-1 top-[1%] left-0"></div>
                         </div>
@@ -89,7 +89,7 @@ $logged_in = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
         <h2 class="anotherHeading text-4xl font-bold">Explore and Learn</h2>
         <p class="anotherHeading mt-4 font-['Lexend'] font-bold text-lg text-gray-300">Dive deep into Security Vulnerabilities and hands-on exploitation</p>
         <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 px-6 auto-rows-fr">
-            <a href="/Web-Nexus-Project/Karan/SSRF/index.php" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">
+            <a href="/Web-Nexus-Project/vulnerabilites/SSRF/index.php" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">
                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
                     <img src="/Web-Nexus-Project/Assets/Images/Fish.gif" alt="Broken Access Control" class="w-full h-40 object-cover rounded-md">
                     <h3 class="text-lg font-semibold mt-5">Server Side Request Forgery</h3>
@@ -109,7 +109,7 @@ $logged_in = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
                     </div>
                 </div>
             </a>
-            <a href="/Web-Nexus-Project/Karan/Cryptographic Failures/index.php" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">
+            <a href="/Web-Nexus-Project/vulnerabilities/Cryptographic Failures/index.php" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">
                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
                     <img src="/Web-Nexus-Project/Assets/Images/lofi.gif" alt="Crypto Failures" class="w-full h-40 object-cover rounded-md">
                     <h3 class="text-lg font-semibold mt-5">Cryptographic Failures</h3>
@@ -241,7 +241,7 @@ $logged_in = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
             <div>
                 <h3 class="text-lg font-semibold text-blue-400">Company</h3>
                 <ul class="mt-4 space-y-2">
-                    <li><a href="/Web-Nexus-Project/Karan/About Us/contact us.php" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">About Us</a></li>
+                    <li><a href="/Web-Nexus-Project/About Us/contact us.php" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">About Us</a></li>
                     <li><a href="#home" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Careers</a></li>
                     <li><a href="#home" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Blog</a></li>
                 </ul>
@@ -250,7 +250,7 @@ $logged_in = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
                 <h3 class="text-lg font-semibold text-blue-400">Support</h3>
                 <ul class="mt-4 space-y-2">
                     <li><a href="#home" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Help Center</a></li>
-                    <li><a href="/Web-Nexus-Project/Karan/About Us/contact us.php" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Contact</a></li>
+                    <li><a href="/Web-Nexus-Project/About Us/contact us.php" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Contact</a></li>
                     <li><a href="#home" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">FAQs</a></li>
                 </ul>
             </div>
