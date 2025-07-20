@@ -46,10 +46,12 @@ Welcome to our interactive learning platform designed to **explore, exploit, and
 ---
 
 ## 📢 Disclaimer
+
 This platform is intended strictly for educational purposes only.
 Do not deploy intentionally vulnerable code in production environments.
 Always adhere to ethical hacking principles and responsible disclosure practices.
 
 ## 🌟 Support & Contribution
+
 If you found this project helpful, consider leaving a ⭐ on the repository and sharing it with others in the security and developer communities.
 Together, let's make the web a safer place—one vulnerability at a time.
