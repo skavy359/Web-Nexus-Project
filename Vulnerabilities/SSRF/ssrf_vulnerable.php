@@ -78,7 +78,7 @@ if (isset($_GET['url'])) {
             <div onclick="window.location.href='index.php'" class="yellowButton yellowButtonHeader hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer]">
                 <div class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 mr-3 rounded-md border-3 border-[rgb(221,170,16)] transition-colors duration-500">
                     <div class="font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] text-black font-thin text-sm max-md:text-[8px]">
-                        <a href="../../vulnerabilites/SSRF/index.php">Back to Vulnerability</a>
+                        <a href="../../Vulnerabilites/SSRF/index.php">Back to Vulnerability</a>
                     </div>
                     <div class="absolute w-[102%] h-[115%] bg-[rgb(221,170,16)] hover:bg-yellow-600 rounded-md transition-colors duration-500 -z-1 top-[1%] left-0"></div>
                 </div>

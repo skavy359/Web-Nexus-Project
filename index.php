@@ -88,7 +88,7 @@ $logged_in = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
         <h2 class="anotherHeading text-4xl font-bold">Explore and Learn</h2>
         <p class="anotherHeading mt-4 font-['Lexend'] font-bold text-lg text-gray-300">Dive deep into Security Vulnerabilities and hands-on exploitation</p>
         <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 px-6 auto-rows-fr">
-            <a href="vulnerabilities/SSRF/index.php" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('Assets/Images/cursor_02.png'),_pointer]">
+            <a href="Vulnerabilities/SSRF/index.php" class="vulnerabilityTile block transform transition-transform duration-300 hover:scale-105 cursor-[url('Assets/Images/cursor_02.png'),_pointer]">
                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full">
                     <img src="Assets/Images/Fish.gif" alt="Broken Access Control" class="w-full h-40 object-cover rounded-md">
                     <h3 class="text-lg font-semibold mt-5">Server Side Request Forgery</h3>
