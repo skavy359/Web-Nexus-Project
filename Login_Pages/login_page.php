@@ -33,26 +33,26 @@ function isActiveForm($formName, $activeForm){
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="bg-[#020617] text-white font-['Lexend'] selection:text-yellow-400 cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_01.png'),_auto]">
+<body class="bg-[#020617] text-white font-['Lexend'] selection:text-yellow-400 cursor-[url('../Assets/Images/cursor_01.png'),_auto]">
     <!-- HEADER -->
     <nav class="fixed z-[999] top-0 left-0 h-[10vh] w-screen flex items-center justify-between p-4 bg-[#020617] border-b-2 border-[#3E4B5E] max-md:p-0">
         <div class="headerStuff flex items-center space-x-3 max-md:space-x-1">
-            <img src="/Web-Nexus-Project/Assets/Images/logo.svg" alt="logo" class="w-12 max-md:w-8">
-            <span class="text-2xl font-bold text-white font-['Press_Start_2P'] font-black drop-shadow-[5px_5px_0px_black] max-md:text-xs hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">Web-Nexus</span>
+            <img src="../Assets/Images/logo.svg" alt="logo" class="w-12 max-md:w-8">
+            <span class="text-2xl font-bold text-white font-['Press_Start_2P'] font-black drop-shadow-[5px_5px_0px_black] max-md:text-xs hover:cursor-[url('../Assets/Images/cursor_02.png'),_pointer]">Web-Nexus</span>
         </div>
 
         <div class="flex items-center justify-between space-x-10 max-md:space-x-04 pr-70">
             
-            <a href="/Web-Nexus-Project/Home/Home-Page.php#vulnerabilities" class="headerStuff hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a>
-            <a href="/Web-Nexus-Project/Home/Home-Page.php" class="headerStuff hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Home</a>
-            <a href="/Web-Nexus-Project/About Us/contact us.php" class="headerStuff hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact Us</a>
+            <a href="../index.php#vulnerabilities" class="headerStuff hover:cursor-[url('../Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a>
+            <a href="../index.php" class="headerStuff hover:cursor-[url('../Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Home</a>
+            <a href="../About Us/contact us.php" class="headerStuff hover:cursor-[url('../Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact Us</a>
         </div>
 
         <div
             id="menu-btn"
-            class="hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] md:hidden focus:outline-none"
+            class="hover:cursor-[url('../Assets/Images/cursor_02.png'),_pointer] md:hidden focus:outline-none"
         >
-            <img src="/Web-Nexus-Project/Assets/Images/menu.svg" alt="menu" class="w-8" />
+            <img src="../Assets/Images/menu.svg" alt="menu" class="w-8" />
         </div>
 
         <div class="flex items-center justify-center">
@@ -72,12 +72,12 @@ function isActiveForm($formName, $activeForm){
                 <input type="email" name="email" placeholder="Email" class="w-full p-3 mb-3 bg-[#1E293B] border border-[#3E4B5E] rounded-xl text-white placeholder:pl-2 ">
                 <input type="password" name="password" placeholder="Password" class="w-full p-3 mb-3 bg-[#1E293B] border border-[#3E4B5E] rounded-xl text-white placeholder:pl-2 ">
                 <button type="submit" name="login"
-                    class="w-full bg-green-600 hover:bg-green-700 py-2 text-xl rounded-lg text-white font-semibold rounded mt-2 transition-all hover:shadow-xl hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">
+                    class="w-full bg-green-600 hover:bg-green-700 py-2 text-xl rounded-lg text-white font-semibold rounded mt-2 transition-all hover:shadow-xl hover:cursor-[url('../Assets/Images/cursor_02.png'),_pointer]">
                     Sign In
                 </button>
                 <p class="text-sm mt-4 text-green-200">Don’t have an account?
                     <a href="#" onclick="showform('register-box')"
-                        class="text-green-400 underline hover:text-green-300 hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">
+                        class="text-green-400 underline hover:text-green-300 hover:cursor-[url('../Assets/Images/cursor_02.png'),_pointer]">
                         Register
                     </a>
                 </p>
@@ -89,16 +89,16 @@ function isActiveForm($formName, $activeForm){
             <form action="login_register_handler.php" method="POST">
                 <h2 class="text-xl font-bold mb-4 text-green-400 font-['Press_Start_2P']">📝 Register</h2>
                 <?= showError($errors['register']); ?>
-                <input type="text" name="name" placeholder="Full Name" class="w-full p-2 mb-3 bg-[#1E293B] border border-[#3E4B5E] rounded-xl text-white placeholder:pl-2 hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">
-                <input type="email" name="email" placeholder="Email" class="w-full p-2 mb-3 bg-[#1E293B] border border-[#3E4B5E] rounded-xl text-white placeholder:pl-2 hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">
-                <input type="password" name="password" placeholder="Password" class="w-full p-2 mb-3 bg-[#1E293B] border border-[#3E4B5E] rounded-xl text-white placeholder:pl-2 hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">
+                <input type="text" name="name" placeholder="Full Name" class="w-full p-2 mb-3 bg-[#1E293B] border border-[#3E4B5E] rounded-xl text-white placeholder:pl-2 hover:cursor-[url('../Assets/Images/cursor_02.png'),_pointer]">
+                <input type="email" name="email" placeholder="Email" class="w-full p-2 mb-3 bg-[#1E293B] border border-[#3E4B5E] rounded-xl text-white placeholder:pl-2 hover:cursor-[url('../Assets/Images/cursor_02.png'),_pointer]">
+                <input type="password" name="password" placeholder="Password" class="w-full p-2 mb-3 bg-[#1E293B] border border-[#3E4B5E] rounded-xl text-white placeholder:pl-2 hover:cursor-[url('../Assets/Images/cursor_02.png'),_pointer]">
                 <button type="submit" name="register"
-                    class="w-full bg-green-600 hover:bg-green-700 py-2 text-xl rounded-lg text-white font-semibold mt-2 transition-all hover:shadow-xl hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">
+                    class="w-full bg-green-600 hover:bg-green-700 py-2 text-xl rounded-lg text-white font-semibold mt-2 transition-all hover:shadow-xl hover:cursor-[url('../Assets/Images/cursor_02.png'),_pointer]">
                     Register
                 </button>
                 <p class="text-sm mt-4 text-green-200">Already have an account?
                     <a href="#" onclick="showform('login-form')"
-                        class="text-green-400 underline hover:text-green-300 hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">Login</a>
+                        class="text-green-400 underline hover:text-green-300 hover:cursor-[url('../Assets/Images/cursor_02.png'),_pointer]">Login</a>
                 </p>
             </form>
         </div>
@@ -110,36 +110,36 @@ function isActiveForm($formName, $activeForm){
     <footer class="bg-gray-950 text-white py-16 mt-16">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
             <div>
-                <img src="/Web-Nexus-Project/Assets/Images/logo.svg" alt="Web-Nexus Logo" class="w-24 mx-auto md:mx-0">
+                <img src="../Assets/Images/logo.svg" alt="Web-Nexus Logo" class="w-24 mx-auto md:mx-0">
                 <p class="mt-4 text-gray-400">Learn security the hands-on-way.</p>
             </div>
             <div>
                 <h3 class="text-lg font-semibold text-blue-400">Company</h3>
                 <ul class="mt-4 space-y-2">
-                    <li><a href="/Web-Nexus-Project/About Us/contact_us.php" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">About Us</a></li>
-                    <li><a href="#home" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Careers</a></li>
-                    <li><a href="#home" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Blog</a></li>
+                    <li><a href="../About Us/contact_us.php" class=" hover:cursor-[url('../Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">About Us</a></li>
+                    <li><a href="#home" class=" hover:cursor-[url('../Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Careers</a></li>
+                    <li><a href="#home" class=" hover:cursor-[url('../Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Blog</a></li>
                 </ul>
             </div>
             <div>
                 <h3 class="text-lg font-semibold text-blue-400">Support</h3>
                 <ul class="mt-4 space-y-2">
-                    <li><a href="#home" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Help Center</a></li>
-                    <li><a href="/Web-Nexus-Project/About Us/contact_us.php" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Contact</a></li>
-                    <li><a href="#home" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">FAQs</a></li>
+                    <li><a href="#home" class=" hover:cursor-[url('../Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Help Center</a></li>
+                    <li><a href="../About Us/contact_us.php" class=" hover:cursor-[url('../Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Contact</a></li>
+                    <li><a href="#home" class=" hover:cursor-[url('../Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">FAQs</a></li>
                 </ul>
             </div>
             <div>
                 <h3 class="text-lg font-semibold text-blue-400">Follow Us</h3>
                 <div class="mt-4 flex justify-center md:justify-start space-x-4">
-                    <a href="#" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
-                        <img src="/Web-Nexus-Project/Assets/Images/github.png" alt="Github" class="w-8">
+                    <a href="#" class=" hover:cursor-[url('../Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
+                        <img src="../Assets/Images/github.png" alt="Github" class="w-8">
                     </a>
-                    <a href="#" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
-                        <img src="/Web-Nexus-Project/Assets/Images/LinkedIn.jpg" alt="Linkedin" class="w-8">
+                    <a href="#" class=" hover:cursor-[url('../Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
+                        <img src="../Assets/Images/LinkedIn.jpg" alt="Linkedin" class="w-8">
                     </a>
-                    <a href="#" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
-                        <img src="/Web-Nexus-Project/Assets/Images/twitter.jpg" alt="Twitter" class="w-8">
+                    <a href="#" class=" hover:cursor-[url('../Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
+                        <img src="../Assets/Images/twitter.jpg" alt="Twitter" class="w-8">
                     </a>
                 </div>
             </div>
@@ -151,7 +151,7 @@ function isActiveForm($formName, $activeForm){
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="/Web-Nexus-Project/Assets/Animations/MisconfigAnimation/vulnerable_login_animation.js"></script>
+    <script src="../Assets/Animations/MisconfigAnimation/vulnerable_login_animation.js"></script>
 
     <script>
         function showform(id) {

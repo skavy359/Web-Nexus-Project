@@ -2,7 +2,7 @@
 
 session_start();
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header("Location: /Web-Nexus-Project/Login_Pages/login_page.php");
+    header("Location: ../../Login_Pages/login_page.php");
     exit;
 }
 

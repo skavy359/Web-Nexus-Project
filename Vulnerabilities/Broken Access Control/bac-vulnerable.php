@@ -3,7 +3,7 @@
 session_start();
 
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header("Location: /Web-Nexus-Project/Login_Pages/login_page.php");
+    header("Location: ../../Login_Pages/login_page.php");
     exit;
 }
 
@@ -150,25 +150,25 @@ if (isset($_GET['doc_id'])) {
         });
     </script>
 </head>
-<body class="bg-[#020617] text-white font-['Lexend'] cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_01.png'),_auto]">
+<body class="bg-[#020617] text-white font-['Lexend'] cursor-[url('../../Assets/Images/cursor_01.png'),_auto]">
     <!-- HEADER -->
     <nav class="fixed z-[999] top-0 left-0 h-[10vh] w-screen flex items-center justify-between p-4 bg-[#020617] border-b-2 border-[#3E4B5E] max-md:p-0">
         <div class="headerStuff flex items-center space-x-3 max-md:space-x-1">
-            <img src="/Web-Nexus-Project/Assets/Images/logo.svg" alt="logo" class="w-12 max-md:w-8">
-            <span class="text-2xl font-bold text-white font-['Press_Start_2P'] font-black drop-shadow-[5px_5px_0px_black] max-md:text-xs hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">Web-Nexus</span>
+            <img src="../../Assets/Images/logo.svg" alt="logo" class="w-12 max-md:w-8">
+            <span class="text-2xl font-bold text-white font-['Press_Start_2P'] font-black drop-shadow-[5px_5px_0px_black] max-md:text-xs hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer]">Web-Nexus</span>
         </div>
 
         <div class="flex items-center justify-between space-x-10 max-md:space-x-4">
-            <a href="/Web-Nexus-Project/Home/Home-Page.php#vulnerabilities" class="headerStuff hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a>
-            <a href="/Web-Nexus-Project/Home/Home-Page.php" class="headerStuff hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Home</a>
-            <a href="/Web-Nexus-Project/About Us/contact us.php" class="headerStuff hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact Us</a>
+            <a href="../../index.php#vulnerabilities" class="headerStuff hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a>
+            <a href="../../index.php" class="headerStuff hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Home</a>
+            <a href="../../About Us/contact us.php" class="headerStuff hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact Us</a>
         </div>
 
-        <div class="hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] flex justify-center items-center">
-            <div onclick="window.location.href='Broken-access-control.php'" class="yellowButton yellowButtonHeader hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">
+        <div class="hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] flex justify-center items-center">
+            <div onclick="window.location.href='Broken-access-control.php'" class="yellowButton yellowButtonHeader hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer]">
                 <div class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 mr-3 rounded-md border-3 border-[rgb(221,170,16)] transition-colors duration-500">
                     <div class="font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] text-black font-thin text-sm max-md:text-[8px]">
-                        <a href="/Web-Nexus-Project/Vulnerabilities/Broken Access Control/Broken-access-control.php">Back to Vulnerability</a>
+                        <a href="../../Vulnerabilities/Broken Access Control/Broken-access-control.php">Back to Vulnerability</a>
                     </div>
                     <div class="absolute w-[102%] h-[115%] bg-[rgb(221,170,16)] hover:bg-yellow-600 rounded-md transition-colors duration-500 -z-1 top-[1%] left-0"></div>
                 </div>
@@ -203,7 +203,7 @@ if (isset($_GET['doc_id'])) {
                             <input type="password" name="password" id="password" class="w-full p-3 bg-[#1E293B] border border-[#3E4B5E] rounded-md text-white focus:outline-none focus:ring-2 focus:ring-yellow-300">
                             <p class="text-xs text-gray-400 mt-1">Default passwords: admin123, password123, mary2023</p>
                         </div>
-                        <button type="submit" name="login" class="relative bg-blue-500 hover:bg-blue-600 w-full px-4 py-3 rounded-md border-2 border-[rgb(59,130,246)] transition-colors duration-500 group hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">
+                        <button type="submit" name="login" class="relative bg-blue-500 hover:bg-blue-600 w-full px-4 py-3 rounded-md border-2 border-[rgb(59,130,246)] transition-colors duration-500 group hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer]">
                             <div class="font-['Press_Start_2P'] text-black group-hover:text-white drop-shadow-[2px_2px_0px_rgb(59,130,246)] text-sm">Login</div>
                             <div class="absolute w-[101%] h-[110%] bg-[rgb(59,130,246)] hover:bg-blue-600 rounded-md transition-colors duration-500 -z-10 top-[2%] left-0"></div>
                         </button>
@@ -247,7 +247,7 @@ if (isset($_GET['doc_id'])) {
                                 <input type="text" name="profile_id" id="profile_id" placeholder="Enter profile ID (e.g., 1001)" class="w-full p-3 bg-[#1E293B] border border-[#3E4B5E] rounded-md text-white focus:outline-none focus:ring-2 focus:ring-yellow-300">
                                 <p class="text-xs text-red-400 mt-1">Broken Access Control: Direct object reference with no authorization checks</p>
                             </div>
-                            <button type="submit" class="relative bg-red-500 hover:bg-red-600 w-full px-4 py-2 rounded-md border-2 border-[rgb(239,68,68)] transition-colors duration-500 group hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">
+                            <button type="submit" class="relative bg-red-500 hover:bg-red-600 w-full px-4 py-2 rounded-md border-2 border-[rgb(239,68,68)] transition-colors duration-500 group hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer]">
                                 <div class="font-['Press_Start_2P'] text-black group-hover:text-white drop-shadow-[2px_2px_0px_rgb(239,68,68)] text-xs">View Profile</div>
                                 <div class="absolute w-[101%] h-[115%] bg-[rgb(239,68,68)] hover:bg-red-600 rounded-md transition-colors duration-500 -z-10 top-[2%] left-0"></div>
                             </button>
@@ -304,7 +304,7 @@ if (isset($_GET['doc_id'])) {
                     <div class="border border-yellow-500 bg-yellow-900/30 rounded-md p-4 mb-6">
                         <h4 class="font-bold text-yellow-400 mb-2">Access Control Bypass Demonstration</h4>
                         <p class="text-gray-300 mb-2">Try accessing the admin panel by adding <span class="font-mono text-yellow-300">?role=admin</span> to the URL, even if you're logged in as a regular user.</p>
-                        <a href="?role=admin" class="text-blue-400 hover:text-blue-300 hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">Click here to test the vulnerability</a>
+                        <a href="?role=admin" class="text-blue-400 hover:text-blue-300 hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer]">Click here to test the vulnerability</a>
                         <p class="text-xs text-yellow-400 mt-2">This demonstrates how client-side access control can be easily bypassed.</p>
                     </div>
                     <?php endif; ?>
@@ -347,12 +347,12 @@ if (isset($_GET['doc_id'])) {
                     <?php endif; ?>
 
                     <div class="mt-6">
-                        <a href="?logout=1" class="text-blue-400 hover:text-blue-300 hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">Logout</a>
+                        <a href="?logout=1" class="text-blue-400 hover:text-blue-300 hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer]">Logout</a>
                     </div>
                 </div>
                 <?php endif; ?>
                 <div class="mt-4 text-center">
-                    <a href="bac-secure.php" class="text-blue-400 hover:text-blue-300 text-sm hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">Try the secure version</a>
+                    <a href="bac-secure.php" class="text-blue-400 hover:text-blue-300 text-sm hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer]">Try the secure version</a>
                 </div>
             </div>
 
@@ -453,36 +453,36 @@ if (isset($_GET['doc_id'])) {
     <footer class="bg-gray-950 text-white py-16 mt-16">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
             <div>
-                <img src="/Web-Nexus-Project/Assets/Images/logo.svg" alt="Web-Nexus Logo" class="w-24 mx-auto md:mx-0">
+                <img src="../../Assets/Images/logo.svg" alt="Web-Nexus Logo" class="w-24 mx-auto md:mx-0">
                 <p class="mt-4 text-gray-400">Learn security the hands-on-way.</p>
             </div>
             <div>
                 <h3 class="text-lg font-semibold text-blue-400">Company</h3>
                 <ul class="mt-4 space-y-2">
-                    <li><a href="/Web-Nexus-Project/About Us/contact us.php" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">About Us</a></li>
-                    <li><a href="#" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Careers</a></li>
-                    <li><a href="#" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Blog</a></li>
+                    <li><a href="../../About Us/contact us.php" class=" hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">About Us</a></li>
+                    <li><a href="#" class=" hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Careers</a></li>
+                    <li><a href="#" class=" hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Blog</a></li>
                 </ul>
             </div>
             <div>
                 <h3 class="text-lg font-semibold text-blue-400">Support</h3>
                 <ul class="mt-4 space-y-2">
-                    <li><a href="/Web-Nexus-Project/About Us/contact us.php" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Help Center</a></li>
-                    <li><a href="/Web-Nexus-Project/About Us/contact us.php" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Contact</a></li>
-                    <li><a href="#" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">FAQs</a></li>
+                    <li><a href="../../About Us/contact us.php" class=" hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Help Center</a></li>
+                    <li><a href="../../About Us/contact us.php" class=" hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Contact</a></li>
+                    <li><a href="#" class=" hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">FAQs</a></li>
                 </ul>
             </div>
             <div>
                 <h3 class="text-lg font-semibold text-blue-400">Follow Us</h3>
                 <div class="mt-4 flex justify-center md:justify-start space-x-4">
-                    <a href="#" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
-                        <img src="/Web-Nexus-Project/Assets/Images/github.png" alt="Github" class="w-8">
+                    <a href="#" class=" hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
+                        <img src="../../Assets/Images/github.png" alt="Github" class="w-8">
                     </a>
-                    <a href="#" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
-                        <img src="/Web-Nexus-Project/Assets/Images/LinkedIn.jpg" alt="Linkedin" class="w-8">
+                    <a href="#" class=" hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
+                        <img src="../../Assets/Images/LinkedIn.jpg" alt="Linkedin" class="w-8">
                     </a>
-                    <a href="#" class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
-                        <img src="/Web-Nexus-Project/Assets/Images/twitter.jpg" alt="Twitter" class="w-8">
+                    <a href="#" class=" hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
+                        <img src="../../Assets/Images/twitter.jpg" alt="Twitter" class="w-8">
                     </a>
                 </div>
             </div>
@@ -498,7 +498,7 @@ if (isset($_GET['doc_id'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"
         integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="/Web-Nexus-Project/Assets/Animations/DeserialisationAnimation/vulnerable_deserialisation_animation.js"></script>
+    <script src="../../Assets/Animations/DeserialisationAnimation/vulnerable_deserialisation_animation.js"></script>
 
 </body>
 </html>

@@ -1854,10 +1854,10 @@
     }
   }
   .custom-cursor {
-    cursor: url('/Web-Nexus-Project/Assets/Images/cursor_01.png'), auto;
+    cursor: url('../Assets/Images/cursor_01.png'), auto;
   }
   .responsive-bg {
-    background-image: url('/Web-Nexus-Project/Assets/Images/space-bg.svg');
+    background-image: url('../Assets/Images/space-bg.svg');
     background-size: 120%;
   }
   
@@ -1879,7 +1879,7 @@
     }
   }
   .special-area{
-    cursor: url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),auto;
+    cursor: url('../Assets/Images/cursor_02.png'),auto;
   }
 }
 @property --tw-translate-x {

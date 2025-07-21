@@ -182,7 +182,7 @@ if (isset($_POST['login'])) {
 
                 logAuth("Successful login: $email");
 
-                header("Location: /Web-Nexus-Project/Home/Home-Page.php");
+                header("Location: ../index.php");
                 exit();
             } else {
                 logAuth("Failed login (wrong password): $email");

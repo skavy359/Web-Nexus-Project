@@ -3,7 +3,7 @@
 session_start();
 session_unset();
 session_destroy();
-header("Location: /Web-Nexus-Project/Home/Home-Page.php");
+header("Location: ../index.php");
 exit();
 
 ?>

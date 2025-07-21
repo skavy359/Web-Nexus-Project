@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header("Location: /Web-Nexus-Project/Login_Pages/login_page.php");
+    header("Location: ../../Login_Pages/login_page.php");
     exit;
 }
 ?>
@@ -37,26 +37,26 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 
 </head>
 
-<body class="bg-[#020617] font-['Lexend'] selection:text-yellow-400 cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_01.png'),_auto]">
+<body class="bg-[#020617] font-['Lexend'] selection:text-yellow-400 cursor-[url('../../Assets/Images/cursor_01.png'),_auto]">
 
     <!-- HEADER -->
     <nav class="fixed z-[999] top-0 left-0 h-[10vh] w-screen flex items-center justify-between p-4 bg-[#020617] border-b-2 border-[#3E4B5E] max-md:p-0">
         <div class="headerStuff flex items-center space-x-3 max-md:space-x-1">
-            <img src="/Web-Nexus-Project/Assets/Images/logo.svg" alt="logo" class="w-12 max-md:w-8">
-            <span class="text-2xl font-bold text-white font-['Press_Start_2P'] font-black drop-shadow-[5px_5px_0px_black] max-md:text-xs hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">Web-Nexus</span>
+            <img src="../../Assets/Images/logo.svg" alt="logo" class="w-12 max-md:w-8">
+            <span class="text-2xl font-bold text-white font-['Press_Start_2P'] font-black drop-shadow-[5px_5px_0px_black] max-md:text-xs hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer]">Web-Nexus</span>
         </div>
 
         <div class="flex items-center justify-between space-x-10 max-md:space-x-4">
-            <a href="/Web-Nexus-Project/Home/Home-Page.php#vulnerabilities" class="headerStuff hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a>
-            <a href="/Web-Nexus-Project/Home/Home-Page.php" class="headerStuff hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Home</a>
-            <a href="/Web-Nexus-Project/About Us/contact us.php" class="headerStuff hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact Us</a>
+            <a href="../../index.php#vulnerabilities" class="headerStuff hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs">Vulnerabilities</a>
+            <a href="../../index.php" class="headerStuff hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Home</a>
+            <a href="../../About Us/contact us.php" class="headerStuff hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] text-center font-semibold text-white hover:text-gray-300 max-md:text-xs max-md:hidden">Contact Us</a>
         </div>
 
-        <div class="hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] flex justify-center items-center">
-            <div onclick="window.location.href='/Web-Nexus-Project/Login_Pages/logout.php'" class="yellowButton yellowButtonHeader hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]">
+        <div class="hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] flex justify-center items-center">
+            <div onclick="window.location.href='../../Login_Pages/logout.php'" class="yellowButton yellowButtonHeader hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer]">
                 <div class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 mr-3 rounded-md border-3 border-[rgb(221,170,16)] transition-colors duration-500">
                     <div class="font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] text-black font-thin text-sm max-md:text-[8px]">
-                        <a href="/Web-Nexus-Project/Login_Pages/logout.php">Log Out</a>
+                        <a href="../../Login_Pages/logout.php">Log Out</a>
                     </div>
                     <div class="absolute w-[105%] h-[115%] bg-[rgb(221,170,16)] hover:bg-yellow-600 rounded-md transition-colors duration-500 -z-1 top-[1%] left-0"></div>
                 </div>
@@ -93,7 +93,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                     creating a vast attack surface that hackers actively target through automated scanning techniques.
                 </div>
                 <div
-                    class="yellowButton yellowButtonThumbnail hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] ">
+                    class="yellowButton yellowButtonThumbnail hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] ">
                     <div
                         class="relative bg-yellow-300 hover:bg-yellow-600 px-3 py-2 rounded-md mt-7 border-3 border-[rgb(221,170,16)] transition-colors duration-500">
 
@@ -111,7 +111,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             </div>
 
         </div>
-        <img src="/Web-Nexus-Project/Assets/Images/VulnerableComponents.gif" class="absolute object-cover w-full h-full opacity-[0.6]"
+        <img src="../../Assets/Images/VulnerableComponents.gif" class="absolute object-cover w-full h-full opacity-[0.6]"
             alt="">
 
 
@@ -127,7 +127,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                 class="relative group w-full bg-[#020617] shadow-md rounded-lg p-4 hover:bg-[#0F172A] transition-colors duration-500">
 
                 <summary
-                    class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] cursor-pointer text-lg font-semibold flex justify-between items-center rounded-md p-2">
+                    class=" hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] cursor-pointer text-lg font-semibold flex justify-between items-center rounded-md p-2">
                     <div
                         class="flex items-center justify-center ['Press_Start_2P'] text-white font-black text-3xl border-3 border-[#3E4B5E] rounded-full w-16 h-16 max-md:w-12 max-md:h-12 max-md:text-sm p-4 mx-2">
                         1
@@ -166,11 +166,11 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                         <!-- BUTTON -->
 
                         <div onclick="window.location.href='vulnerable_page_Vulnerable_and_Outdated_Components.php'"
-                            class="yellowButton yellowButtonVulnerable  hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] h-full py-10 w-full relative z-[100] max-w-[50%]">
+                            class="yellowButton yellowButtonVulnerable  hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] h-full py-10 w-full relative z-[100] max-w-[50%]">
 
                             <div class="z-[100] flex flex-row h-full w-full items-center justify-center px-3 py-2">
 
-                                <img src="/Web-Nexus-Project/Assets/Images/playButton.png"
+                                <img src="../../Assets/Images/playButton.png"
                                     class="z-[100] w-[20%] m-1 h-auto drop-shadow-[2px_2px_0px_rgb(221,170,16)]"
                                     alt="Image 1">
 
@@ -206,7 +206,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 
 
                 <!-- GIF -->
-                <img src="/Web-Nexus-Project/Assets/Images/terminalAndRobo.gif" class="-mt-25" alt="giff">
+                <img src="../../Assets/Images/terminalAndRobo.gif" class="-mt-25" alt="giff">
 
 
                 <div class="bulletPoints p-15">
@@ -215,7 +215,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                         vulnerable if the application is:</p>
 
                     <div class="flex flex-row items-start justify-start space-x-5 mb-[30px]">
-                        <img class="diamond w-auto" src="/Web-Nexus-Project/Assets//Images/diamond.png" alt="">
+                        <img class="diamond w-auto" src="../../Assets//Images/diamond.png" alt="">
 
                         <p class="text-gray-400  text-xl">Using components/libraries with known vulnerabilities due to
                             lack of regular updates or patch management.</p>
@@ -223,7 +223,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                     </div>
 
                     <div class="flex flex-row items-start justify-start space-x-5 mb-[30px]">
-                        <img class="diamond w-auto" src="/Web-Nexus-Project/Assets//Images/diamond.png" alt="">
+                        <img class="diamond w-auto" src="../../Assets//Images/diamond.png" alt="">
 
                         <p class="text-gray-400  text-xl font-['Lexend']">Running software that is unsupported or has
                             reached end-of-life without security updates.</p>
@@ -231,7 +231,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                     </div>
 
                     <div class="flex flex-row items-start justify-start space-x-5 mb-[30px]">
-                        <img class="diamond w-auto" src="/Web-Nexus-Project/Assets//Images/diamond.png" alt="">
+                        <img class="diamond w-auto" src="../../Assets//Images/diamond.png" alt="">
 
                         <p class="text-gray-400  text-xl">Not regularly scanning for vulnerabilities or subscribing to
                             security bulletins related to components.</p>
@@ -239,7 +239,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                     </div>
 
                     <div class="flex flex-row items-start justify-start space-x-5 mb-[30px]">
-                        <img class="diamond w-auto" src="/Web-Nexus-Project/Assets//Images/diamond.png" alt="">
+                        <img class="diamond w-auto" src="../../Assets//Images/diamond.png" alt="">
 
                         <p class="text-gray-400  text-xl">Failing to fix or upgrade the underlying platform, frameworks,
                             and dependencies in a timely fashion.</p>
@@ -247,7 +247,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                     </div>
 
                     <div class="flex flex-row items-start justify-start space-x-5 mb-[30px]">
-                        <img class="diamond w-auto" src="/Web-Nexus-Project/Assets//Images/diamond.png" alt="">
+                        <img class="diamond w-auto" src="../../Assets//Images/diamond.png" alt="">
 
                         <p class="text-gray-400  text-xl">Using components from unofficial sources or with altered code
                             without verification.</p>
@@ -255,7 +255,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                     </div>
 
                     <div class="flex flex-row items-start justify-start space-x-5 mb-[30px]">
-                        <img class="diamond w-auto" src="/Web-Nexus-Project/Assets//Images/diamond.png" alt="">
+                        <img class="diamond w-auto" src="../../Assets//Images/diamond.png" alt="">
 
                         <p class="text-gray-400  text-xl">Not maintaining a proper inventory of client-side and
                             server-side components and their dependencies.</p>
@@ -263,7 +263,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                     </div>
 
                     <div class="flex flex-row items-start justify-start space-x-5 mb-[30px]">
-                        <img class="diamond w-auto" src="/Web-Nexus-Project/Assets//Images/diamond.png" alt="">
+                        <img class="diamond w-auto" src="../../Assets//Images/diamond.png" alt="">
 
                         <p class="text-gray-400  text-xl">Not securing component configurations by using default
                             settings or with excessive permissions.</p>
@@ -285,7 +285,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                 class="relative group w-full bg-[#020617] shadow-md rounded-lg p-4 hover:bg-[#0F172A] transition-colors duration-500">
 
                 <summary
-                    class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] cursor-pointer text-lg font-semibold flex justify-between items-center rounded-md p-2">
+                    class=" hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] cursor-pointer text-lg font-semibold flex justify-between items-center rounded-md p-2">
                     <div
                         class="flex items-center justify-center ['Press_Start_2P'] text-white font-black text-3xl border-3 border-[#3E4B5E] rounded-full w-16 h-16 max-md:w-12 max-md:h-12 max-md:text-sm p-4 mx-2">
                         2
@@ -355,7 +355,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                     <div class="flex flex-row items-start gap-2 justify-start mt-8 mb-20">
 
 
-                        <img src="/Web-Nexus-Project/Assets/Images/robot.gif" class="h-16 w-auto" alt="">
+                        <img src="../../Assets/Images/robot.gif" class="h-16 w-auto" alt="">
 
                         <p class="preventionDescription mt-2 text-gray-600 italic">This security practice implements
                             explicit version pinning for dependencies, preventing automatic updates to potentially
@@ -417,7 +417,7 @@ exit 0
                     <div class="flex flex-row items-start gap-2 justify-start mt-8 mb-20">
 
 
-                        <img src="/Web-Nexus-Project/Assets/Images/robot.gif" class="h-16 w-auto" alt="">
+                        <img src="../../Assets/Images/robot.gif" class="h-16 w-auto" alt="">
 
                         <p class="preventionDescription mt-2 text-gray-600 italic">This preventive measure implements
                             automated dependency scanning that runs before each code commit. The script checks
@@ -481,7 +481,7 @@ function validateLibraryIntegrity($libraryPath) {
                     <div class="flex flex-row items-start gap-2 justify-start mt-8 mb-20">
 
 
-                        <img src="/Web-Nexus-Project/Assets/Images/robot.gif" class="h-16 w-auto" alt="">
+                        <img src="../../Assets/Images/robot.gif" class="h-16 w-auto" alt="">
 
                         <p class="preventionDescription mt-2 text-gray-600 italic"> This security mechanism performs
                             runtime validation of critical JavaScript libraries by checking file integrity against
@@ -535,7 +535,7 @@ echo generateIntegrityTag(
                     <div class="flex flex-row items-start gap-2 justify-start mt-8 mb-20">
 
 
-                        <img src="/Web-Nexus-Project/Assets/Images/robot.gif" class="h-16 w-auto" alt="">
+                        <img src="../../Assets/Images/robot.gif" class="h-16 w-auto" alt="">
 
                         <p class="preventionDescription mt-2 text-gray-600 italic"> This code implements Subresource
                             Integrity (SRI) for external JavaScript libraries, which verifies that resources loaded
@@ -613,7 +613,7 @@ class LibrarySandbox {
                     <div class="flex flex-row items-start gap-2 justify-start mt-8 mb-20">
 
 
-                        <img src="/Web-Nexus-Project/Assets/Images/robot.gif" class="h-16 w-auto" alt="">
+                        <img src="../../Assets/Images/robot.gif" class="h-16 w-auto" alt="">
 
                         <p class="preventionDescription mt-2 text-gray-600 italic"> This security pattern implements a
                             sandboxing mechanism for third-party libraries that restricts their execution context
@@ -638,7 +638,7 @@ class LibrarySandbox {
                 class="relative group w-full bg-[#020617] shadow-md rounded-lg p-4 hover:bg-[#0F172A] transition-colors duration-500">
 
                 <summary
-                    class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] cursor-pointer text-lg font-semibold flex justify-between items-center  rounded-md p-2">
+                    class=" hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] cursor-pointer text-lg font-semibold flex justify-between items-center  rounded-md p-2">
                     <div
                         class="flex items-center justify-center ['Press_Start_2P'] text-white font-black text-3xl border-3 border-[#3E4B5E] rounded-full w-16 h-16 max-md:w-12 max-md:h-12 max-md:text-sm p-4 mx-2">
                         3
@@ -687,21 +687,21 @@ class LibrarySandbox {
 
                         <!-- MASCOT -->
 
-                        <img src="/Web-Nexus-Project/Assets/Images/mascot.gif" class="max-w-[50%] w-100 h-auto" alt="mascot">
+                        <img src="../../Assets/Images/mascot.gif" class="max-w-[50%] w-100 h-auto" alt="mascot">
 
                         <!-- BUTTON -->
 
                         <div onclick="window.location.href='secure_page_Vulnerable_and_Outdated_Components.php'"
-                            class="yellowButton yellowButtonSecure hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer]  h-full py-10 w-full relative z-[100] max-w-[50%]">
+                            class="yellowButton yellowButtonSecure hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer]  h-full py-10 w-full relative z-[100] max-w-[50%]">
 
                             <div class="z-[100] flex flex-row h-full w-full items-center justify-center px-3 py-2">
 
-                                <img src="/Web-Nexus-Project/Assets/Images/playButton.png"
+                                <img src="../../Assets/Images/playButton.png"
                                     class="z-[100] w-[20%] m-1 h-auto drop-shadow-[2px_2px_0px_rgb(221,170,16)]"
                                     alt="Image 1">
 
                                 <div
-                                    class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] flex flex-col items-center justify-center">
+                                    class=" hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] flex flex-col items-center justify-center">
                                     <div
                                         class="z-[100] font-['Press_Start_2P'] drop-shadow-[2px_2px_0px_rgb(221,170,16)] font-black text-2xl max-md:text-sm max-sm:text-xs">
                                         Simulate
@@ -730,7 +730,7 @@ class LibrarySandbox {
 
 
                 <!-- <marquee behavior="scroll" direction="left" scrollamount="10">
-                    <img src="/Web-Nexus-Project/Assets/Images/Ronit-User1.JPG" class="w-40 h-40 inline-block mx-4" alt="Image 1">
+                    <img src="../../Assets/Images/Ronit-User1.JPG" class="w-40 h-40 inline-block mx-4" alt="Image 1">
                 
                 </marquee> -->
             </details>
@@ -742,20 +742,20 @@ class LibrarySandbox {
     <footer class="bg-gray-950 text-white py-16 mt-16">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
             <div>
-                <img src="/Web-Nexus-Project/Assets/Images/logo.svg" alt="Web-Nexus Logo" class="w-24 mx-auto md:mx-0">
+                <img src="../../Assets/Images/logo.svg" alt="Web-Nexus Logo" class="w-24 mx-auto md:mx-0">
                 <p class="mt-4 text-gray-400">Learn security the hands-on-way.</p>
             </div>
             <div>
                 <h3 class="text-lg font-semibold text-blue-400">Company</h3>
                 <ul class="mt-4 space-y-2">
                     <li><a href="#"
-                            class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">About
+                            class=" hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">About
                             Us</a></li>
                     <li><a href="#"
-                            class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Careers</a>
+                            class=" hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Careers</a>
                     </li>
                     <li><a href="#"
-                            class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Blog</a>
+                            class=" hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Blog</a>
                     </li>
                 </ul>
             </div>
@@ -763,13 +763,13 @@ class LibrarySandbox {
                 <h3 class="text-lg font-semibold text-blue-400">Support</h3>
                 <ul class="mt-4 space-y-2">
                     <li><a href="#"
-                            class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Help
+                            class=" hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Help
                             Center</a></li>
                     <li><a href="#"
-                            class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Contact</a>
+                            class=" hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">Contact</a>
                     </li>
                     <li><a href="#"
-                            class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">FAQs</a>
+                            class=" hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">FAQs</a>
                     </li>
                 </ul>
             </div>
@@ -777,16 +777,16 @@ class LibrarySandbox {
                 <h3 class="text-lg font-semibold text-blue-400">Follow Us</h3>
                 <div class="mt-4 flex justify-center md:justify-start space-x-4">
                     <a href="#"
-                        class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
-                        <img src="/Web-Nexus-Project/Assets/Images/github.png" alt="Github" class="w-8">
+                        class=" hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
+                        <img src="../../Assets/Images/github.png" alt="Github" class="w-8">
                     </a>
                     <a href="#"
-                        class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
-                        <img src="/Web-Nexus-Project/Assets/Images/LinkedIn.jpg" alt="Linkedin" class="w-8">
+                        class=" hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
+                        <img src="../../Assets/Images/LinkedIn.jpg" alt="Linkedin" class="w-8">
                     </a>
                     <a href="#"
-                        class=" hover:cursor-[url('/Web-Nexus-Project/Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
-                        <img src="/Web-Nexus-Project/Assets/Images/twitter.jpg" alt="Twitter" class="w-8">
+                        class=" hover:cursor-[url('../../Assets/Images/cursor_02.png'),_pointer] text-gray-300 hover:text-white">
+                        <img src="../../Assets/Images/twitter.jpg" alt="Twitter" class="w-8">
                     </a>
                 </div>
             </div>
@@ -798,7 +798,7 @@ class LibrarySandbox {
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="/Web-Nexus-Project/Assets/Animations/vulnerabilityPageAnimation.js"></script>
+    <script src="../../Assets/Animations/vulnerabilityPageAnimation.js"></script>
 
 </body>
 
