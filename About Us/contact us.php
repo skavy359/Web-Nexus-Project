@@ -537,9 +537,9 @@ session_start();
       </div>
 
       <script>
-        const flipCards = document.querySelectorAll(".flip-card");
+        const theFlipCards = document.querySelectorAll(".flip-card");
 
-        flipCards.forEach((card) => {
+        theFlipCards.forEach((card) => {
           card.addEventListener("click", () => {
             card.classList.add("rotate-y-180");
 
