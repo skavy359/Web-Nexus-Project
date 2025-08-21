@@ -34,7 +34,7 @@ session_start();
   </head>
   <body
     class="w-full min-h-screen bg-[url('../Assets/Images/webNexusBackground.svg')] bg-cover bg-center bg-no-repeat  cursor-[url('../Assets/Images/cursor_01.png'),_auto]"
-    
+
   >
     <!-- HEADER -->
     <nav class="fixed z-[999] top-0 left-0 h-[10vh] w-screen flex items-center justify-between p-4 bg-[#020617] border-b-2 border-[#3E4B5E] max-md:p-0">
