@@ -60,8 +60,7 @@ session_start();
             </div>
         </div>
     </nav>
-  
-  </nav>
+
     <main id="home" class="p-4 mt-20 flex flex-col items-center justify-center">
       <div class="flex justify-center gap-x-20 mt-13">
         <div class="pokedex mt-5 flex justify-center relative">
